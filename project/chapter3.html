@@ -231,7 +231,21 @@ ex) "A" > "B" // false ("B"의 아스키값이 더 크므로)<br>
     <h11>if ...else 문</h11><br>
   if문은 결과값이 true일 때만 실행하므로 true가 아닐 때 명령을 따로 수행할 수 없다.<br>
   if~else 문은 if 조건의 결과값이 true가 아닐 때 실행할 명령을 else 문 다음에 추가한다.<br>
-  
+    <h12>if...else 문 실습하기</h12><br>
+  <script>
+    let userNumber = prompt("숫자를 입력하세요.");
+
+    if(userNumber !== null){
+      userNumber = parseInt(userNumber);
+      if(userNumber % 3 === 0)
+        alret("3의 배수입니다.");
+      else
+        alert("3의 배수가 아닙니다.");
+    }
+    else{
+      alert("입력이 취소됐습니다.")"
+    }
+  </script>
   
   
   
