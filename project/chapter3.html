@@ -219,7 +219,7 @@ ex) "A" > "B" // false ("B"의 아스키값이 더 크므로)<br>
     let birth_year;
     let age;
 
-    birth_year = parselnt(prompt("태어난 연도를 입력하세요.(YYYY)",""));
+    birth_year = parseInt(prompt("태어난 연도를 입력하세요.(YYYY)",""));
     age = current_year - birth_year + 1;
     if(age < 20) {
       alert("성인이 아닙니다.")
