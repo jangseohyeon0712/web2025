@@ -120,6 +120,20 @@ Margin : 경계선 밖 인접 엘리먼트와의 간격    투명. 상하좌우 
 <p>CSS Flex Layout</p><br>
 flex CSS 속성 : 하나의 플렉스 아이템이 자신의 컨테이너가 차지하는 공간에 맞추기 위해, 크기를 키우거나 줄이는 방법을 설정하는 속성
 .abc { display: flex}
+<style>
+  .abc {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+  }
+  .abc div {
+    padding: 10px;
+    background-color: #d9eaff;
+    border: 1px solid #007acc;
+  }
+</style>
 <div class=abc>
   <div>AAA</div>
   <div>BBBBBBBBB</div>
