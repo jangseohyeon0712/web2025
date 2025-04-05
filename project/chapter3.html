@@ -351,7 +351,16 @@ ex) "A" > "B" // false ("B"의 아스키값이 더 크므로)<br>
   <li>조건이 참(true)인 동안 문장 반복</li>
   <li>조건이 false라도 최소한 한번은 실행됨</li>
 </ul><br> do{<br> 실행할 명령<br>}while(조건)<br>
-  11
+  <p>break문</p><br>
+  반복문은 주어진 조건에 따라 문장을 반복하기 때문에 종료 조건이 되어야 반복이 끝남.<br>
+  종료 조건이 되기 전에 반복문을 빠져나와야 한다면?? ==> break문 사용<br>
+  (switch문에서도 case에 맞는 값이 있을 경우 명령 실행 후 break문을 사용해 switch문 빠져나옴)<br>
+  ex) let n = 50;<br>for(let i = 1; i <= n; i++){<br>document.write(`${i}`);<br>if(i===10){<br>break;<br>}<br>}    이런 경우 화면에 10이 나오면 멈춘다.<br>
+<br><p>continue문</p><br>
+특정 조건이 됐을 때 실행하던 반복 문장을 더 이상 실행하지 않고 반복문의 맨 앞으로 되돌아감 <br>
+    ==> 반복 과정을 한 차례 건너뛰게 됨.<br>
+for(let i = 1; i <= 10;i++){<br>if(i % 2 === 1){<br>continue;<br>}<br>document.write(`${i}<code><br></code>`);<br>}
+     이 경우에는 1~10까지 중 짝수만 표시하게 됨
   
   
   
