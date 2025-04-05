@@ -245,21 +245,29 @@ ex) "A" > "B" // false ("B"의 아스키값이 더 크므로)<br>
     else{
       alert("입력이 취소됐습니다.");
     }
-  </script>
+  </script><br>
+  
+  
   <br><h13>조건 연산자</h13><br>
   조건이 하나이고 실행할 명령도 하나일 때 조건문을 간단하게 처리하는 연산 <br>
   <h13>조건 연산자 실습 (짝수, 홀수 구분하는 프로그램)</h13><br>
   <script>
-    let userNumber = prompt("숫자를 입력하세요. (짝수 홀수 구분 프로그램)");
+  let userNumber = prompt("숫자를 입력하세요. (짝수 홀수 구분 프로그램)");
 
-    if(userNumber !== null){
-      userNumber = parseInt(userNumber);
-      (userNumber % 2 === 0) ? alert(`${userNumber} : 짝수`) : alert(`${userNumber}: 홀수`);
+  if (userNumber !== null) {
+    userNumber = parseInt(userNumber);
+    if (isNaN(userNumber)) {
+      alert("숫자를 입력해 주세요!");
+    } else {
+      (userNumber % 2 === 0) 
+        ? alert(`${userNumber} : 짝수`) 
+        : alert(`${userNumber} : 홀수`);
     }
-  </script>
-   
-  
-  
+  } else {
+    alert("입력이 취소됐습니다.");
+  }
+</script><br>
+  <br><h13>switch 문</h13><br>
   
   
   
