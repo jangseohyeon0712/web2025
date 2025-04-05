@@ -5,3 +5,148 @@ Chapter 3 summary
 <h1>연산자</h1><br>
 다음 과 같은 식이 있을 때 -> age = current_year - birth_year + 1 <br>
 age, current_year, birth_year, 1은 연산 대상이 되기 때문에 '피연산자'라고 부른다. 위 식에서 '='와 '-', '+'은 연산자 <br>
+<h2>산술 연산자</h2><br>
+<style>
+  .operator-table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+
+  .operator-table th,
+  .operator-table td {
+    border: 1px solid #aaa;
+    padding: 8px 12px;
+    text-align: left;
+  }
+
+  .operator-table thead {
+    background-color: #e3e8f0;
+    font-weight: bold;
+  }
+</style>
+
+<table class="operator-table">
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+      <th>예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>+</td>
+      <td>두 피연산자의 값을 더합니다.</td>
+      <td>c = a + b</td>
+    </tr>
+    <tr>
+      <td>-</td>
+      <td>첫 번째 피연산자 값에서 두 번째 피연산자 값을 뺍니다.</td>
+      <td>c = a - b</td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>두 피연산자의 값을 곱합니다.</td>
+      <td>c = a * b</td>
+    </tr>
+    <tr>
+      <td>/</td>
+      <td>첫 번째 피연산자 값을 두 번째 피연산자 값으로 나눕니다.</td>
+      <td>c = a / b</td>
+    </tr>
+    <tr>
+      <td>%</td>
+      <td>첫 번째 피연산자 값을 두 번째 피연산자 값으로 나눈 나머지를 구합니다.</td>
+      <td>c = a % b</td>
+    </tr>
+    <tr>
+      <td>++</td>
+      <td>피연산자를 1 증가시킵니다.</td>
+      <td>a++</td>
+    </tr>
+    <tr>
+      <td>--</td>
+      <td>피연산자를 1 감소시킵니다.</td>
+      <td>b--</td>
+    </tr>
+  </tbody>
+</table><br>
+나누기 연산자(/) : 나눈 값 자체<br>
+나머지 연산자(%) : 나눈 후에 남은 나머지 값<br>
+<h3>증감 연산자</h3><br>
+증가(++) 연산자 : 변수값을 1 증가시킴<br>
+감소(--) 연산자 : 변수값을 1 감소시킴<br>
+합쳐서 증감 연산자라고 부른다. <br>
+증감 연산자는 연산자가 어느 위치에 붙느냐에 따라 처리 방법이 달라짐<br>
+ a = 10 <br>sum = a++ + 5 // 15 , a // 11 <br>
+<h4>할당 연산자 (대입 연산자)</h4><br>
+<style>
+  .assignment-table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+
+  .assignment-table th,
+  .assignment-table td {
+    border: 1px solid #aaa;
+    padding: 8px 12px;
+    text-align: left;
+  }
+
+  .assignment-table thead {
+    background-color: #e3e8f0;
+    font-weight: bold;
+  }
+</style>
+
+<table class="assignment-table">
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+      <th>예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>=</td>
+      <td>연산자 오른쪽의 값을 왼쪽 변수에 할당합니다.</td>
+      <td>y = x + 3</td>
+    </tr>
+    <tr>
+      <td>+=</td>
+      <td>y = y + x 를 의미합니다.</td>
+      <td>y += x</td>
+    </tr>
+    <tr>
+      <td>-=</td>
+      <td>y = y - x 를 의미합니다.</td>
+      <td>y -= x</td>
+    </tr>
+    <tr>
+      <td>*=</td>
+      <td>y = y * x 를 의미합니다.</td>
+      <td>y *= x</td>
+    </tr>
+    <tr>
+      <td>/=</td>
+      <td>y = y / x 를 의미합니다.</td>
+      <td>y /= x</td>
+    </tr>
+    <tr>
+      <td>%=</td>
+      <td>y = y % x 를 의미합니다.</td>
+      <td>y %= x</td>
+    </tr>
+  </tbody>
+</table><br>
+
+
+
+
