@@ -2,4 +2,53 @@
 Chapter 1 summary
 HTML
 CSS
-JavaScript
+JavaScript<br>
+<h2>함수의 종류</h2><br>
+arlert()함수 : 알림 창 표시  ex) arlert("안녕하세요") 라고 하면 알림 창에 안녕하세요 라는 알림이 뜬다.<br>
+confirm()함수 : 확인 창 표시 ex) confirm("종료하시겠습니까?") 라고 하면 "확인" , "취소" 버튼이 있어서 사용자가 어떤 버튼을 클릭했는가에 따라 다르게 동작하도록 할 수 있다.<br>
+prompt()함수 : 사용자가 간단한 값을 입력할 수 있는 창 표시 ex)prompt("이름을 입력하세요.") 라고 하면 사용자가 값을 입력할 수 있는 창이 생기며 입력 가능 기본값 을 지정하지 않으면 텍스트 필드가 빈 상태로 표시됨.<br>
+prompt("회의 참석 여부(예/아니요)","예")라고 명령어를 주면 예라는 기본 값으로 선언 하여 엔터를 눌러도 된다. 아무것도 입력하지 않고 "취소"버튼을 누르면 결괏값은 null이 된다.<br>
+<br>console.log()함수 : 콘솔 창에 괄호 안의 내용을 표시함 자바스크립트 소스를 작성하면서 중간에 프로그램이 제대로 동작하는지 확인하는 용도로 자주 사용한다.<br>
+document.write() 함수 : 괄호 안의 내용을 웹 브라우저 화면에 표시함.<br>
+<br><h3>변수란 ?</h3><br>
+변수 : 프로그램에서 사용하기 위해 값을 담아놓는 바구니 (variable) 일반적으로 변수는 프로그램 안에서 값이 달라질 수 있는 데이터를 가리킴.<br>
+변수 이름 정하는 규칙<br>
+1. 변수 이름은 숫자로 시작할 수 없고 이름 안에 공백이 포함되어 있으면 안 된다. ex) current,_current,&current 사용가능 25current,curr ent 사용불가<br>
+2. 자바스크립트는 영문자의 대소문자를 구별한다. ex) current, Current, CURRENT 이 셋은 모두 다른 변수이다.<br>
+3. 한 단어로 이루어진 변수를 사용할 때에는 주로 소문자를 사용한다. 그 이유는 알아보기 편하기 때문이다. ex)current, age, sum<br>
+4. 두 단어로 이루어진 변수는 언더바(_)로 연결하거나 중간에 대문자를 섞어 사용 ex) current_year, total_area 스네이크 표기법 currentYear,totalArea 카멜 표기법<br>
+5. 자바스크립트에서 미리 정해 놓은 예약어(ex: let 등)는 변수 이름으로 사용할 수 없음<br>
+6. 무의미한 변수 이름은 피한다.<br>
+상수 변수가 왜 필요한지?<br>
+예를 들어 나이 계산 프로그램이 있다고 하면 올해 연도를 따로 current_year 상수로 저장해 두면 프로그램 안에서 올햇값을 사용해야 할 때 current_year 값 사용. 내년에 다시 이 프로그램을 사용한다면 current_year 값만 수정하면 된다.<br>
+var와  let, const<br>
+<tabel>
+  <tr>
+    <th scope="col">키워드</td>
+    <th scope="col">선언하지 않고 사용하면?</td>
+    <th scope="col">재선언</td>
+    <th scope="col">재할당</td>
+  </tr>
+  <tr>
+    <td>var</td>
+    <td>오류없음</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td>let</td>
+    <td>오류발생</td>
+    <td>X</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td>const</td>
+    <td>오류발생</td>
+    <td>X</td>
+    <td>X</td>
+  </tr> 
+</tabel>
+
+
+
+
