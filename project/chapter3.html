@@ -268,8 +268,38 @@ ex) "A" > "B" // false ("B"의 아스키값이 더 크므로)<br>
   }
 </script><br>
   <br><p>switch 문</p><br>
-  1234
-  
+ <p>switch 문 설명</p>
+
+<table border="1" style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; font-size: 14px;">
+  <tr>
+    <td style="width: 60%; padding: 10px; vertical-align: top;">
+      <ul>
+        <li>switch 키워드 오른쪽에 조건을 확인할 변수를 지정</li>
+        <li>조건값은 case문 다음에 지정</li>
+        <li>조건값에 맞을 때 실행할 명령은 콜론(:) 다음에 나열</li>
+        <li>둘 이상의 명령이라면 <code>{ }</code> 사용</li>
+        <li>조건에 맞는 명령을 실행한 후에는 <code>break</code>문을 써서 switch문에서 빠져나옴</li>
+        <li>case 값과 일치하는 게 없으면 <code>default</code> 문 실행</li>
+        <li>default 문에는 <code>break</code>가 없어도 됨</li>
+      </ul>
+    </td>
+    <td style="width: 40%; background-color: #eee; padding: 10px; font-family: monospace;">
+<pre><code>switch (변수) {
+  case 값1:
+    문장;
+    break;
+  case 값2:
+    문장;
+    break;
+  ...
+  default:
+    문장;
+}
+</code></pre>
+    </td>
+  </tr>
+</table><br>
+  11
   
   
 
