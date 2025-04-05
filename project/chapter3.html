@@ -251,17 +251,17 @@ ex) "A" > "B" // false ("B"의 아스키값이 더 크므로)<br>
   <br><p>조건 연산자</p><br>
   조건이 하나이고 실행할 명령도 하나일 때 조건문을 간단하게 처리하는 연산 <br>
   <p>조건 연산자 실습 (짝수, 홀수 구분하는 프로그램)</p><br>
-  <script>
-  let userNumber = prompt("숫자를 입력하세요. (짝수 홀수 구분 프로그램)");
+ <script>
+  let evenOddNumber = prompt("숫자를 입력하세요. (짝수 홀수 구분 프로그램)");
 
-  if (userNumber !== null) {
-    userNumber = parseInt(userNumber);
-    if (isNaN(userNumber)) {
+  if (evenOddNumber !== null) {
+    evenOddNumber = parseInt(evenOddNumber);
+    if (isNaN(evenOddNumber)) {
       alert("숫자를 입력해 주세요!");
     } else {
-      (userNumber % 2 === 0) 
-        ? alert(`${userNumber} : 짝수`) 
-        : alert(`${userNumber} : 홀수`);
+      (evenOddNumber % 2 === 0) 
+        ? alert(`${evenOddNumber} : 짝수`) 
+        : alert(`${evenOddNumber} : 홀수`);
     }
   } else {
     alert("입력이 취소됐습니다.");
