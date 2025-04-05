@@ -83,16 +83,43 @@ var와  let, const<br>
 자바스크립트 자료형은 크게 '원시형'과 '객체'로 나뉨<br>
     원시형(primitive type) : 하나의 값만 가지고 있는 자료형.<br>
     객체(object) : 원시형 외의 모든 자료<br>
-<table border="1" style="border-collapse: collapse; text-align: left; width: 100%; font-family: Arial, sans-serif;">
+<style>
+  .datatype-table {
+    border-collapse: collapse;
+    width: 70%;                /* 너비를 70%로 조정 */
+    margin: 20px auto;         /* 가운데 정렬 */
+    font-family: Arial, sans-serif;
+    font-size: 14px;           /* 글자 크기 조금 작게 */
+  }
+
+  .datatype-table th,
+  .datatype-table td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: left;
+  }
+
+  .datatype-table thead {
+    background-color: #f4d7a3;
+  }
+
+  .datatype-table .section {
+    background-color: #fef6e4;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
+
+<table class="datatype-table">
   <thead>
-    <tr style="background-color: #f4d7a3;">
+    <tr>
       <th>자료형</th>
       <th>설명</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td colspan="2" style="background-color: #fef6e4; font-weight: bold;">기본형</td>
+      <td class="section" colspan="2">기본형</td>
     </tr>
     <tr>
       <td>number(숫자)</td>
@@ -115,7 +142,7 @@ var와  let, const<br>
       <td>값이 유효하지 않을 때의 유형입니다.</td>
     </tr>
     <tr>
-      <td colspan="2" style="background-color: #fef6e4; font-weight: bold;">복합형</td>
+      <td class="section" colspan="2">복합형</td>
     </tr>
     <tr>
       <td>array(배열)</td>
@@ -127,6 +154,7 @@ var와  let, const<br>
     </tr>
   </tbody>
 </table><br>
+
 
 
 
