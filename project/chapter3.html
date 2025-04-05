@@ -204,6 +204,30 @@ age, current_year, birth_year, 1은 연산 대상이 되기 때문에 '피연산
 문자열의 비교는 피연산자가 문자열이라면 문자열에 있는 문자들의 아스키(ASCII)값을 비교해서 결정한다.<br>
 ex) "A" > "B" // false ("B"의 아스키값이 더 크므로)<br>
 "A" < "a" // ture (영소문자의 아스키값이 숫자보다 크므로)<br>
+<h7>논리 연산자</h7><br>
+  불리언 연산자라고도 하며 true, false를 처리하는 연산자<br>
+  프로그램에서 조건을 처리할 때 사용하는 연산자<br>
+  OR 연산자의 기호 ( || ) : 피연산자 중 하나만 true여도 true가 된다.<br>
+  AND 연산자의 기호 ( && ) : 피연산자가 모두 true일 경우에만 true가 된다<br>
+  NOT 연산자의 기호 ( ! ) : 피연산자의 반대값을 지정합니다.<br>
+  <br><h8>제어문</h8><br>
+ <h9>if 문</h9><br>
+  괄호 안의 조건이 true이면 {} 사이의 명령을 처리하고, false 이면 {} 안의 명령 무시하고 다음 명령처리<br>
+  <h10>if 문 실습하기</h9><br>
+  <script>
+    const current_year = 2050;
+    let birth_year;
+    let age;
+
+    birth_year = parselnt(prompt("태어난 연도를 입력하세요.(YYYY)",""));
+    age = current_year - birth_year + 1;
+    if(age < 20) {
+      alert("성인이 아닙니다.")
+    }
+    alert(`${current_year}년 현재,${age}세입니다.`);
+  </script>
+  
+  
   
 
 
