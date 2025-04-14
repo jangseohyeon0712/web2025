@@ -13,80 +13,63 @@ ex) function 함수명(){<br><br>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>JavaScript 코드 설명 표</title>
+  <title>JavaScript 합계 예제</title>
   <style>
     body {
       font-family: "Pretendard", sans-serif;
-      padding: 20px;
-      background-color: #f9f9f9;
+      background-color: #f4f4f4;
+      padding: 40px;
     }
-    table {
-      width: 70%;
-      margin: 0 auto;
-      border-collapse: collapse;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      background-color: #ffffff;
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px 16px;
-      text-align: left;
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
     }
-    th {
-      background-color: #f0f0f0;
-      font-weight: bold;
+    pre {
+      background-color: #272822;
+      color: #f8f8f2;
+      padding: 16px;
+      border-radius: 8px;
+      font-family: "Courier New", monospace;
+      overflow-x: auto;
     }
-    code {
-      background-color: #eee;
-      padding: 2px 4px;
-      border-radius: 4px;
+    .console {
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      padding: 16px;
+      margin-top: 20px;
+      border-radius: 8px;
       font-family: "Courier New", monospace;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h2>JavaScript: 1부터 10까지 합 구하기</h2>
+    
+    <pre><code>
+function calcSum() {
+  let sum = 0;
+  for(let i = 1; i &lt;= 10; i++) {
+    sum += i;
+  }
+  console.log(`1부터 10까지 더하면 ${sum}입니다.`);
+}
 
-  <h2 style="text-align: center;">JavaScript 코드 설명 표</h2>
+calcSum();
+    </code></pre>
 
-  <table>
-    <thead>
-      <tr>
-        <th>구성 요소</th>
-        <th>설명</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>function calcSum()</code></td>
-        <td>합계를 계산하는 함수 선언</td>
-      </tr>
-      <tr>
-        <td><code>let sum = 0;</code></td>
-        <td>합계를 저장할 변수 초기화</td>
-      </tr>
-      <tr>
-        <td><code>for (let i = 1; i &lt;= 10; i++)</code></td>
-        <td>1부터 10까지 반복하면서</td>
-      </tr>
-      <tr>
-        <td><code>sum += i;</code></td>
-        <td>반복할 때마다 i를 sum에 더함</td>
-      </tr>
-      <tr>
-        <td><code>console.log(`1부터 10까지 더하면 ${sum}입니다.`);</code></td>
-        <td>결과를 콘솔에 출력</td>
-      </tr>
-      <tr>
-        <td><code>calcSum();</code></td>
-        <td>함수 호출 및 실행</td>
-      </tr>
-      <tr>
-        <td>콘솔 출력</td>
-        <td>1부터 10까지 더하면 55입니다.</td>
-      </tr>
-    </tbody>
-  </table>
-
+    <div class="console">
+      ▶ 1부터 10까지 더하면 55입니다.
+    </div>
+  </div>
 </body>
 </html>
 
