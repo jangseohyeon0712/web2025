@@ -6,111 +6,56 @@
   <style>
     body {
       font-family: "Pretendard", sans-serif;
-      background-color: #f4f4f4;
+      background-color: #f9f9f9;
       padding: 40px;
       line-height: 1.6;
     }
 
-    h1 {
+    h1, h2, h3, h4, h5, h6, p {
       font-size: 2rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      text-align: left; /* 왼쪽 정렬로 수정 */
+      font-weight: bold;
       margin-top: 40px;
       margin-bottom: 16px;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background-color: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    ul {
+      margin-top: 8px;
+      margin-bottom: 32px;
+      line-height: 1.7;
+      padding-left: 20px;
     }
 
-    pre {
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .container, .wrapper, .code-block, .explanation, .code-box {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    pre, code {
       background-color: #272822;
       color: #f8f8f2;
       padding: 16px;
       border-radius: 8px;
       font-family: "Courier New", monospace;
       overflow-x: auto;
+      display: block;
     }
 
     .console {
       background-color: #1e1e1e;
       color: #d4d4d4;
       padding: 16px;
-      margin-top: 20px;
       border-radius: 8px;
       font-family: "Courier New", monospace;
     }
-  </style>
-</head>
-<body>
 
-  <h1>Chapter 4</h1>
-  <p><strong>Chapter 4 summary</strong><br>
-  함수 function 스코프 scope</p>
-
-  <h2>함수 (function)</h2>
-  <p>
-    함수를 선언할 때에는 <code>function</code>이라는 예약어를 사용하고 함수 이름을 적은 후 중괄호 안에 실행할 여러 명령들을 묶는다.<br>
-    함수를 실행(호출)할 때에는 함수 이름 뒤에 중괄호 <code>()</code>를 붙인다.<br>
-    
-  </p>
-
-  <div class="container">
-    <h2>JavaScript: 1부터 10까지 합 구하기</h2>
-    
-    <pre><code>
-function calcSum() {
-  let sum = 0;
-  for(let i = 1; i <= 10; i++) {
-    sum += i;
-  }
-  console.log(`1부터 10까지 더하면 ${sum}입니다.`);
-}
-
-calcSum();
-    </code></pre>
-
-    <div class="console">
-      ▶ 1부터 10까지 더하면 55입니다.
-    </div>
-  </div>
-
-  <h2>매개변수와 인수</h2>
-  <p>매개변수와 인수를 통틀어서 '인자'라고도 한다.</p>
-
-</body>
-</html>
-
-<h3>매개변수</h3>
-<ul>
-  <li>함수를 선언할 때 외부에서 값을 받는 변수</li>
-  <li>함수 이름 옆의 괄호 안에 매개변수 이름을 넣어준다</li>
-  <li>매개변수에 이름을 붙이는 방법은 일반적인 변수 이름을 붙이는 방법과 같다.</li>
-  <li>매개변수는 선언된 함수에서만 사용한다.</li>
-  <li>함수에 여러 개의 매개변수가 필요할 때에는 매개변수 사이에 쉼표(,)를 찍으면서 나열한다.</li>
-</ul>
-
-<h4>인수</h4> 
-매개변수가 있는 함수를 실행할 때, 매개변수로 값을 넘겨주는 변수 <br>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>자바스크립트 함수 처리 순서</title>
-  <style>
-    body {
-      font-family: "Pretendard", sans-serif;
-      padding: 40px;
-      background-color: #f4f4f4;
-    }
     .wrapper {
       display: flex;
       gap: 40px;
@@ -118,63 +63,60 @@ calcSum();
       max-width: 1200px;
       margin: 0 auto;
     }
-    .code-box {
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 20px;
-      font-family: "Courier New", monospace;
-      position: relative;
-      flex: 1;
-    }
-    .code-box .step {
-      color: red;
-      font-weight: bold;
-    }
+
     .arrow {
       position: absolute;
       font-weight: bold;
       color: red;
     }
-    .arrow1 {
-      top: 220px;
-      left: -30px;
-    }
-    .arrow2 {
-      top: 10px;
-      left: 120px;
-    }
-    .arrow3 {
-      top: 135px;
-      left: 250px;
-    }
-
-    .explanation {
-      flex: 1;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 24px;
-      line-height: 1.7;
-    }
-
-    .explanation strong {
-      font-weight: bold;
-    }
-
-    .explanation ol {
-      margin-top: 1em;
-      padding-left: 20px;
-    }
+    .arrow1 { top: 220px; left: -30px; }
+    .arrow2 { top: 10px; left: 120px; }
+    .arrow3 { top: 135px; left: 250px; }
   </style>
 </head>
 <body>
 
-  <h1>자바스크립트에서 함수 처리 순서</h1>
+  <h1>Chapter 4</h1>
+  <p>Chapter 4 summary<br>함수 function 스코프 scope</p>
 
+  <h2>함수</h2>
+  <p>
+    함수를 선언할 때에는 <code>function</code>이라는 예약어를 사용하고 함수 이름을 적은 후 중괄호 안에 실행할 여러 명령들을 묶는다.<br>
+    함수를 실행(호출)할 때에는 함수 이름 뒤에 중괄호 <code>()</code>를 붙인다.
+  </p>
+
+  <div class="container">
+    <h3>JavaScript: 1부터 10까지 합 구하기</h3>
+    <pre><code>function calcSum() {
+  let sum = 0;
+  for(let i = 1; i <= 10; i++) {
+    sum += i;
+  }
+  console.log(`1부터 10까지 더하면 ${sum}입니다.`);
+}
+
+calcSum();</code></pre>
+    <div class="console">▶ 1부터 10까지 더하면 55입니다.</div>
+  </div>
+
+  <h4>매개변수와 인수</h4>
+  <p>매개변수와 인수를 통틀어서 '인자'라고도 한다.</p>
+
+  <h5>매개변수</h5>
+  <ul>
+    <li>함수를 선언할 때 외부에서 값을 받는 변수</li>
+    <li>함수 이름 옆의 괄호 안에 매개변수 이름을 넣어준다</li>
+    <li>매개변수에 이름을 붙이는 방법은 일반적인 변수 이름을 붙이는 방법과 같다.</li>
+    <li>매개변수는 선언된 함수에서만 사용한다.</li>
+    <li>함수에 여러 개의 매개변수가 필요할 때에는 매개변수 사이에 쉼표(,)를 찍으면서 나열한다.</li>
+  </ul>
+
+  <h6>인수</h6>
+  <p>매개변수가 있는 함수를 실행할 때, 매개변수로 값을 넘겨주는 변수</p>
+
+  <p>자바스크립트에서 함수 처리 순서</p>
   <div class="wrapper">
-    <!-- 왼쪽 코드 박스 -->
-    <div class="code-box">
+    <div class="code-box" style="position: relative;">
       <div class="arrow arrow1">(1)</div>
       <div class="arrow arrow2">10 <span style="color:#a00;">(2)</span></div>
       <div class="arrow arrow3">(3)</div>
@@ -189,12 +131,10 @@ calcSum();
 calcSum(10);</code></pre>
     </div>
 
-    <!-- 오른쪽 설명 박스 -->
     <div class="explanation">
-      자바스크립트는 <code>function</code>이라는 예약어를 만나면  
-      함수를 선언한다는 것을 알고 일단 메모리에 저장하고  
+      자바스크립트는 <code>function</code>이라는 예약어를 만나면<br>
+      함수를 선언한다는 것을 알고 일단 메모리에 저장하고<br>
       뒤에 <strong>calcSum()</strong> 함수의 내용을 저장해둔다.
-
       <ol>
         <li>함수 선언 다음에 오는 <code>calcSum(10)</code> 명령을 만나면 calcSum 함수를 실행한다.</li>
         <li>이 때 소괄호 안에 있는 10은 함수를 선언할 때 지정한 매개변수 <code>n</code>으로 넘겨진다.</li>
@@ -203,56 +143,7 @@ calcSum(10);</code></pre>
     </div>
   </div>
 
-</body>
-</html>
-<br>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>return문</title>
-  <style>
-    body {
-      font-family: "Pretendard", sans-serif;
-      padding: 40px;
-      background-color: #f9f9f9;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      font-weight: bold;
-    }
-
-    h2 span {
-      text-decoration: underline;
-      color: #000;
-    }
-
-    ul {
-      margin-top: 16px;
-      margin-bottom: 32px;
-      line-height: 1.7;
-    }
-
-    ul li {
-      margin-bottom: 8px;
-    }
-
-    .code-block {
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 20px;
-      font-family: "Courier New", monospace;
-      line-height: 1.6;
-      white-space: pre;
-    }
-  </style>
-</head>
-<body>
-
-  <h2><span>return</span>문</h2>
-
+  <p>return 문</p>
   <ul>
     <li>함수 안에서 실행하고 그 결과를 함수 밖에서 받아 처리해야 할 경우도 많다.</li>
     <li>함수의 실행 결과를 함수를 실행한 시점으로 넘겨주는 것을 ‘결과값을 반환한다(return)’라고 한다.</li>
@@ -260,7 +151,7 @@ calcSum(10);</code></pre>
   </ul>
 
   <div class="code-block">
-function calcSum(n) {  // n: 매개변수
+<pre><code>function calcSum(n) {  // n: 매개변수
   let sum = 0;
   for(let i = 1; i <= n; i++) {
     sum += i;
@@ -269,13 +160,8 @@ function calcSum(n) {  // n: 매개변수
 }
 
 let num = parseInt(prompt("몇까지 더할까요?"));
-document.write(`1부터 ${num}까지 더하면 ${calcSum(num)}입니다.`);
+document.write(`1부터 ${num}까지 더하면 ${calcSum(num)}입니다.`);</code></pre>
   </div>
 
 </body>
 </html>
-
-
-
-
-
