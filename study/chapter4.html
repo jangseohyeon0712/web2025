@@ -273,7 +273,44 @@ document.write(`1부터 ${num}까지 더하면 ${calcSum(num)}입니다.`);
   </div>
 
 </body>
+</html><br>
+<p>스코프 (scope)</p><br>
+스코프(scope) : 선언한 변수의 적용 범위를 가리킨다. <br>
+<ul>
+    <li>var 키워드를 사용한 변수는 함수 레벨 스코프</li>
+    <li>let, const 키워드를 사용한 변수는 블록 레벨 스코프</li>    
+  </ul>
+<br>
+<p>var 변수의 스코프 - 함수 스코프</p>
+  <ul>
+    <li><code>var</code> 예약어를 사용해서 변수를 선언하면 해당 변수는 함수 스코프를 가진다.</li>
+    <li>함수 스코프란 변수를 선언한 함수에서만 해당 변수를 사용할 수 있다는 의미인데,<br>→ 이런 변수는 <strong>지역 스코프</strong>를 가진다. (지역 변수)</li>
+    <li>프로그램 시작 부분에서 변수를 선언하면 프로그램 전체에서 사용할 수 있다.<br>→ 이런 변수는 <strong>전역 스코프</strong>를 가진다. (전역 변수)</li>
+  </ul>
+
+  <div class="wrapper">
+    <div class="code-box">
+<pre><code>function sum(a, b) {
+  var result = a + b;
+}
+console.log(result);</code></pre>
+      <p style="color: #4a90e2; font-size: 1.5rem; font-weight: normal;">지역 스코프를 가지는 result 변수</p>
+    </div>
+    <div class="code-box">
+<pre><code>var hi = "hello";
+
+function greeting() {
+  console.log(hi);
+}
+
+greeting();</code></pre>
+      <p style="color: #4a90e2; font-size: 1.5rem; font-weight: normal;">전역 스코프를 가지는 hi 변수</p>
+    </div>
+  </div>
+
+</body>
 </html>
+
 
 
 
