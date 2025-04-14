@@ -389,6 +389,23 @@ function calc() {
 화살표 함수는 함수 표현식을 사용할 경우에만 사용할 수 있음.<br>
 () =>{함수내용}<br>
 (매개변수)=>{함수내용}<br>
+<section>
+  <p>콜백 함수</p>
+  콜백 함수는 다른 함수의 인자로 사용하는 함수<br><br>
+
+  <p>함수 이름을 사용해 콜백 함수 실행하기</p>
+  addEventListener() 함수는 아직 배우지 않았지만, addEventListener() 함수 안에 display 함수를 인자로 사용한다는 점만 알아두자.<br>
+  이 때 display 뒤에 괄호가 없다는 점 기억하기!
+
+  <pre><code>const bttn = document.querySelector("button");  // 버튼 요소 가져옴
+
+function display() {
+  alert("클릭했습니다.");
+}
+
+bttn.addEventListener("click", display);  // 버튼 클릭하면 display 함수 실행
+</code></pre>
+</section>
 
 
 
