@@ -322,6 +322,29 @@ greeting();</code></pre>
 
 큰 규모의 프로젝트에서는 전역 변수를 사용하는게 위험할 수 있다.
 <br>
+<p>let, const 변수의 스코프 – 블록 스코프</p>
+<ul>
+  <li>자바스크립트에서 이야기하는 블록은 { }로 둘러싸인 영역을 가리킨다.</li>
+  <li>블록별로 변수의 유효 범위가 결정되는 것을 블록 스코프(block scope)라고 한다.</li>
+  <li>let이나 const를 사용해 만든 변수는 변수가 선언된 블록 안에서만 유효하다. (블록 변수)</li>
+</ul>
+
+<div class="code-block">
+<pre><code>
+const factor = 5;
+
+function calc() {
+  return num * factor;
+}
+
+{
+  const num = 10;
+  let result = calc();
+  console.log(`result : ${result}`);
+}
+</code></pre>
+</div>
+
 
 <style>
   h1, h2, h3, h4, h5, h6, p {
@@ -331,5 +354,6 @@ greeting();</code></pre>
     margin-bottom: 0.5em;
   }
 </style>
+
 
 
