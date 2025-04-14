@@ -314,35 +314,13 @@ greeting();</code></pre>
 
 함수에서 변수를 선언할 때 변수 이름 앞에 <code>var</code> 예약어를 붙이지 않으면 
 자바스크립트는 전역 변수로 인식한다.<br>
-실수로 <code>var</code> 예약어 없이 변수를 선언한다면?? → 전역 변수가 되어 엉뚱한 결과가 발생할 수 있다.
+실수로 <code>var</code> 예약어 없이 변수를 선언한다면?? → 전역 변수가 되어 엉뚱한 결과가 발생할 수 있다.<br>
 
-
-
-var를 넣었을 때와 뺐을 때<br>
-어떻게 달라지는지 확인해 보세요
-
-
-
-function greeting() {<br>
-&nbsp;&nbsp;hi = "hello"; <span style="color: gray;">// 실수로 var를 빠뜨렸다면</span><br>
-}<br>
-greeting();<br>
-console.log(hi); <span style="color: gray;">// 함수 밖에서 사용할 수 있다.</span>
-
-
-
-여러 함수에서 사용할 변수를 전역 변수로 지정해 놓으면 편리할 수도 있다.
-<span style="color: crimson; font-weight: bold;">하지만 !!</span>
-
-
-
+여러 함수에서 사용할 변수를 전역 변수로 지정해 놓으면 편리할 수도 있다.<br>
 여러 사람이 공동 작업하는 프로그램일 경우<br>
-다른 함수에서 전역 변수를 수정하면 예상하지 못한 결과가 나올 수도 있다.
-
-<br>
+다른 함수에서 전역 변수를 수정하면 예상하지 못한 결과가 나올 수도 있다.<br>
 
 큰 규모의 프로젝트에서는 전역 변수를 사용하는게 위험할 수 있다.
-
 <br>
 
 <style>
