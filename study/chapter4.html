@@ -98,8 +98,183 @@ calcSum();
   <li>함수에 여러 개의 매개변수가 필요할 때에는 매개변수 사이에 쉼표(,)를 찍으면서 나열한다.</li>
 </ul>
 
-<h4>인수</h4> <br>
-매개변수가 있는 함수를 실행할 때, 매개변수로 값을 넘겨주는 변수
+<h4>인수</h4> 
+매개변수가 있는 함수를 실행할 때, 매개변수로 값을 넘겨주는 변수 <br>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>자바스크립트 함수 처리 순서</title>
+  <style>
+    body {
+      font-family: "Pretendard", sans-serif;
+      padding: 40px;
+      background-color: #f4f4f4;
+    }
+    .wrapper {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .code-box {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      font-family: "Courier New", monospace;
+      position: relative;
+      flex: 1;
+    }
+    .code-box .step {
+      color: red;
+      font-weight: bold;
+    }
+    .arrow {
+      position: absolute;
+      font-weight: bold;
+      color: red;
+    }
+    .arrow1 {
+      top: 220px;
+      left: -30px;
+    }
+    .arrow2 {
+      top: 10px;
+      left: 120px;
+    }
+    .arrow3 {
+      top: 135px;
+      left: 250px;
+    }
+
+    .explanation {
+      flex: 1;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 24px;
+      line-height: 1.7;
+    }
+
+    .explanation strong {
+      font-weight: bold;
+    }
+
+    .explanation ol {
+      margin-top: 1em;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>자바스크립트에서 함수 처리 순서</h1>
+
+  <div class="wrapper">
+    <!-- 왼쪽 코드 박스 -->
+    <div class="code-box">
+      <div class="arrow arrow1">(1)</div>
+      <div class="arrow arrow2">10 <span style="color:#a00;">(2)</span></div>
+      <div class="arrow arrow3">(3)</div>
+<pre><code>function calcSum(n) {
+  let sum = 0;
+  for(let i = 1; i <= n; i++) {
+    sum += i;
+  }
+  console.log(`1부터 ${n}까지 더하면 ${sum}입니다.`);
+}
+
+calcSum(10);</code></pre>
+    </div>
+
+    <!-- 오른쪽 설명 박스 -->
+    <div class="explanation">
+      자바스크립트는 <code>function</code>이라는 예약어를 만나면  
+      함수를 선언한다는 것을 알고 일단 메모리에 저장하고  
+      뒤에 <strong>calcSum()</strong> 함수의 내용을 저장해둔다.
+
+      <ol>
+        <li>함수 선언 다음에 오는 <code>calcSum(10)</code> 명령을 만나면 calcSum 함수를 실행한다.</li>
+        <li>이 때 소괄호 안에 있는 10은 함수를 선언할 때 지정한 매개변수 <code>n</code>으로 넘겨진다.</li>
+        <li>그 값을 사용해서 함수에 있던 명령을 차례대로 실행한다.</li>
+      </ol>
+    </div>
+  </div>
+
+</body>
+</html>
+<br>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>return문</title>
+  <style>
+    body {
+      font-family: "Pretendard", sans-serif;
+      padding: 40px;
+      background-color: #f9f9f9;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    h2 span {
+      text-decoration: underline;
+      color: #000;
+    }
+
+    ul {
+      margin-top: 16px;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .code-block {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      font-family: "Courier New", monospace;
+      line-height: 1.6;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+
+  <h2><span>return</span>문</h2>
+
+  <ul>
+    <li>함수 안에서 실행하고 그 결과를 함수 밖에서 받아 처리해야 할 경우도 많다.</li>
+    <li>함수의 실행 결과를 함수를 실행한 시점으로 넘겨주는 것을 ‘결과값을 반환한다(return)’라고 한다.</li>
+    <li>함수를 실행한 후 결과를 반환할 때는 예약어 <code>return</code> 다음에 넘겨줄 값이나 변수를 지정한다.</li>
+  </ul>
+
+  <div class="code-block">
+function calcSum(n) {  // n: 매개변수
+  let sum = 0;
+  for(let i = 1; i <= n; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+let num = parseInt(prompt("몇까지 더할까요?"));
+document.write(`1부터 ${num}까지 더하면 ${calcSum(num)}입니다.`);
+  </div>
+
+</body>
+</html>
+
 
 
 
