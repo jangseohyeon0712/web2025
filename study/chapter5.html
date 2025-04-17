@@ -122,5 +122,35 @@ html
     <li>querySelector()를 사용하면 둘 이상의 선택자를 조합해서 접근할 수 있음 (예, <code>#detail &gt; p</code>)</li>
   </ul>
 </div>
+<div>
+  <p>웹 요소 내용 가져오기 및 수정하기</p><br><br>
+
+  접근한 요소의 텍스트 내용을 가져오거나 지정할 때는  
+  <code>innerText</code>, <code>innerHTML</code>, <code>textContent</code> 프로퍼티 사용<br><br>
+
+  <ul>
+    <li><strong>innerText</strong> : 순수 텍스트를 가져오거나, 해당 요소에 텍스트 지정</li>
+    <li><strong>innerHTML</strong> : 태그와 함께 텍스트를 가져오거나, 해당 요소에 태그와 함께 텍스트 지정</li>
+    <li>
+      <strong>textContent</strong> : 텍스트를 가져오되, 화면에 보이는 대로가 아니라 소스에 있는 그대로 가져옴<br>
+      (화면에서 감춘 요소에서도 내용을 가져올 수 있고, 소스에 공백이 여러 개인 경우 그 공백도 모두 가져옴)
+    </li>
+  </ul><br>
+
+  <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+    <div style="border: 1px solid #ccc; background-color: #f3f3f3; padding: 10px; width: fit-content;">
+      요소.innerText<br>
+      요소.innerHTML<br>
+      요소.textContent
+    </div>
+
+    <div style="border: 1px solid #ccc; background-color: #f3f3f3; padding: 10px; width: fit-content;">
+      요소.innerText = "내용"<br>
+      요소.innerHTML = "내용"<br>
+      요소.textContent = "내용"
+    </div>
+  </div>
+</div>
+
 
 
