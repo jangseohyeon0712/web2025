@@ -362,5 +362,34 @@ title.onclick = () =&gt; {<br>
     요소.classList.contains(클래스명)
   </div>
 </div>
+<br>
+<div>
+  <ul>
+    <li><code>contains()</code> 함수를 사용해서 <code>.clicked</code> 스타일이 있는지 살펴보고,</li>
+    <li><code>.clicked</code> 스타일이 있다면 <code>remove()</code>를 사용해서 제거한다</li>
+  </ul><br>
+
+  <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+    <!-- 코드 박스 -->
+    <div style="border: 1px solid #ccc; background-color: #fdfdfd; padding: 12px; font-family: monospace; white-space: pre-wrap; min-width: 320px;">
+const title = document.querySelector("#title");
+
+title.onclick = () =&gt; {
+  <span style="color: crimson;">if (!title.classList.contains("clicked")) {</span>
+    <span style="color: crimson;">title.classList.add("clicked");</span>
+  <span style="color: crimson;">} else {</span>
+    <span style="color: crimson;">title.classList.remove("clicked");</span>
+  <span style="color: crimson;">}</span>
+}
+    </div>
+
+    <!-- 설명 박스 -->
+    <div style="color: #3a4a9e; font-size: 15px;">
+      .clicked가 없으면 추가<br><br>
+      .clicked가 있으면 삭제
+    </div>
+  </div>
+</div>
+
 
 
