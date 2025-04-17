@@ -156,7 +156,7 @@ html
 
   <strong>1) 문서 소스 확인하기</strong><br><br>
 
-  05wjs-content-2.html<br><br>
+ 
 
   <div style="display: flex; gap: 30px; flex-wrap: wrap;">
     <!-- 코드 박스 -->
@@ -216,6 +216,39 @@ title.onclick = () =&gt; title.innerText = "프로필";
     </div>
   </div>
 </div>
+<div>
+  <strong>(예) 클릭해서 텍스트 내용 또는 이미지 바꾸기</strong><br><br>
+
+  <strong>3) 이미지 부분 클릭했을 때 변경하기</strong><br><br>
+
+  이미지를 변경하려면 이미지에 접근한 후 <code>src</code> 속성 값을 바꿔준다<br><br>
+
+  <div style="display: inline-block; background-color: #f3f3f3; border: 1px solid #ccc; padding: 6px 10px; margin-bottom: 10px;">
+    이미지 요소.src = 이미지 파일 경로
+  </div><br><br>
+
+  05wjs-content-2.js<br><br>
+
+  <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+    <!-- 코드 블록 -->
+    <div style="border: 1px solid #ccc; background-color: #f9f9f9; padding: 12px; font-family: monospace; white-space: pre; width: fit-content;">
+const title = document.querySelector("#title");<br>
+<span style="color: crimson;">const pfImage = document.querySelector("#profile img");</span><br><br>
+title.onclick = () =&gt; title.innerText = "프로필";<br>
+<span style="color: crimson;">pfImage.onclick = () =&gt; pfImage.src = "images/pf2.png";</span>
+    </div>
+
+    <!-- 출력 예시 -->
+    <div style="border: 1px solid #ccc; background-color: #fff; padding: 20px; text-align: center; width: 220px;">
+      <div style="font-weight: bold; font-size: 18px;">프로필</div><br>
+      <img src="images/pf2.png" alt="변경된 프로필" style="width: 80px; height: 80px;"><br><br>
+      <div style="color: black;">이름 <strong>(변경)</strong></div>
+      <div style="color: black;">주소 : somewhere</div>
+      <div style="color: black;">연락처 : 1234-5678</div>
+    </div>
+  </div>
+</div>
+
 
 
 
