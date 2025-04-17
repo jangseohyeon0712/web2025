@@ -151,6 +151,72 @@ html
     </div>
   </div>
 </div>
+<div>
+  <p>(예) 클릭해서 텍스트 내용 또는 이미지 바꾸기</p><br><br>
+
+  <strong>1) 문서 소스 확인하기</strong><br><br>
+
+  05wjs-content-2.html<br><br>
+
+  <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+    <!-- 코드 박스 -->
+    <div style="border: 1px solid #ccc; background-color: #f9f9f9; padding: 12px; font-family: monospace; white-space: pre; width: fit-content;">
+&lt;h1 id="title"&gt;My Profile&lt;/h1&gt;<br>
+&lt;div id="profile"&gt;<br>
+&nbsp;&nbsp;&lt;img src="images/pf.png" alt="도레미"&gt;<br>
+&nbsp;&nbsp;&lt;div id="desc"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="user"&gt;이름 : 도레미&lt;/span&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="user"&gt;주소 : somewhere&lt;/span&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="user"&gt;연락처 : 1234-5678&lt;/span&gt;<br>
+&nbsp;&nbsp;&lt;/div&gt;<br>
+&lt;/div&gt;
+    </div>
+
+    <!-- 출력 예시 박스 -->
+    <div style="border: 1px solid #ccc; background-color: #fff; padding: 20px; text-align: center; width: 220px;">
+      <div style="font-weight: bold; font-size: 18px;">My Profile</div><br>
+      <img src="images/pf.png" alt="프로필" style="width: 80px; height: 80px;"><br><br>
+      <div style="color: purple;">이름 : 도레미</div>
+      <div style="color: purple;">주소 : somewhere</div>
+      <div style="color: purple;">연락처 : 1234-5678</div>
+    </div>
+  </div>
+</div>
+<div>
+  <p>(예) 클릭해서 텍스트 내용 또는 이미지 바꾸기</p><br><br>
+
+  <strong>2) 제목 부분 클릭했을 때 변경하기</strong><br><br>
+
+  click 이벤트가 발생했을 때, 요소에 직접 함수를 연결해서 사용<br><br>
+
+  <div style="display: inline-block; background-color: #f3f3f3; border: 1px solid #ccc; padding: 6px 10px; margin-bottom: 10px;">
+    변수.onclick = 함수
+  </div><br><br>
+
+  05wjs-content-2.js<br><br>
+
+  <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+    <!-- 일반 함수 버전 -->
+    <div style="border: 1px solid #ccc; background-color: #f9f9f9; padding: 12px; font-family: monospace; white-space: pre; width: fit-content;">
+const title = document.querySelector("#title");
+
+title.onclick = function() {
+  title.innerText = "프로필";
+}
+    </div>
+
+    <!-- 화살표 함수 버전 -->
+    <div>
+      화살표 함수를 사용하면<br><br>
+      <div style="border: 1px solid #ccc; background-color: #f9f9f9; padding: 12px; font-family: monospace; white-space: pre; width: fit-content;">
+const title = document.querySelector("#title");
+
+title.onclick = () =&gt; title.innerText = "프로필";
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 
