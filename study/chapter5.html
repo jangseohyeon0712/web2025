@@ -65,3 +65,31 @@ html
     <div>h1 요소는 body의 자식 요소</div>
   </div>
 </div>
+
+<div>
+  <h4>웹 요소에 접근하기</h4><br><<br>
+
+  웹 문서에서 원하는 요소를 찾아가는 것을 “접근한다(access)”고 함<br>
+  <em>(예) 제목의 글자색을 바꾸고 싶다면 우선 제목까지 ‘접근해야’ 함.</em><br><br>
+
+  <h5>querySelector(), querySelectorAll() 함수</h5><br><br>
+
+  <div style="display: flex; gap: 10px;">
+    <div style="border: 1px solid #ccc; background-color: #f3f3f3; padding: 6px 12px; width: fit-content;">
+      querySelector(선택자)
+    </div>
+    <div style="border: 1px solid #ccc; background-color: #f3f3f3; padding: 6px 12px; width: fit-content;">
+      querySelectorAll(선택자)
+    </div>
+  </div><br>
+
+  <strong>선택자</strong><br>
+  id 이름 앞에는 해시 기호(#), class 이름 앞에는 마침표(.), 태그는 기호 없이 태그명 사용<br><br>
+
+  <strong>반환 값</strong>
+  <ul>
+    <li>querySelector() 메서드는 한 개의 값만 반환</li>
+    <li>querySelectorAll() 메서드는 반환 값이 여러 개인 때 모두 반환 → 노드 리스트로 저장됨</li>
+  </ul>
+</div>
+
