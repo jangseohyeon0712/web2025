@@ -274,10 +274,11 @@ title.onclick = () =&gt; title.innerText = "프로필";<br>
     <li><code>classList</code>를 사용해서 적용 중인 <code>class</code> 스타일을 제거할 수도 있고, 새로운 <code>class</code> 스타일을 추가할 수도 있다</li>
   </ul><br>
 
+  05wclasslist-0.html<br><br>
 
   <div style="display: flex; gap: 30px; flex-wrap: wrap;">
     <!-- HTML 구조 -->
-    <div style="border: 1px solid #ccc; background-color: #f9f9f9; padding: 12px; font-family: monospace; white-space: pre; width: fit-content;">
+    <div style="border: 1px solid #ccc; background-color: #f9f9f9; padding: 12px; font-family: monospace; white-space: pre-wrap; min-width: 280px;">
 &lt;div id="desc"&gt;<br>
 &nbsp;&nbsp;&lt;p class="user clicked"&gt;이름 : 도레미&lt;/p&gt;<br>
 &nbsp;&nbsp;&lt;p class="user"&gt;주소 : somewhere&lt;/p&gt;<br>
@@ -291,11 +292,11 @@ title.onclick = () =&gt; title.innerText = "프로필";<br>
       <div style="border: 1px solid #ccc; background-color: #f3f3f3; padding: 6px 10px; width: fit-content;">
         document.querySelector("#desc p").classList
       </div><br>
-      <div style="border: 1px solid #ccc; background-color: #fff; padding: 12px; font-family: monospace; white-space: pre; width: fit-content;">
+      <div style="border: 1px solid #ccc; background-color: #fff; padding: 12px; font-family: monospace; white-space: pre; max-width: 360px;">
 document.querySelector("#desc p").classList<br>
 ▶ DOMTokenList(2) ['user', 'clicked'], value: 'user clicked'
       </div><br>
-      <div style="border: 1px solid #ccc; background-color: #fff; padding: 12px; font-family: monospace; white-space: pre; width: fit-content;">
+      <div style="border: 1px solid #ccc; background-color: #fff; padding: 12px; font-family: monospace; white-space: pre; max-width: 360px;">
 document.querySelector("#desc p").classList<br>
 ▶ DOMTokenList(2) ['user', 'clicked']<br>
   0: "user"<br>
@@ -307,9 +308,6 @@ document.querySelector("#desc p").classList<br>
     </div>
   </div>
 </div>
-
-
-
 
 
 
