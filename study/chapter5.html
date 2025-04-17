@@ -21,4 +21,47 @@ DOM
     <li>마크업을 보면서 요소 사이의 포함 관계도 알아야 한다</li>
   </ul>
 </div>
+<div>
+  <h3>DOM 트리</h3><br><br>
 
+  <ul>
+    <li>웹 문서에 있는 요소들 간의 부모, 자식 관계를 계층 구조로 표시한 것</li>
+    <li>나무 형태가 되기 때문에 “DOM 트리”라고 함</li>
+    <li>노드(node) : DOM 트리에서 가지가 갈라져 나간 항목</li>
+    <li>루트 노드(root node) : DOM 트리의 시작 부분(html)</li>
+  </ul><br>
+
+  <div style="border:1px solid #ccc; padding:10px; margin-bottom:20px;">
+    <code>
+      &lt;!DOCTYPE html&gt;<br>
+      &lt;html lang="ko"&gt;<br>
+      &nbsp;&nbsp;&lt;head&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;DOM Tree 알아보기&lt;/title&gt;<br>
+      &nbsp;&nbsp;&lt;/head&gt;<br>
+      &nbsp;&nbsp;&lt;body&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Do it!&lt;/h1&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/doit.jpg" alt="공부하는 이미지"&gt;<br>
+      &nbsp;&nbsp;&lt;/body&gt;<br>
+      &lt;/html&gt;
+    </code>
+  </div>
+
+  <div style="border:1px solid #ccc; padding:10px;">
+    <div>html 요소는 head, body의 부모 요소</div>
+    <br>
+    <div>
+      <strong>DOM 트리 구조:</strong><br><br>
+      <pre>
+html
+├── head
+│   ├── meta
+│   └── title
+└── body
+    ├── h1
+    └── img
+      </pre>
+    </div>
+    <div>h1 요소는 body의 자식 요소</div>
+  </div>
+</div>
