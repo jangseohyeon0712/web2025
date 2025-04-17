@@ -318,6 +318,36 @@ document.querySelector("#desc p").classList<br>
     요소.classList.remove(클래스명)
   </div>
 </div>
+<div>
+  <p>add() – 클래스 스타일 추가</p><br><br>
+
+  05wcss\style.css  05wclasslist-1.html, 05wjs\classlist-1.js<br><br>
+
+  <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+    <!-- CSS 코드 박스 -->
+    <div style="border: 1px solid #ccc; background-color: #fdfdfd; padding: 12px; font-family: monospace; white-space: pre; min-width: 250px;">
+h1 {<br>
+&nbsp;&nbsp;font-size: 2rem;<br>
+&nbsp;&nbsp;margin-bottom: 20px;<br>
+}<br><br>
+<span style="color: crimson;">.clicked {</span><br>
+&nbsp;&nbsp;<span style="color: crimson;">background-color: yellow;</span><br>
+<span style="color: crimson;">}</span>
+    </div>
+
+    <!-- JS 코드 박스 -->
+    <div style="border: 1px solid #ccc; background-color: #fdfdfd; padding: 12px; font-family: monospace; white-space: pre; min-width: 300px;">
+const title = document.querySelector("#title");<br><br>
+title.onclick = () =&gt; {<br>
+&nbsp;&nbsp;<span style="color: crimson;">title.classList.add("clicked");</span><br>
+}
+    </div>
+  </div><br>
+
+  <div style="color: crimson;">
+    제목을 클릭했을 때 <code>.clicked</code> 스타일이 추가됨
+  </div>
+</div>
 
 
 
