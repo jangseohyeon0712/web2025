@@ -266,6 +266,47 @@ title.onclick = () =&gt; title.innerText = "프로필";<br>
     <code>backgroundColor</code>, <code>fontSize</code>처럼 하이픈 없이 사용. 둘째 단어는 대문자로
   </div>
 </div>
+<div>
+  <p>classList 프로퍼티</p><br><br>
+
+  <ul>
+    <li>두 개 이상의 <code>class</code> 스타일이 적용되었을 경우 <code>class</code> 스타일 정보를 담아두는 프로퍼티</li>
+    <li><code>classList</code>를 사용해서 적용 중인 <code>class</code> 스타일을 제거할 수도 있고, 새로운 <code>class</code> 스타일을 추가할 수도 있다</li>
+  </ul><br>
+
+
+  <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+    <!-- HTML 구조 -->
+    <div style="border: 1px solid #ccc; background-color: #f9f9f9; padding: 12px; font-family: monospace; white-space: pre; width: fit-content;">
+&lt;div id="desc"&gt;<br>
+&nbsp;&nbsp;&lt;p class="user clicked"&gt;이름 : 도레미&lt;/p&gt;<br>
+&nbsp;&nbsp;&lt;p class="user"&gt;주소 : somewhere&lt;/p&gt;<br>
+&nbsp;&nbsp;&lt;p class="user"&gt;연락처 : 1234-5678&lt;/p&gt;<br>
+&lt;/div&gt;
+    </div>
+
+    <!-- 콘솔 확인 -->
+    <div>
+      콘솔 창에서 확인하기<br><br>
+      <div style="border: 1px solid #ccc; background-color: #f3f3f3; padding: 6px 10px; width: fit-content;">
+        document.querySelector("#desc p").classList
+      </div><br>
+      <div style="border: 1px solid #ccc; background-color: #fff; padding: 12px; font-family: monospace; white-space: pre; width: fit-content;">
+document.querySelector("#desc p").classList<br>
+▶ DOMTokenList(2) ['user', 'clicked'], value: 'user clicked'
+      </div><br>
+      <div style="border: 1px solid #ccc; background-color: #fff; padding: 12px; font-family: monospace; white-space: pre; width: fit-content;">
+document.querySelector("#desc p").classList<br>
+▶ DOMTokenList(2) ['user', 'clicked']<br>
+  0: "user"<br>
+  1: "clicked"<br>
+  length: 2<br>
+  value: "user clicked"<br>
+  ▶ [[Prototype]]: DOMTokenList
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
