@@ -130,5 +130,32 @@ EVENT <br>
     </tr>
   </tbody>
 </table>
+<p>이벤트 처리하기</p>
+
+<div style="margin-top: 10px;">
+  이벤트가 발생하면 그에 따른 연결 동작이 있어야 한다.<br>
+  이렇게 이벤트를 처리하는 것을 <strong>이벤트 처리기</strong> 또는 
+  <strong>이벤트 핸들러(<span style='font-family:monospace'>event handler</span>)</strong>라고 한다.
+</div>
+
+<h3 style="margin-top: 30px;">1) HTML 태그에 연결하기</h3>
+
+<div style="margin-top: 5px;">
+  이벤트가 발생한 <strong>HTML</strong> 태그에 직접 함수를 연결한다
+</div>
+
+<div style="margin: 15px 0; padding: 10px; border: 1px solid #ccc; background-color: #f5f5f5; font-family: monospace; width: fit-content;">
+  &lt;태그 on<em>이벤트명</em> = "함수명"&gt;
+</div>
+
+<div style="margin: 15px 0; padding: 10px; border: 1px solid #ccc; font-family: monospace; width: fit-content;">
+  &lt;button <span style="color: brown;">onclick = "alert('클릭!')"</span>&gt;Click&lt;/button&gt;
+</div>
+
+<div style="color: #4a6bb1;">
+  <strong>HTML</strong> 태그에 스크립트를 함께 사용하기 때문에<br>
+  스크립트 소스에서 함수 이름이 바뀌거나 다른 변경 내용이 있을 경우 <strong>HTML</strong> 소스도 함께 수정해야 한다
+</div>
+
 
 
