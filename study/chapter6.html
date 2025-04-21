@@ -1,3 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>모달 박스 만들기</title>
+  <style>
+    /* 모달 전체 영역 */
+    #modal-box {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 모달 내용 박스 */
+    #modal-contents {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+      position: relative;
+    }
+
+    /* 프로필 이미지 */
+    #profile img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+
+    /* 사용자 정보 텍스트 */
+    .user {
+      margin: 5px 0;
+    }
+
+    /* 닫기 버튼 */
+    #close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* 보기 버튼 스타일 (선택) */
+    #open {
+      padding: 10px 20px;
+      background-color: royalblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button id="open">프로필 보기</button>
+
+  <div id="modal-box">
+    <div id="modal-contents">
+      <button id="close">&times;</button>
+      <h1 id="title">My Profile</h1>
+      <div id="profile">
+        <img src="images/pf.png" alt="도레미">
+        <div id="desc">
+          <p class="user">이름 : 도레미</p>
+          <p class="user">주소 : somewhere</p>
+          <p class="user">연락처 : 1234-5678</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("open").onclick = function () {
+      document.getElementById("modal-box").style.display = "flex";
+    };
+
+    document.getElementById("close").onclick = function () {
+      document.getElementById("modal-box").style.display = "none";
+    };
+  </script>
+</body>
+</html>
+
 <h1>Chapter 6</h1>
 Chapter 6 summary
 EVENT <br>
