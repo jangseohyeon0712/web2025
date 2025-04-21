@@ -819,6 +819,35 @@ for (let element of elements) {
     </td>
   </tr>
 </table>
+<p>이벤트 캡처링</p>
+
+<ul style="line-height: 1.8;">
+  <li>이벤트 캡처링은 웹 요소에서 이벤트가 발생하면 일단 최상위 요소에서 시작해서</li>
+  <li>이벤트가 발생한 요소까지 차례로 이벤트가 전파되는 방식</li>
+  <li>이벤트 캡처링을 사용하려면 이벤트 리스너 함수에서 세 번째 옵션을 '<strong>true</strong>'로 지정해야 한다.</li>
+</ul>
+
+<div style="margin-bottom: 10px;"></div>
+
+<table style="border-collapse: collapse; width: 90%; margin: 0 auto; font-family: monospace; font-size: 15px;">
+  <tr>
+    <td style="border: 1px solid #ccc; padding: 15px; vertical-align: top;">
+<pre style="margin: 0;">
+const elements = document.querySelectorAll('*');
+
+for (let element of elements) {
+  element.addEventListener("click", e =&gt;
+    console.log(`
+      event.target : ${e.target.tagName},
+      event.currentTarget : ${e.currentTarget.tagName}
+    `),
+    <span style="color: red;">true</span>
+  );
+}
+</pre>
+    </td>
+  </tr>
+</table>
 
 
 <style>
