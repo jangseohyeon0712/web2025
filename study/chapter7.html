@@ -791,11 +791,10 @@ item.addEventListener("click", function () {
 </div>
 
 <br><br>
-
-<div id="container" style="border: 1px solid #ccc; padding: 1em; display: inline-block;">
+<div id="container">
   <h1>Book List</h1>
-  <form>
-    <ul id="bookInfo" style="list-style-type: disc; margin-left: 1em;">
+  <form id="bookForm">
+    <ul id="bookInfo">
       <li>
         <label for="title">제 목</label>
         <input type="text" id="title">
@@ -805,53 +804,80 @@ item.addEventListener("click", function () {
         <input type="text" id="author">
       </li>
     </ul>
-    <br>
-    <button type="reset">취소하기</button>
-    <button id="save">저장하기</button>
+    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+      <button type="reset">취소하기</button>
+      <button type="button" id="save">저장하기</button>
+      <button type="button" id="sort">정렬하기</button>
+    </div>
   </form>
-  <br>
-  <ul id="bookList"></ul>
+
+  <ul id="bookList" style="margin-top: 2rem;"></ul>
 </div>
+
+<style>
+  .book-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .delete {
+    cursor: pointer;
+    color: #666;
+    transition: 0.2s;
+  }
+
+  .delete:hover {
+    color: crimson;
+    text-decoration: underline;
+  }
+</style>
+
 <script>
-  const saveBtn = document.querySelector("#save");
-  const bookList = document.querySelector("#bookList");
+  const saveBtn = document.getElementById("save");
+  const sortBtn = document.getElementById("sort");
+  const bookList = document.getElementById("bookList");
 
-  saveBtn.addEventListener("click", function (e) {
-    e.preventDefault();
+  let books = [];
 
-    const title = document.querySelector("#title").value.trim();
-    const author = document.querySelector("#author").value.trim();
+  function renderBooks() {
+    bookList.innerHTML = "";
+    books.forEach((book, index) => {
+      const li = document.createElement("li");
+      li.className = "book-item";
 
-    if (!title || !author) return;
+      const text = document.createTextNode(`${book.title} - ${book.author}`);
+      const del = document.createElement("span");
+      del.className = "delete";
+      del.textContent = "삭제";
+      del.onclick = () => {
+        books.splice(index, 1);
+        renderBooks();
+      };
 
-    const li = document.createElement("li");
-    li.style.display = "flex";
-    li.style.justifyContent = "space-between";
-    li.style.borderBottom = "1px solid #ccc";
-    li.style.padding = "8px 4px";
-
-    const bookText = document.createElement("span");
-    bookText.textContent = `${title} - ${author}`;
-
-    const delBtn = document.createElement("button");
-    delBtn.textContent = "삭제";
-    delBtn.style.border = "none";
-    delBtn.style.background = "none";
-    delBtn.style.color = "gray";
-    delBtn.style.cursor = "pointer";
-
-    delBtn.addEventListener("click", () => {
-      bookList.removeChild(li);
+      li.appendChild(text);
+      li.appendChild(del);
+      bookList.appendChild(li);
     });
+  }
 
-    li.appendChild(bookText);
-    li.appendChild(delBtn);
-    bookList.appendChild(li);
+  saveBtn.onclick = function () {
+    const title = document.getElementById("title").value.trim();
+    const author = document.getElementById("author").value.trim();
 
-    document.querySelector("#title").value = "";
-    document.querySelector("#author").value = "";
-  });
+    if (title && author) {
+      books.push({ title, author });
+      renderBooks();
+      document.getElementById("bookForm").reset();
+    }
+  };
+
+  sortBtn.onclick = function () {
+    books.sort((a, b) => a.title.localeCompare(b.title));
+    renderBooks();
+  };
 </script>
-
 
 
