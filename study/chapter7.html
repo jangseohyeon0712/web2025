@@ -348,6 +348,141 @@ srcNode.value = "images/wall.jpg"
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>속성 노드 연결하기 – setAttributeNode()</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 50px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .sub {
+      margin-top: 25px;
+      margin-bottom: 30px;
+    }
+
+    .sub span {
+      font-weight: bold;
+    }
+
+    .sub .red {
+      color: #b30000;
+    }
+
+    .gray-box {
+      background-color: #eee;
+      padding: 15px;
+      font-family: monospace;
+      width: fit-content;
+      margin-bottom: 40px;
+      font-style: italic;
+    }
+
+    .console-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .code-box {
+      border: 1px solid #444;
+      font-family: monospace;
+      font-size: 16px;
+      padding: 10px;
+      width: fit-content;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+
+<p>속성 노드 연결하기 – setAttributeNode()</p>
+
+<div class="sub">
+  새로 만든 속성 노드를 요소 노드에 추가하려면 
+  <span>setAttributeNode()</span> 메서드 사용<br>
+  <span class="red">setAttribute()와 다른 메서드이므로 꼭 구별해서 사용하세요</span>
+</div>
+
+<div class="gray-box">
+  요소_노드.setAttributeNode(속성_노드)
+</div>
+
+<div class="console-title">콘솔 창에 입력하기</div>
+
+<div class="code-box">
+newImg.setAttributeNode(srcNode)
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>자식 노드 연결하기 – appendChild()</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 50px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .desc {
+      margin: 30px 0;
+      line-height: 1.8;
+    }
+
+    .desc b {
+      font-weight: bold;
+    }
+
+    .console-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .code-box {
+      border: 1px solid #444;
+      font-family: monospace;
+      font-size: 16px;
+      padding: 10px;
+      width: fit-content;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+
+<p>자식 노드 연결하기 – appendChild()</p>
+
+<div class="desc">
+  <b>img</b> 요소에 속성 노드가 연결되었지만,  
+  <b>img</b> 요소는 아직 <b>DOM</b>에 연결되지 않은 상태<br>
+  <b>appendChild()</b>를 사용해서 <b>img</b> 요소를 원하는 위치에 연결한다.
+</div>
+
+<div class="console-title">콘솔 창에 입력하기</div>
+
+<div class="code-box">
+document.body.appendChild(newImg)
+</div>
+
+</body>
+</html>
 
 
 
