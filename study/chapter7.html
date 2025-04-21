@@ -749,6 +749,28 @@ for (let item of items) {
 }
   </div>
 </div>
+<p>이벤트 리스너에서 함수 안에 있는 this</p>
+
+<div style="border: 1px solid #ccc; padding: 10px; font-family: monospace; white-space: pre;">
+item.addEventListener("click", function () {
+  this.parentNode.removeChild(this);
+});
+</div>
+
+<br>
+
+<div>
+이벤트 리스너에서 <b>function() { ... }</b>에 <b>this</b>를 사용하면 <span style="color: brown;">this는 이벤트가 발생한 노드를 가리킨다.</span><br>
+<span style="color: #888;">(예) 첫번째 항목을 클릭했다면 첫번째 li 요소가 this가 됩니다.</span>
+</div>
+
+<br>
+
+<div>
+이벤트 리스너에서 화살표 함수를 사용할 경우 <b>this</b>는 최상위 객체 <b>window</b>를 가리킨다.<br>
+→ 화살표 함수를 사용할 경우 클릭한 요소를 찾을 때 <b>this</b>를 사용할 수 없다.<br>
+→ <span style="color: brown;">이벤트가 발생한 요소를 this로 사용하려면 function() { } 를 사용한다.</span>
+</div>
 
 
 
