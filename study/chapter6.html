@@ -349,8 +349,8 @@ EVENT <br>
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5);
       display: none;
-      justify-content: left;
-      align-items: left;
+      justify-content: center;
+      align-items: center;
     }
 
     /* 모달 내용 박스 */
@@ -359,7 +359,7 @@ EVENT <br>
       padding: 20px;
       border-radius: 10px;
       width: 300px;
-      text-align: left;
+      text-align: center;
       position: relative;
     }
 
@@ -743,6 +743,48 @@ EVENT <br>
     캡처 여부: 이벤트를 캡처링하는지의 여부를 지정한다.
   </div>
 </div>
+  <p>[실습] 이벤트 버블링</p>
+
+<ul style="line-height: 1.8;">
+  <li>이름에서 알 수 있듯이, 위로 버블버블~</li>
+  <li>이벤트가 발생한 요소에서부터 부모 요소로, 다시 그 요소의 부모 요소로 이벤트가 전달된다.</li>
+  <li>모든 브라우저에서 대부분의 이벤트는 버블링된다.</li>
+</ul>
+
+<div style="margin-bottom: 10px;"><code>06\bubbling.html</code></div>
+
+<table style="border-collapse: collapse; width: 90%; margin: 0 auto; font-family: monospace; font-size: 15px;">
+  <tr>
+    <!-- 코드 블럭 -->
+    <td style="border: 1px solid #ccc; padding: 15px; vertical-align: top; width: 50%;">
+      BODY<br>
+      &lt;div onclick="console.log('div')"&gt;<br>
+      &nbsp;&nbsp;DIV<br>
+      &nbsp;&nbsp;&lt;section onclick="console.log('section')"&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;SECTION<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;p onclick="console.log('p')"&gt;P&lt;/p&gt;<br>
+      &nbsp;&nbsp;&lt;/section&gt;<br>
+      &lt;/div&gt;
+    </td>
+
+    <!-- 구조도 시각화 -->
+    <td style="border: 1px solid #ccc; padding: 15px; vertical-align: top; width: 50%; font-family: sans-serif;">
+      <div style="border: 1px dashed #000; padding: 10px;">
+        <strong>BODY</strong>
+        <div style="border: 1px dashed #000; margin: 10px; padding: 10px;">
+          <strong>DIV</strong>
+          <div style="border: 1px dashed #000; margin: 10px; padding: 10px;">
+            <strong>SECTION</strong>
+            <div style="border: 1px dashed #000; margin: 10px; padding: 10px;">
+              <strong>P</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
 
 <style>
   h1, h2, h3, h4, h5, h6, p {
