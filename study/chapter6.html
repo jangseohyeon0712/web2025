@@ -155,7 +155,47 @@ EVENT <br>
 <div style="color: #4a6bb1;">
   <strong>HTML</strong> 태그에 스크립트를 함께 사용하기 때문에<br>
   스크립트 소스에서 함수 이름이 바뀌거나 다른 변경 내용이 있을 경우 <strong>HTML</strong> 소스도 함께 수정해야 한다
+</div> <br>
+<h3>2) 웹 요소에 직접 함수 연결하기</h3>
+
+<div style="margin: 10px 0;">
+  스크립트 소스를 변경해도 <strong>HTML</strong> 마크업에는 영향을 주지 않게 하려면<br>
+  이벤트 처리기도 스크립트 소스에서 처리하는 것이 좋다
 </div>
+
+<div style="margin: 15px 0; padding: 10px; border: 1px solid #ccc; background-color: #f5f5f5; font-family: monospace; width: fit-content;">
+  요소.on<em>이벤트명</em> = 함수
+</div>
+
+<div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+  <div style="flex: 1; min-width: 300px;">
+    <div style="padding: 10px; border: 1px solid #aaa; font-family: monospace; background-color: #fff;">
+      const button = document.querySelector("button");<br><br>
+      <span style="color: brown;">button.onclick</span> = function() {<br>
+      &nbsp;&nbsp;document.body.style.backgroundColor = "green";<br>
+      }
+    </div>
+    <div style="margin-top: 10px; color: #c14444; font-size: 14px;">
+      ↳ 클릭했을 때 (onclick)<br>
+      &nbsp;&nbsp;&nbsp;실행할 함수를 표현식으로 할당
+    </div>
+  </div>
+
+  <div style="flex: 1; min-width: 300px;">
+    <div style="padding: 10px; border: 1px solid #aaa; font-family: monospace; background-color: #fff;">
+      function changeBackground() {<br>
+      &nbsp;&nbsp;document.body.style.backgroundColor = "green";<br>
+      }<br><br>
+      const button = document.querySelector("button");<br>
+      <span style="color: brown;">button.onclick</span> = changeBackground;
+    </div>
+    <div style="margin-top: 10px; font-size: 14px;">
+      함수를 미리 만들어 두었다면 그 함수를 지정해도 된다.<br>
+      이때 실행할 함수 이름 뒤에 중괄호(()는 사용하지 않는다.
+    </div>
+  </div>
+</div>
+<br>
 
 
 
