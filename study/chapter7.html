@@ -198,5 +198,85 @@ DOM에 새로운 요소를 추가할 때 가장 먼저 요소 노드를 만들�
   <li>클릭하는 버튼과 결과를 표시할 영역을 어떤 방식으로 가져올까?</li>
   <li>새로 만든 텍스트를 화면에 어떻게 연결할까?</li>
 </ul>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>장바구니에 상품 추가</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 50px;
+    }
+
+    .product-box {
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 300px;
+    }
+
+    .product-title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .desc {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    #cart {
+      margin-top: 10px;
+    }
+
+    .cut-line {
+      margin-top: 10px;
+      color: #999;
+    }
+
+    .added-title {
+      color: blue;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="product-box">
+  <div class="product-title">상품 설명</div>
+  <div class="desc">
+    HTML+CSS+자바스크립트 웹 표준의 정석<br>
+    한 권으로 끝내는 웹 기본 교과서<br>
+    코딩 왕초보도 OK! 기초부터 활용까지 완전정복
+  </div>
+
+  <button id="orderBtn">주문하기</button>
+  <div class="cut-line">-------------------------------------</div>
+
+  <div id="cart"></div>
+</div>
+
+<script>
+  document.getElementById("orderBtn").onclick = function () {
+    const titleText = "HTML+CSS+자바스크립트 웹 표준의 정석";
+
+    const newP = document.createElement("p");
+    newP.className = "added-title";  // 파란색 스타일 클래스
+    const textNode = document.createTextNode(titleText);
+    newP.appendChild(textNode);
+
+    document.getElementById("cart").appendChild(newP);
+  };
+</script>
+
+</body>
+</html>
 
 
