@@ -144,5 +144,35 @@ DOM에 새로운 요소를 추가할 때 가장 먼저 요소 노드를 만들�
     <td>let textNode = document.createTextNode("Typescript")</td>
   </tr>
 </table>
+<p>자식 노드 연결하기 – appendChild()</p>
+
+아직까지는 <code>p</code> 노드와 텍스트 노드가 따로 만들어진 상태<br>
+→ 서로 부모 노드와 자식 노드로 연결해야 한다.
+
+<br><br>
+
+<table style="background-color: #eee; border: 1px solid #aaa; padding: 10px; font-family: monospace; font-size: 16px; width: 600px;">
+  <tr>
+    <td>부모_노드.appendChild(자식_노드)</td>
+  </tr>
+</table>
+
+<br><br>
+콘솔 창에 입력하기<br><br>
+
+<table style="border: 1px solid #aaa; font-family: monospace; font-size: 16px; background-color: #fff; width: 750px;">
+  <tr>
+    <td>
+      newP.appendChild(textNode)
+      <span style="color: #4a6bb1;">&nbsp;&larr; 텍스트 노드를 p 요소에 연결</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      document.body.appendChild(newP)
+      <span style="color: #4a6bb1;">&nbsp;&larr; p 요소 노드를 body 노드에 연결</span>
+    </td>
+  </tr>
+</table>
 
 
