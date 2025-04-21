@@ -784,6 +784,41 @@ EVENT <br>
     </td>
   </tr>
 </table>
+<p>event.target과 event.currentTarget</p>
+
+<ul style="line-height: 1.8;">
+  <li>이벤트가 발생하면 해당 이벤트와 관련된 정보는 event 객체에 담겨진다.</li>
+  <li>이벤트 전파와 관련이 있는 프로퍼티는 <code>target</code> 프로퍼티와 <code>currentTarget</code> 프로퍼티</li>
+  <li>
+    <strong>target</strong>: 이벤트가 처음 발생한 요소,
+    <strong>currentTarget</strong>: 이벤트가 전파된 현재 요소
+  </li>
+</ul>
+
+<div style="margin-bottom: 10px;"><code>20\js\propagation.js</code></div>
+
+<table style="border-collapse: collapse; width: 90%; margin: 0 auto; font-family: monospace; font-size: 15px;">
+  <tr>
+    <td style="border: 1px solid #ccc; padding: 15px; vertical-align: top;">
+<pre style="margin: 0;">
+const elements = document.querySelectorAll('*');
+
+for (let element of elements) {
+  element.addEventListener("click", e =&gt;
+    console.log(`
+      event.target : ${e.target.tagName},
+      event.currentTarget : ${e.currentTarget.tagName}
+    `),
+  );
+}
+</pre>
+    </td>
+    <td style="border: 1px solid #ccc; padding: 15px; vertical-align: top; font-family: sans-serif; color: #547aa5;">
+      이벤트 리스너에 전파 관련 옵션이 없으므로<br>
+      기본값 <strong style="color: black;">false</strong> 사용 (이벤트 버블링)
+    </td>
+  </tr>
+</table>
 
 
 <style>
