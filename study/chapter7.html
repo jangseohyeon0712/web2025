@@ -812,6 +812,46 @@ item.addEventListener("click", function () {
   <br>
   <ul id="bookList"></ul>
 </div>
+<script>
+  const saveBtn = document.querySelector("#save");
+  const bookList = document.querySelector("#bookList");
+
+  saveBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const title = document.querySelector("#title").value.trim();
+    const author = document.querySelector("#author").value.trim();
+
+    if (!title || !author) return;
+
+    const li = document.createElement("li");
+    li.style.display = "flex";
+    li.style.justifyContent = "space-between";
+    li.style.borderBottom = "1px solid #ccc";
+    li.style.padding = "8px 4px";
+
+    const bookText = document.createElement("span");
+    bookText.textContent = `${title} - ${author}`;
+
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "삭제";
+    delBtn.style.border = "none";
+    delBtn.style.background = "none";
+    delBtn.style.color = "gray";
+    delBtn.style.cursor = "pointer";
+
+    delBtn.addEventListener("click", () => {
+      bookList.removeChild(li);
+    });
+
+    li.appendChild(bookText);
+    li.appendChild(delBtn);
+    bookList.appendChild(li);
+
+    document.querySelector("#title").value = "";
+    document.querySelector("#author").value = "";
+  });
+</script>
 
 
 
