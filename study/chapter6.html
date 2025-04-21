@@ -238,6 +238,46 @@ EVENT <br>
   </div>
 </div>
 <br>
+<h2>[실습] 모달 박스 만들기</h2>
+
+<div style="margin-top: 10px;">
+  <strong>모달 박스</strong><span style="font-style: italic;">(modal box)</span> :
+  화면에 내용이 팝업되면서 기타 내용은 블러 처리되어<br>
+  팝업된 내용에만 집중할 수 있게 해 주는 창입니다. (라이트 박스라고도 함)
+</div>
+
+<ul style="margin-top: 20px; line-height: 1.8;">
+  <li>모달 박스에 표시되는 내용은 웹 문서 안에 미리 만들어져 있어야 한다.</li>
+  <li>CSS와 자바스크립트를 사용해서, 처음에는 모달 박스 부분을 화면에 감춰 두었다가<br>
+      버튼을 클릭하거나 특정 이벤트가 발생했을 때 모달 박스를 표시한다.</li>
+</ul>
+<br>
+<h2>[실습] 모달 박스 만들기</h2>
+<div style="margin-bottom: 5px;">
+  <code>06\modal.html</code>, <code>06\css\modal.css</code> 파일 사용
+</div>
+
+<div style="margin-top: 20px; padding: 10px; border: 1px solid #ccc; background-color: #fdfdfd; font-family: monospace; white-space: pre; overflow-x: auto;">
+&lt;body&gt;
+  &lt;button id="open"&gt;프로필 보기&lt;/button&gt;
+
+  &lt;div id="modal-box"&gt;
+    &lt;div id="modal-contents"&gt;
+      &lt;button id="close"&gt;&amp;times;&lt;/button&gt;
+      &lt;h1 id="title"&gt;My Profile&lt;/h1&gt;
+      &lt;div id="profile"&gt;
+        &lt;img src="images/pf.png" alt="도레미"&gt;
+        &lt;div id="desc"&gt;
+          &lt;p class="user"&gt;이름 : 도레미&lt;/p&gt;
+          &lt;p class="user"&gt;주소 : somewhere&lt;/p&gt;
+          &lt;p class="user"&gt;연락처 : 1234-5678&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+</div>
+
 
 
 
