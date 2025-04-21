@@ -532,49 +532,33 @@ EVENT <br>
   </style>
 </head>
 <body>
+<p>[실습] 캐러셀 만들기</p>
 
-  <p>좌우 화살표를 눌러 보세요</p>
+<div style="margin-bottom: 10px;">
+  캐러셀(<i>carousel</i>) : 이미지나 콘텐츠를 슬라이드 쇼처럼 보여주는 요소
+</div>
 
-  <div id="container">
-    <div class="arrow" id="left">&lang;</div>
-    <div class="arrow" id="right">&rang;</div>
+<div style="margin-bottom: 10px;">
+  <code>19\carousel.html</code> 에 작성
+</div>
 
-    <div class="slide active">1번 슬라이드</div>
-    <div class="slide">2번 슬라이드</div>
-    <div class="slide">3번 슬라이드</div>
-  </div>
-
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    const left = document.getElementById('left');
-    const right = document.getElementById('right');
-    let current = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active', 'prev');
-        if (i === index) {
-          slide.classList.add('active');
-        } else if (i === index - 1) {
-          slide.classList.add('prev');
-        }
-      });
-    }
-
-    left.addEventListener('click', () => {
-      current = (current - 1 + slides.length) % slides.length;
-      showSlide(current);
-    });
-
-    right.addEventListener('click', () => {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    });
-  </script>
-
-</body>
-</html>
-
+<table style="border-collapse: collapse; width: 90%; margin: 0 auto; font-family: monospace; font-size: 15px;">
+  <tr>
+    <td style="border: 1px solid #ccc; padding: 15px; vertical-align: top; width: 50%;">
+      &lt;body&gt;<br>
+      &nbsp;&nbsp;&lt;p&gt;좌우 화살표를 눌러 보세요&lt;/p&gt;<br><br>
+      &nbsp;&nbsp;&lt;div id="container"&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="arrow" id="left"&gt;&amp;lang;&lt;/div&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="arrow" id="right"&gt;&amp;rang;&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;/div&gt;<br>
+      &lt;/body&gt;
+    </td>
+    <td style="border: 1px solid #ccc; padding: 15px; vertical-align: top; width: 50%; text-align: center;">
+      좌우 화살표를 눌러 보세요<br><br>
+      <span style="font-size: 30px;">〈</span> &nbsp;&nbsp;&nbsp; <span style="font-size: 30px;">〉</span>
+    </td>
+  </tr>
+</table>
 
 
 
