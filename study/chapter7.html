@@ -278,5 +278,76 @@ DOM에 새로운 요소를 추가할 때 가장 먼저 요소 노드를 만들�
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>속성 노드 만들기 - createAttribute()</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 50px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    ol {
+      margin-top: 20px;
+      margin-bottom: 30px;
+      line-height: 2;
+      padding-left: 20px;
+    }
+
+    .gray-box {
+      background-color: #eee;
+      padding: 15px;
+      font-family: monospace;
+      width: fit-content;
+      margin-bottom: 40px;
+    }
+
+    .console-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .code-box {
+      border: 1px solid #444;
+      font-family: monospace;
+      font-size: 16px;
+      padding: 10px;
+      width: fit-content;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+
+<h1>속성 노드 만들기 – createAttribute()</h1>
+
+<ol>
+  <li><code>createAttribute()</code> 메서드를 사용해서 속성 노드를 만들고,</li>
+  <li>속성의 값은 <code>value</code> 프로퍼티를 사용해서 지정한다.</li>
+</ol>
+
+<div class="gray-box">
+  document.createAttribute(<em>속성명</em>)<br>
+  <span style="font-style: italic;">노드명</span>.value = <span style="font-style: italic;">속성값</span>
+</div>
+
+<div class="console-title">콘솔 창에 입력하기</div>
+
+<div class="code-box">
+let srcNode = document.createAttribute("src")<br>
+srcNode.value = "images/wall.jpg"
+</div>
+
+</body>
+</html>
+
 
 
