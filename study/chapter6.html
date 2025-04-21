@@ -467,6 +467,113 @@ EVENT <br>
     </tr>
   </tbody>
 </table>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>캐러셀 만들기</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #container {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      margin: 20px auto;
+      border: 2px solid #ddd;
+      overflow: hidden;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      cursor: pointer;
+      user-select: none;
+      width: 30px;
+      text-align: center;
+      color: #555;
+    }
+
+    #left {
+      left: 10px;
+    }
+
+    #right {
+      right: 10px;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #eee;
+      transition: left 0.4s;
+      font-size: 24px;
+    }
+
+    .slide.active {
+      left: 0;
+    }
+
+    .slide.prev {
+      left: -100%;
+    }
+  </style>
+</head>
+<body>
+
+  <p>좌우 화살표를 눌러 보세요</p>
+
+  <div id="container">
+    <div class="arrow" id="left">&lang;</div>
+    <div class="arrow" id="right">&rang;</div>
+
+    <div class="slide active">1번 슬라이드</div>
+    <div class="slide">2번 슬라이드</div>
+    <div class="slide">3번 슬라이드</div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const left = document.getElementById('left');
+    const right = document.getElementById('right');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active', 'prev');
+        if (i === index) {
+          slide.classList.add('active');
+        } else if (i === index - 1) {
+          slide.classList.add('prev');
+        }
+      });
+    }
+
+    left.addEventListener('click', () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    });
+
+    right.addEventListener('click', () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
+  </script>
+
+</body>
+</html>
 
 
 
