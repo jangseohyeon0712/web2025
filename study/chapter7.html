@@ -483,6 +483,87 @@ document.body.appendChild(newImg)
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>기존 노드 앞에 추가하기 – insertBefore()</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 50px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .desc {
+      margin: 30px 0;
+      line-height: 1.8;
+    }
+
+    .highlight-box {
+      background: #eee;
+      padding: 10px 20px;
+      width: fit-content;
+      font-family: monospace;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .filename {
+      font-size: 18px;
+      margin: 0 0 10px 0;
+    }
+
+    .code-box {
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      white-space: pre;
+      font-family: monospace;
+      font-size: 16px;
+      position: relative;
+    }
+
+    .arrow-label {
+      position: absolute;
+      left: 110px;
+      top: 28px;
+      background: royalblue;
+      color: white;
+      padding: 5px 10px;
+      font-size: 14px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<p>기존 노드 앞에 추가하기 – insertBefore()</p>
+
+<div class="desc">
+  지금까지 살펴본 방법은, 새로 만든 요소를 부모 노드의 맨 마지막에 자식 노드로 추가하는 것.<br>
+  <b>insertBefore()</b>를 사용하면 특정 노드 앞에 새 요소를 추가할 수 있다.
+</div>
+
+<div class="highlight-box">
+  insertBefore(새 노드, 기준 노드)
+</div>
+
+<div class="filename">07\nodelist.html</div>
+
+<div class="code-box">
+  &lt;h1&gt;노드 리스트 살펴보기&lt;/h1&gt;<br>
+  &lt;p&gt;HTML&lt;/p&gt;<br>
+  &lt;p&gt;CSS&lt;/p&gt;<br>
+  &lt;p&gt;Javascript&lt;/p&gt;
+  <div class="arrow-label">여기에 새로운 p 요소 추가하기</div>
+</div>
+
+</body>
+</html>
 
 
 
