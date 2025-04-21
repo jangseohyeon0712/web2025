@@ -722,6 +722,33 @@ document.body.appendChild(newImg)
     부모 노드.removeChild(자식 노드)
   </div>
 </div>
+<p>노드 삭제하기 – removeChild()</p>
+
+<div>목록에서 각 항목을 클릭했을 때 항목이 삭제되게 하려면?</div>
+
+<br>
+
+<div style="display: flex; gap: 40px;">
+  <div style="border: 1px solid #ccc; padding: 10px; font-family: monospace; white-space: pre;">
+&lt;h1&gt;Web Programming&lt;/h1&gt;
+&lt;ul id="items"&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;Javascript&lt;/li&gt;
+&lt;/ul&gt;
+  </div>
+
+  <div style="border: 1px solid #ccc; padding: 10px; font-family: monospace; white-space: pre;">
+const items = document.querySelectorAll("li");
+
+for (let item of items) {
+  item.addEventListener("click", function () {
+    <span style="background: yellow;">this</span>.parentNode.removeChild(<span style="background: yellow;">this</span>);
+    // this.remove(this); 도 가능
+  });
+}
+  </div>
+</div>
 
 
 
