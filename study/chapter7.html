@@ -692,6 +692,36 @@ document.body.appendChild(newImg)
 
 </body>
 </html>
+<p>노드 삭제하기 – removeChild()</p>
+
+<ul>
+  <li><strong>removeChild()</strong>는 자식 노드 삭제</li>
+  <li>이 메서드를 사용하려면 우선 부모 노드를 찾아야 하고 그 후에 자식 노드를 삭제해야 한다.</li>
+  <li>예전에 IE에서는 <strong>removeChild()</strong> 메서드만 사용할 수 있어서, 주로 <strong>removeChild()</strong>를 사용했지만, <br>
+      이제 모던 브라우저에서는 <strong>remove()</strong> 메서드를 사용해도 된다.</li>
+</ul>
+
+<br>
+
+<div style="display: flex; gap: 40px;">
+  <div>
+    부모 노드를 찾는 <strong>parentNode</strong> 프로퍼티
+  </div>
+  <div style="background: #eee; padding: 4px 10px; font-family: monospace;">
+    노드명.parentNode
+  </div>
+</div>
+
+<br><br>
+
+<div style="display: flex; gap: 40px;">
+  <div>
+    자식 노드를 제거하는 <strong>removeChild()</strong> 메서드
+  </div>
+  <div style="background: #eee; padding: 4px 10px; font-family: monospace;">
+    부모 노드.removeChild(자식 노드)
+  </div>
+</div>
 
 
 
