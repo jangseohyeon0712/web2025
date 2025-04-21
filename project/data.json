@@ -1,0 +1,184 @@
+[
+  {
+  "name": "캐주얼",
+  "desc": "편안하고 실용적인 아이템 중심의 스타일로, 일상에서 자연스럽고 무난하게 활용되는 패션입니다",
+  "fabrics": ["코튼", "데님", "스웨트", "폴리에스터"],
+  "brands": ["UNIQLO", "ZARA", "Muji", "Gap"],
+  "history": [
+    { "year": "1950s", "event": "청바지와 티셔츠의 대중화로 시작" },
+    { "year": "1990s", "event": "스포티 & 심플한 룩으로 일상 패션의 중심" },
+    { "year": "2020s", "event": "노멀코어, 애슬레저와 결합되어 다양화" }
+  ],
+  "gallery": [
+    "https://via.placeholder.com/300x200?text=Casual+Look+1",
+    "https://via.placeholder.com/300x200?text=Casual+Look+2"
+  ]
+},
+  {
+    "name": "프레피",
+    "desc": "아이비리그에서 유래된 단정하고 클래식한 스타일입니다.",
+    "fabrics": ["트위드", "면", "니트"],
+    "brands": ["Lacoste", "Ralph Lauren"],
+    "history": [
+      { "year": "1950s", "event": "아이비리그 학생들 사이에서 유행 시작" },
+      { "year": "1980s", "event": "브랜드화되어 대중적으로 확산" },
+      { "year": "2000s", "event": "Y2K 트렌드 속 복고적 요소 재조명" },
+      { "year": "2020s", "event": "Z세대 사이에서 다시 유행" }
+    ],
+    "gallery": [
+      "https://via.placeholder.com/300x200?text=Preppy+Look+1",
+      "https://via.placeholder.com/300x200?text=Preppy+Look+2"
+    ]
+  },
+  {
+    "name": "미니멀",
+    "desc": "절제된 색상과 단순한 실루엣, 실용성을 강조하는 세련된 스타일입니다.",
+    "fabrics": ["울", "코튼", "리넨"],
+    "brands": ["COS", "The Row", "Uniqlo U"],
+    "history": [
+      { "year": "1990s", "event": "90년대 모던 감성으로 등장" },
+      { "year": "2010s", "event": "북유럽 감성 브랜드들과 함께 확산" },
+      { "year": "2020s", "event": "지속가능성과 연결되며 재조명" }
+    ],
+    "gallery": [
+      "https://via.placeholder.com/300x200?text=Minimal+Look+1",
+      "https://via.placeholder.com/300x200?text=Minimal+Look+2"
+    ]
+  },
+  {
+  "name": "워크웨어",
+  "desc": "노동자 복장에서 유래된 실용적이고 견고한 스타일로, 거칠고 투박한 멋이 특징입니다.",
+  "fabrics": ["데님", "코튼 캔버스", "더클", "왁스드 코튼"],
+  "brands": ["Carhartt", "Dickies", "Engineered Garments", "Nigel Cabourn"],
+  "history": [
+    { "year": "1900s", "event": "미국 노동자들의 작업복에서 기원" },
+    { "year": "1970s", "event": "스트리트 패션에 일부 차용되기 시작" },
+    { "year": "2010s", "event": "아메카지, 시티보이 트렌드와 함께 대중화" },
+    { "year": "2020s", "event": "밀리터리, 아웃도어와 믹스되어 재해석" }
+  ],
+  "gallery": [
+    "https://via.placeholder.com/300x200?text=Workwear+Look+1",
+    "https://via.placeholder.com/300x200?text=Workwear+Look+2"
+  ]
+},
+  {
+  "name": "테크웨어",
+  "desc": "기능성과 미래지향적 실루엣을 결합한 스타일로, 어둡고 유틸리티한 디자인이 특징입니다.",
+  "fabrics": ["고어텍스", "나일론 립스탑", "폴리에스터", "방수 원단"],
+  "brands": ["ACRONYM", "Nike ACG", "Stone Island Shadow Project", "Guerrilla Group"],
+  "history": [
+    { "year": "2000s", "event": "기능성 의류 브랜드 ACRONYM 중심으로 시작" },
+    { "year": "2010s", "event": "스트리트웨어와 하이엔드의 경계에서 확산" },
+    { "year": "2020s", "event": "유틸리티 & 아웃도어 감성과 융합되어 인기 상승" }
+  ],
+  "gallery": [
+    "https://via.placeholder.com/300x200?text=Techwear+Look+1",
+    "https://via.placeholder.com/300x200?text=Techwear+Look+2"
+  ]
+},
+  {
+  "name": "아메카지",
+  "desc": "아메리칸 캐주얼을 기반으로 한 빈티지한 스타일로 데님, 워크웨어, 밀리터리 감성을 조합합니다.",
+  "fabrics": ["데님", "코듀로이", "왁스드 코튼"],
+  "brands": ["Visvim", "Kapital", "Warehouse", "The Real McCoy's"],
+  "history": [
+    { "year": "1980s", "event": "일본에서 빈티지 워크웨어 문화로 등장" },
+    { "year": "2000s", "event": "미국 캐주얼과 믹스되며 독자적 스타일 완성" },
+    { "year": "2020s", "event": "시티보이와 결합해 재조명됨" }
+  ],
+  "gallery": [
+    "https://via.placeholder.com/300x200?text=Amekaji+Look+1",
+    "https://via.placeholder.com/300x200?text=Amekaji+Look+2"
+  ]
+},
+  {
+  "name": "시티보이",
+  "desc": "도심 속 일상에서 편안함과 감성을 중시하는 스트리트 기반의 루즈핏 스타일입니다.",
+  "fabrics": ["코튼", "데님", "플란넬", "울"],
+  "brands": ["BEAMS", "UNIQLO", "AURALEE", "NANAMICA"],
+  "history": [
+    { "year": "2010s", "event": "일본 패션잡지 'POPEYE'에서 유행 시작" },
+    { "year": "2015s", "event": "루즈핏, 기본템 중심 스타일로 확산" },
+    { "year": "2020s", "event": "Z세대 SNS 통해 글로벌하게 인기 상승" }
+  ],
+  "gallery": [
+    "https://via.placeholder.com/300x200?text=Cityboy+Look+1",
+    "https://via.placeholder.com/300x200?text=Cityboy+Look+2"
+  ]
+},
+  {
+  "name": "고프코어",
+  "desc": "실용적인 아웃도어 스타일을 스트리트 감성으로 재해석한 유틸리티 중심의 스타일입니다.",
+  "fabrics": ["고어텍스", "플리스", "나일론", "폴리에스터"],
+  "brands": ["The North Face", "Arc'teryx", "Patagonia", "Salomon"],
+  "history": [
+    { "year": "2010s", "event": "미국 캠핑 및 등산 패션에서 시작" },
+    { "year": "2020s", "event": "SNS 통해 일상복으로 확산되며 트렌드화" },
+    { "year": "2023s", "event": "하이엔드 브랜드들과 협업하며 패션계 정착" }
+  ],
+  "gallery": [
+    "https://via.placeholder.com/300x200?text=Gorpcore+Look+1",
+    "https://via.placeholder.com/300x200?text=Gorpcore+Look+2"
+  ]
+},
+  {
+  "name": "젠더리스",
+  "desc": "성별 구분 없이 나 자신을 표현하는 중성적이고 자유로운 스타일입니다.",
+  "fabrics": ["코튼", "레이온", "린넨", "울"],
+  "brands": ["Telfar", "Comme des Garçons", "Y/Project", "JW Anderson"],
+  "history": [
+    { "year": "2010s", "event": "하이패션 브랜드 중심으로 중성적 스타일 등장" },
+    { "year": "2020s", "event": "SNS와 K-패션을 통해 젠더리스 트렌드 확산" },
+    { "year": "2023s", "event": "Z세대와 알파세대의 정체성 표현 방식으로 정착" }
+  ],
+  "gallery": [
+    "https://via.placeholder.com/300x200?text=Genderless+Look+1",
+    "https://via.placeholder.com/300x200?text=Genderless+Look+2"
+  ]
+},
+  {
+  "name": "스트릿",
+  "desc": "거리 문화에서 시작된 자유롭고 개성 있는 스타일로, 힙합・스케이트・그래픽 중심의 감성이 특징입니다.",
+  "fabrics": ["코튼 저지", "데님", "플리스", "나일론"],
+  "brands": ["Supreme", "Stüssy", "A Bathing Ape", "Palace"],
+  "history": [
+    { "year": "1980s", "event": "뉴욕 힙합과 LA 스케이트 문화에서 시작" },
+    { "year": "1990s", "event": "하위문화로 전 세계 청소년에게 확산" },
+    { "year": "2020s", "event": "하이패션과 협업하며 메인스트림으로 진입" }
+  ],
+  "gallery": [
+    "https://via.placeholder.com/300x200?text=Street+Look+1",
+    "https://via.placeholder.com/300x200?text=Street+Look+2"
+  ]
+},
+  {
+  "name": "키치",
+  "desc": "촌스러움, 유치함, 과장을 스타일로 승화한 유쾌하고 독창적인 패션 스타일입니다.",
+  "fabrics": ["폴리에스터", "스팽글", "벨벳", "퍼", "PVC"],
+  "brands": ["Moschino", "Ashley Williams", "Lazy Oaf", "Lisa Says Gah"],
+  "history": [
+    { "year": "1990s", "event": "비주류 스트릿 문화에서 패러디와 유머로 시작" },
+    { "year": "2010s", "event": "SNS와 유튜브를 통해 10대 중심으로 확산" },
+    { "year": "2020s", "event": "MZ세대의 자기표현 수단으로 주류에 등장" }
+  ],
+  "gallery": [
+    "https://via.placeholder.com/300x200?text=Kitsch+Look+1",
+    "https://via.placeholder.com/300x200?text=Kitsch+Look+2"
+  ]
+},
+  {
+  "name": "펑크",
+  "desc": "1970년대 반문화에서 유래한 거칠고 반항적인 스타일로, DIY와 자극적인 감성이 특징입니다.",
+  "fabrics": ["가죽", "데님", "네트", "PVC", "체인"],
+  "brands": ["Vivienne Westwood", "Underground", "Sex Pistols Merch", "Tripp NYC"],
+  "history": [
+    { "year": "1970s", "event": "영국에서 펑크 록 문화와 함께 등장" },
+    { "year": "1980s", "event": "하위문화의 아이콘으로 자리잡음" },
+    { "year": "2020s", "event": "하이패션과 결합되어 재조명됨" }
+  ],
+  "gallery": [
+    "https://via.placeholder.com/300x200?text=Punk+Look+1",
+    "https://via.placeholder.com/300x200?text=Punk+Look+2"
+  ]
+}
+]
