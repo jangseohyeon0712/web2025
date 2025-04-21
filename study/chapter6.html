@@ -214,5 +214,28 @@ EVENT <br>
   <li><strong>캡처 여부:</strong> 이벤트를 캡처링하는지의 여부. <code>true</code>면 캡처링을, <code>false</code>면 버블링을 한다는 의미. 선택 사항이며 기본값은 <code>false</code></li>
 </ul>
 <br>
+<div style="display: flex; gap: 30px; flex-wrap: wrap; margin-top: 20px;">
+  <!-- 첫 번째 코드 블록 -->
+  <div style="flex: 1; min-width: 300px;">
+    <div style="padding: 10px; border: 1px solid #ccc; font-family: monospace; background-color: #fff;">
+      function changeBackground() {<br>
+      &nbsp;&nbsp;document.body.style.backgroundColor = "green";<br>
+      }<br><br>
+      const button = document.querySelector("button");<br>
+      button.<span style="background-color: yellow;">onclick</span> = changeBackground;
+    </div>
+  </div>
+
+  <!-- 두 번째 코드 블록 -->
+  <div style="flex: 1; min-width: 300px;">
+    <div style="padding: 10px; border: 1px solid #ccc; font-family: monospace; background-color: #fff;">
+      function changeBackground() {<br>
+      &nbsp;&nbsp;document.body.style.backgroundColor = "green";<br>
+      }<br><br>
+      const button = document.querySelector("button");<br>
+      <span style="color: brown;">button.addEventListener(</span><span style="background-color: yellow;">"click"</span>, changeBackground<span style="color: brown;">);</span>
+    </div>
+  </div>
+</div>
 
 
