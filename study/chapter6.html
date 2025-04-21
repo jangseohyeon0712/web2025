@@ -664,6 +664,29 @@ EVENT <br>
 
 </body>
 </html>
+<br>
+<p>이벤트가 전파된다?</p>
+
+<ul style="line-height: 1.8;">
+  <li>웹 요소에서 이벤트가 발생했을 때 해당 요소에서만 이벤트가 처리되는 것이 아니라 해당 요소를 감싸고 있는 부모 요소, 그리고 그 요소의 부모 요소에서도 똑같이 이벤트가 처리된다.</li>
+  <li>이것을 <strong>이벤트 전파</strong>라고 한다.</li>
+  <li>‘이벤트 버블링’과 ‘이벤트 캡처링’, 두 가지 형태가 있다.</li>
+</ul>
+
+<div style="margin-top: 25px;">
+  이벤트 리스너를 사용할 때 이벤트 전파 방식을 지정할 수 있다.
+</div>
+
+<!-- addEventListener 구문 강조 상자 -->
+<div style="margin: 15px 0; padding: 10px; font-size: 16px; border: 1px solid #999; width: fit-content;">
+  <i>요소</i>.addEventListener(<i>이벤트</i>, 함수, <span style="color: crimson;"><b>캡처 여부</b></span>);
+</div>
+
+<!-- 설명 텍스트 -->
+<div style="color: brown; font-size: 15px;">
+  캡처 여부: 이벤트를 캡처링하는지의 여부를 지정한다.
+</div>
+
 
 
 
