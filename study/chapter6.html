@@ -156,7 +156,7 @@ EVENT <br>
   <strong>HTML</strong> 태그에 스크립트를 함께 사용하기 때문에<br>
   스크립트 소스에서 함수 이름이 바뀌거나 다른 변경 내용이 있을 경우 <strong>HTML</strong> 소스도 함께 수정해야 한다
 </div> <br>
-<h3>2) 웹 요소에 직접 함수 연결하기</h3>
+<strong>2) 웹 요소에 직접 함수 연결하기</strong>
 
 <div style="margin: 10px 0;">
   스크립트 소스를 변경해도 <strong>HTML</strong> 마크업에는 영향을 주지 않게 하려면<br>
@@ -196,6 +196,23 @@ EVENT <br>
   </div>
 </div>
 <br>
+ <strong>3) addEventListener() 사용하기</strong>
 
+<ul style="margin-top: 10px;">
+  <li>이벤트 리스너는 어떤 DOM 요소에서도 사용할 수 있다.</li>
+  <li><code>addEventListener</code> 함수를 사용</li>
+</ul>
+
+<div style="margin: 15px 0; padding: 10px; border: 1px solid #ccc; background-color: #f5f5f5; font-family: monospace; width: fit-content;">
+  요소.addEventListener(<em>이벤트</em>, <em>함수</em>, <em>캡처 여부</em>);
+</div>
+
+<ul style="line-height: 1.8;">
+  <li><strong>요소:</strong> 이벤트가 발생한 요소</li>
+  <li><strong>이벤트:</strong> 이벤트 유형. 단, 여기에서는 이벤트 이름 앞에 <code>on</code>을 붙이지 않고 <code>click</code>이나 <code>keypress</code>처럼 이벤트 이름을 그대로 사용한다.</li>
+  <li><strong>함수:</strong> 이벤트가 발생했을 때 실행할 함수. 기존에 있는 함수를 사용해도 되고 직접 익명 함수를 작성해도 된다. 익명 함수로 실행할 때는 <code>event</code> 객체를 사용해서 다양한 것들을 처리할 수 있다.</li>
+  <li><strong>캡처 여부:</strong> 이벤트를 캡처링하는지의 여부. <code>true</code>면 캡처링을, <code>false</code>면 버블링을 한다는 의미. 선택 사항이며 기본값은 <code>false</code></li>
+</ul>
+<br>
 
 
