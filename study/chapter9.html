@@ -175,3 +175,48 @@ book4.finish() // "읽는 중"
 <li>복사한 자료의 값 변경 → 원래 자료의 값도 바뀐다</li>
 <br>
 <img src="images/객체복사2.png" alt="객체 주소 복사 설명">
+<p>생성자 함수</p>
+
+<li>객체마다 반복되는 프로퍼티와 메서드가 있다면 객체 틀을 미리 정의해 놓고 필요할 때마다 그 틀을 사용해서 객체를 만들 수 있다.</li>
+<li>객체의 틀을 만들 때 사용하는 함수를 ‘생성자 함수’라고 한다.</li>
+<li>생성자 함수를 사용해서 찍어 내는 객체를 ‘인스턴스’ 또는 ‘인스턴스 객체’라고 부른다.</li>
+
+<br>
+ <p>생성자 함수를 사용해 객체 정의하기</p>
+
+<table border="1" cellspacing="0" cellpadding="8">
+  <tr>
+    <th>항목</th>
+    <th>내용</th>
+  </tr>
+  <tr>
+    <td>정의 방식</td>
+    <td>생성자 함수는 일반적인 함수와 같은 형식</td>
+  </tr>
+  <tr>
+    <td>이름 규칙</td>
+    <td>함수 이름의 첫 글자는 <strong>대문자</strong>로 사용</td>
+  </tr>
+  <tr>
+    <td>특징</td>
+    <td><code>this</code>를 사용해 프로퍼티와 메서드를 정의</td>
+  </tr>
+  <tr>
+    <td>기본 구조 1</td>
+    <td>
+      function 함수명(매개변수) {<br>
+      &nbsp;&nbsp;this.키1 = 값1;<br>
+      &nbsp;&nbsp;this.메서드1 = function() { ... };<br>
+      }
+    </td>
+  </tr>
+  <tr>
+    <td>기본 구조 2</td>
+    <td>
+      const 함수명 = function(매개변수) {<br>
+      &nbsp;&nbsp;// 내용<br>
+      }
+    </td>
+  </tr>
+</table>
+
