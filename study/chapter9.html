@@ -348,3 +348,115 @@ console.log(values);
 let entries = Object.entries(book1); // 키와 값 함께 가져오기
 console.log(entries);
 </div>
+<p>프로토타입</p>
+
+<ul>
+  <li><code>prototype</code>은 객체 생성자 함수에 의해 생성되는 객체들이 공유하는 속성과 메서드를 저장하는 특수 객체</li>
+  <li>프로토타입 객체는 객체 생성자 함수로 생성된 객체들이 <strong>공유하는 속성과 메서드</strong>를 저장하는 특별한 객체</li>
+  <li>자바스크립트의 상속은 <strong>프로토타입</strong>을 통해 이루어짐</li>
+</ul>
+
+<br>
+
+<img src="images/프로토타입.png" alt="prototype console example" style="width:400px;"><br><br>
+
+<ul>
+  <li><code>[[Prototype]]</code> 속성: <code>arr</code> 객체가 어느 생성자 함수로부터 만들어졌는지 알려주는 속성</li>
+  <li><code>arr</code> 배열의 프로토타입은 <code>Array</code> 객체이고, <code>arr</code> 배열은 <code>Array</code> 객체의 프로퍼티와 메서드를 상속받는다</li>
+  <li>이때 <code>Array</code> 객체를 <code>arr</code> 배열의 <code>프로토타입(prototype)</code>이라고 한다</li>
+</ul>
+<p>생성자 함수와 프로토타입 객체</p>
+
+<ul>
+  <li>생성자 함수를 선언하는 순간 <strong>자동으로 프로토타입 객체</strong>가 만들어진다</li>
+</ul>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="8">
+  <tr>
+    <th>구문</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td>
+      <div style="background-color:#f4f4f4; padding:5px; font-family:monospace;">
+        const Book = function(title, pages, done) { <br>
+          ...<br>
+        }<br><br>
+        const book1 = new Book("웹 표준의 정석", 648, false);
+      </div>
+    </td>
+    <td>
+      생성자 함수 <code>Book</code>을 정의하고, <br>
+      <code>new</code> 연산자를 통해 인스턴스 <code>book1</code> 생성
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div style="background-color:#f4f4f4; padding:5px; font-family:monospace;">
+        Book.prototype
+      </div>
+    </td>
+    <td>
+      생성자 함수 <code>Book</code>의 프로토타입 객체에 접근<br>
+      이 객체는 모든 <code>Book</code> 인스턴스가 공유하는 속성과 메서드를 정의할 수 있음
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<ul>
+  <li><strong>book1의 내부 [[Prototype]]은 Book.prototype을 참조</strong></li>
+  <li><code>Book.prototype</code> 역시 <code>Object</code> 객체를 기반으로 함</li>
+</ul>
+
+<br>
+
+<img src="images/BookPrototype.png" alt="Book 프로토타입 관계 구조도" style="width:450px;">
+<p>생성자 함수와 프로토타입 객체</p>
+
+<ul>
+  <li><strong>book1</strong>은 생성자 함수 <code>Book()</code>을 통해 생성된 객체</li>
+  <li><strong>book1의 [[Prototype]]은 Book.prototype을 참조</strong></li>
+  <li><strong>Book.prototype</strong>은 다시 <code>Object</code> 객체를 상속</li>
+</ul>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="8">
+  <tr>
+    <th>요소</th>
+    <th>내용</th>
+  </tr>
+  <tr>
+    <td><code>book1</code></td>
+    <td>
+      <ul>
+        <li>title: "웹 표준의 정석"</li>
+        <li>pages: 648</li>
+        <li>done: false</li>
+        <li>finish(): 메서드</li>
+        <li><code>[[Prototype]] → Book.prototype</code></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>Book.prototype</code></td>
+    <td>
+      <ul>
+        <li>constructor: Book(title, pages, done)</li>
+        <li><code>[[Prototype]] → Object.prototype</code></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<p><strong>book1은 Book.prototype의 속성과 메서드를 상속받음</strong></p>
+<p>예: <code>book1.finish()</code> 호출 가능</p>
+
+<br>
+
