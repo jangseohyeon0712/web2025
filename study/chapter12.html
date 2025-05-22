@@ -256,3 +256,44 @@ let json = JSON.stringify(student)
 
 이렇게 웹 문서 전체를 다시 불러오지 않고 일부분만 가져와 실행할 수 있는 것은<br>
 <b>AJAX(Asynchronous Javascript And XML)</b> 기능 때문
+
+<p>XMLHttpRequest 객체</p>
+
+<li>웹 브라우저에서 서버로 데이터를 요청하고 서버에서 자료를 받아올 때는 HTTP 통신이 가능한 XMLHttpRequest 객체를 사용한다.</li>
+<li>XMLHttpRequest 객체의 프로퍼티와 메서드를 사용해서 자료를 주고받거나 상태를 체크한다.</li>
+<li>웹 페이지 전체가 아니라 필요한 부분만 자료만 가져올 수 있다.</li>
+
+<br><br>
+
+<span style="font-size: 32px; font-weight: bold;">
+  <span style="color: #3b78cb;">XML</span><span style="color: #f7902e;">Http</span><span style="color: black;">Request</span>
+</span>
+
+<br><br>
+
+<span style="color: #3b78cb;">‘XML’</span>이라는 자료를 
+<span style="color: #f7902e;">‘HTTP’</span> 프로토콜을 사용해서 
+‘<span style="color: black;">Request</span>(요청)’한다
+<p>XMLHttpRequest 객체 만들기</p>
+
+new 예약어를 사용해서 XMLHttpRequest 객체의 인스턴스를 만든다.<br><br>
+
+<div style="background-color: #eee; display: inline-block; padding: 5px 10px;">
+  new XMLHttpRequest()
+</div>
+
+<span style="float: right; font-size: 14px; color: #6689cc;">
+  인스턴스는 <code>xhr</code>이라는 이름을 많이 사용한다.
+</span><br>
+
+<div style="background-color: white; border: 1px solid black; display: inline-block; padding: 5px 10px; margin-top: 8px;">
+  let xhr = new XMLHttpRequest()
+</div>
+
+<br><br>
+
+XMLHttpRequest 객체를 만들면 서버로 자료를 요청하고 자료를 받아올 수 있다.
+<br><br>
+
+<img src="images/xmlhttp.png" style="width: 100%; max-width: 800px;">
+
