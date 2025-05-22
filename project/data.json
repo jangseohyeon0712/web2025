@@ -76,9 +76,9 @@
     { "year": "2020s", "event": "유틸리티 & 아웃도어 감성과 융합되어 인기 상승" }
   ],
   "gallery": [
-    "images/워크웨어1.png",
-  "images/워크웨어2.png",
-  "images/워크웨어어3.png"
+    "images/테크웨어1.png",
+  "images/테크웨어2.png",
+  "images/테크웨어3.png"
   ]
 },
   {
@@ -110,7 +110,7 @@
   "gallery": [
     "images/시티보이1.png",
   "images/시티보이2.png",
-  "images/시티보이이3.png"
+  "images/시티보이3.png"
   ]
 },
   {
@@ -126,7 +126,7 @@
   "gallery": [
     "images/고프코어1.png",
   "images/고프코어2.png",
-  "images/고프코어어3.png"
+  "images/고프코어3.png"
   ]
 },
   {
@@ -158,7 +158,7 @@
   "gallery": [
     "images/스트릿1.png",
   "images/스트릿2.png",
-  "images/스트릿릿3.png"
+  "images/스트릿3.png"
   ]
 },
   {
