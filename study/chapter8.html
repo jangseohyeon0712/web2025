@@ -252,3 +252,56 @@ open( ) 함수를 사용하면 현재 창이나 새 탭, 새로운 알림 창 �
 <span style="display:inline-block; border:1px solid #ccc; padding:4px 8px;">
   &lt;button <span style="color:red;">onclick="window.close()"</span>&gt;닫기&lt;/button&gt;
 </span><br><br>
+<p>screen 객체</p>
+
+사용자의 화면 크기나 방향 등의 정보를 담고 있는 객체<br><br>
+
+<table style="border-collapse: collapse; font-family: sans-serif;">
+  <thead>
+    <tr style="background-color: #e6f0fa;">
+      <td style="border: 1px solid #ccc; padding: 8px;">구분</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">속성/메서드</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">설명</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="7" style="border: 1px solid #ccc; padding: 8px; vertical-align: top;">프로퍼티</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">availHeight</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">UI 영역(예를 들어 윈도우의 작업 표시줄이나 Mac의 독)을 제외한 영역의 높이를 나타냅니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">availWidth</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">UI 영역을 제외한 내용 표시 영역의 너비를 나타냅니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">colorDepth</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">화면에서 픽셀을 렌더링할 때 사용하는 색상 수를 나타냅니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">height</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">UI 영역을 포함한 화면의 높이를 나타냅니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">orientation</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">화면의 현재 방향을 나타냅니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">pixelDepth</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">화면에서 픽셀을 렌더링할 때 사용하는 비트 수를 나타냅니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">width</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">UI 영역을 포함한 화면의 너비를 나타냅니다.</td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="border: 1px solid #ccc; padding: 8px; vertical-align: top;">메서드</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">lockOrientation()</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">화면 방향을 잠급니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">unlockOrientation()</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">화면 방향 잠금을 해제합니다.</td>
+    </tr>
+  </tbody>
+</table>
