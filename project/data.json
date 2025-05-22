@@ -181,7 +181,7 @@
   "name": "펑크",
   "desc": "1970년대 반문화에서 유래한 거칠고 반항적인 스타일로, DIY와 자극적인 감성이 특징입니다.",
   "fabrics": ["가죽", "데님", "네트", "PVC", "체인"],
-  "brands": ["Vivienne Westwood", "Underground", "Sex Pistols Merch", "Tripp NYC"],
+  "brands": ["Vivienne Westwood", "Underground", "Tripp NYC"],
   "history": [
     { "year": "1970s", "event": "영국에서 펑크 록 문화와 함께 등장" },
     { "year": "1980s", "event": "하위문화의 아이콘으로 자리잡음" },
