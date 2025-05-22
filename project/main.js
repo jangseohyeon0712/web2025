@@ -76,38 +76,45 @@ document.addEventListener("DOMContentLoaded", () => {
     styleDetail.classList.remove("hidden");
   }
 
-  function renderGallery() {
-    gallery.innerHTML = "";
-    const wrapper = document.createElement("div");
-    wrapper.className = "slider-wrapper";
+ function renderGallery() {
+  gallery.innerHTML = "";
 
-    const leftBtn = document.createElement("button");
-    leftBtn.textContent = "←";
-    leftBtn.className = "slide-arrow";
-    leftBtn.onclick = () => {
-      currentSlideIndex = (currentSlideIndex - 1 + currentGallery.length) % currentGallery.length;
-      renderGallery();
-    };
+  const wrapper = document.createElement("div");
+  wrapper.className = "slider-wrapper";
 
-    const rightBtn = document.createElement("button");
-    rightBtn.textContent = "→";
-    rightBtn.className = "slide-arrow";
-    rightBtn.onclick = () => {
-      currentSlideIndex = (currentSlideIndex + 1) % currentGallery.length;
-      renderGallery();
-    };
+  const leftBtn = document.createElement("button");
+  leftBtn.textContent = "←";
+  leftBtn.className = "slide-btn slide-left";
+  leftBtn.addEventListener("click", () => {
+    currentSlideIndex = (currentSlideIndex - 1 + currentGallery.length) % currentGallery.length;
+    updateImage();
+  });
 
-    const img = document.createElement("img");
-    img.src = currentGallery[currentSlideIndex];
-    img.alt = "스타일 이미지";
-    img.className = "slide-image";
+  const rightBtn = document.createElement("button");
+  rightBtn.textContent = "→";
+  rightBtn.className = "slide-btn slide-right";
+  rightBtn.addEventListener("click", () => {
+    currentSlideIndex = (currentSlideIndex + 1) % currentGallery.length;
+    updateImage();
+  });
 
-    wrapper.appendChild(leftBtn);
-    wrapper.appendChild(img);
-    wrapper.appendChild(rightBtn);
+  const img = document.createElement("img");
+  img.src = currentGallery[currentSlideIndex];
+  img.alt = "스타일 이미지";
+  img.className = "slide-image";
+  img.id = "current-slide";
 
-    gallery.appendChild(wrapper);
+  wrapper.appendChild(leftBtn);
+  wrapper.appendChild(img);
+  wrapper.appendChild(rightBtn);
+  gallery.appendChild(wrapper);
+
+  // 내부 함수로 이미지만 갱신
+  function updateImage() {
+    document.getElementById("current-slide").src = currentGallery[currentSlideIndex];
   }
+}
+
 
   function getBrandUrl(brand) {
     const urls = {
