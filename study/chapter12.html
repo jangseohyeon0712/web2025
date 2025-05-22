@@ -2,3 +2,26 @@
 Chapter 12 summary
 HTTP/HTTPS
 <br>
+<h2>HTTP란</h2>
+
+클라이언트와 서버 간에 자료를 주고받으려면 미리 약속된 규칙이 필요하다.<br>
+이것을 프로토콜(protocol)이라고 하고, 웹에서는 <b>HTTP</b> (HyperText Transfer Protocol)라는 프로토콜을 사용한다.<br>
+클라이언트에서 서버로 자료 요청하는 것은 <b>HTTP 요청</b> (HTTP request),<br>
+서버에서 응답해서 클라이언트로 자료를 보내는 것은 <b>HTTP 응답</b> (HTTP response)이라고 한다.
+
+<br><br>
+
+<b>[HTTP 통신 흐름]</b><br>
+웹 브라우저 (클라이언트) → <b>HTTP 요청</b> → 서버<br>
+서버 → <b>HTTP 응답</b> → 웹 브라우저 (클라이언트)
+
+<h3>요청 헤더와 응답 헤더</h3>
+
+<img src="images/응답헤더.png"><br>
+
+<b>클라이언트에서 사이트 주소를 입력하고 [Enter]를 누를 때</b><br>
+사이트 주소뿐만 아니라 사용 중인 시스템 정보와 웹 브라우저 정보, 사용한 언어 등 다양한 정보까지 함께 전송된다. → 서버로 요청할 때 보내는 헤더를 ‘요청 헤더(<span style="color:gray">request header</span>)’라고 한다.
+<br><br>
+<b>서버에서 입력한 사이트를 찾아서 클라이언트로 보낼 때</b><br>
+<li>응답 메시지를 보내는 시간, 메시지를 클라이언트에 어떻게 표시할지 등의 정보는 ‘응답 헤더(<span style="color:gray">response header</span>)’에 담기고</li>
+<li>이미지나 텍스트 같은 실제 사이트 내용은 ‘응답 본문(<span style="color:gray">response body</span>)’에 담겨서 전달된다.</li>
