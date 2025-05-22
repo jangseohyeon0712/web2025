@@ -306,3 +306,45 @@ book4.finish() // "읽는 중"
   </tr>
 </table>
 
+<p>keys(), values(), entries() 메서드 사용하기</p>
+
+<table border="1" cellspacing="0" cellpadding="8">
+  <tr>
+    <th>메서드</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td><code>Object.keys(객체명)</code></td>
+    <td>객체의 키만 배열로 반환</td>
+  </tr>
+  <tr>
+    <td><code>Object.values(객체명)</code></td>
+    <td>객체의 값만 배열로 반환</td>
+  </tr>
+  <tr>
+    <td><code>Object.entries(객체명)</code></td>
+    <td>객체의 [키, 값] 쌍을 배열로 반환</td>
+  </tr>
+</table>
+
+<br>
+
+<p>(예) book1 객체의 키와 값 가져오기</p>
+<div style="background:#f4f4f4;padding:8px;white-space:pre-line;font-family:monospace;">
+let book1 = {
+  title: "웹 표준의 정석",
+  pages: 648,
+  buy: function () {
+    console.log("이 책을 구입했습니다.");
+  }
+}
+
+let keys = Object.keys(book1);       // 키만 가져오기
+console.log(keys);                   // ["title", "pages", "buy"]
+
+let values = Object.values(book1);   // 값만 가져오기
+console.log(values);
+
+let entries = Object.entries(book1); // 키와 값 함께 가져오기
+console.log(entries);
+</div>
