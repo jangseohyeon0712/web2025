@@ -859,4 +859,26 @@ secs = (secs < 10) ? "0" + secs : secs;
 console.log(`${period} ${hrs} : ${mins} : ${secs}`);
   </div>
 </div>
+<p>[실습] 디지털 시계 만들기</p>
+
+<ol start="10">
+  <li>콘솔 창에서 확인하기 → 초 값이 고정되어 있다!<br><br>
+    <img src="images/console-fixed.png" style="width:500px; display:inline-block; vertical-align:top; border:1px solid #ccc;">
+    <div style="display:inline-block; margin-left:30px; vertical-align:top;">
+      <div style="line-height:1.8;">
+        1초마다 초 값이 바뀌게 하려면 어떻게 해야 할까?<br>
+        → 1초마다 현재 시간을 가져온 후<br>
+        시, 분, 초로 나누고 화면에 표시해야 함
+      </div>
+    </div>
+  </li><br><br>
+
+  <li>setInterval()을 사용해 소스 수정하기
+    <ol type="1">
+      <li>기존의 <b>console.log()</b> 문 삭제</li>
+      <li>시간을 가져와 화면에 표시하는 것을 타이머로 지정</li>
+      <li><code>setInterval()</code>에서 타이머를 1초마다 실행하도록 한다.</li>
+    </ol>
+  </li>
+</ol>
 
