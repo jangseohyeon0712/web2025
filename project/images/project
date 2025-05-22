@@ -1,0 +1,9 @@
+project/
+├── index.html
+├── main.js
+├── style.css
+├── data.json
+└── images/
+    ├── 캐주얼1.png
+    ├── 캐주얼2.png
+    └── 캐주얼3.png
