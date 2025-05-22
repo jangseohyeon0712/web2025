@@ -881,4 +881,23 @@ console.log(`${period} ${hrs} : ${mins} : ${secs}`);
     </ol>
   </li>
 </ol>
+ <div style="background:#f5f5f5; padding:20px; width:700px; font-family:monospace; font-size:15px; line-height:1.6;">
+  const displayTime = document.querySelector("#clock");<br><br>
+
+  <span style="color:red;">let clock = () => {</span><br>
+  &nbsp;&nbsp;let current = new Date();<br>
+  &nbsp;&nbsp;let hrs = current.getHours();<br>
+  &nbsp;&nbsp;let mins = current.getMinutes();<br>
+  &nbsp;&nbsp;let secs = current.getSeconds();<br>
+  &nbsp;&nbsp;let period = "AM";<br>
+  &nbsp;&nbsp;if (hrs === 0) { hrs = 12; }<br>
+  &nbsp;&nbsp;else if (hrs > 12) { hrs = hrs - 12; period = "PM"; }<br>
+  &nbsp;&nbsp;hrs = (hrs < 10) ? "0" + hrs : hrs;<br>
+  &nbsp;&nbsp;mins = (mins < 10) ? "0" + mins : mins;<br>
+  &nbsp;&nbsp;secs = (secs < 10) ? "0" + secs : secs;<br>
+  &nbsp;&nbsp;displayTime.innerText = `${period} ${hrs} : ${mins} : ${secs}`;<br>
+<span style="color:red;">}</span><br><br>
+
+<span style="color:red;">setInterval(clock, 1000);</span>
+</div>
 
