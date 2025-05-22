@@ -415,3 +415,62 @@ xhr.onreadystatechange = function() {<br>
 &nbsp;&nbsp;}<br>
 }
 </div>
+<p>response, responseText 프로퍼티</p>
+
+<li>response : 요청에 대한 응답</li>
+<li>responseText : 요청에 대한 응답이 문자열 형태로 저장된다. 이 값을 프로그래밍에 사용.</li>
+<li>responseType : 응답 데이터의 종류</li>
+<li>responseURL : 응답을 보낸 URL</li>
+<li>responseXML : HTML이나 XML 같은 형식의 데이터를 받아올 때 사용</li>
+
+<br>콘솔 창에 다음과 같이 입력하면 어떤 값을 가져왔는지 알 수 있다.<br>
+
+<div style="background-color:#f4f4f4; border:1px solid #ccc; padding:8px; width:fit-content; font-family:monospace;">
+xhr.responseText
+</div>
+<p>예외 처리란</p>
+
+프로그램에서 문제가 발생하면 프로그램은 실행을 멈추기 때문에  
+소스를 작성할 때부터 발생할 만한 문제를 미리 고려하고 대비하는 것.  
+(예외 처리, 에러 핸들링, 오류 처리 등으로 부른다)
+
+<br><br>
+예외(exception)  
+- 문법적인 실수로 발생하는 오류  
+→ 문법 오류 뒤에 오는 소스는 실행되지 않아서 프로그램이 중단되기도 한다.  
+- 프로그램의 작성 의도와 다르게 사용했을 때 (예, 프롬프트 창에서 ‘취소’ 버튼 클릭했을 때)  
+→ 이런 상황을 미리 예상해서 처리해 준다
+<p>console.error()</p>
+
+콘솔 창에 오류를 표시한다  
+오류가 발생하면 빨간색으로 표시되기 때문에 일반 메시지와 구별된다
+
+<br><br>
+
+<script>
+try {
+  console.log("시작");
+  add();
+  console.log("실행 중...");
+} catch(err) {
+  console.log(`오류 발생 : ${err}`);
+}
+console.log("끝");
+</script>
+
+<br><br>
+
+error 객체는 error.name과 error.message로 구성된다
+
+<br><br>
+
+<script>
+try {
+  ...
+} catch(err) {
+  console.error(`오류 발생 : ${err}`);
+  console.error(`오류 발생 : ${err.name}`);
+  console.error(`오류 발생 : ${err.message}`);
+}
+...
+</script>
