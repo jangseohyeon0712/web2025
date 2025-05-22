@@ -374,5 +374,78 @@ btnt.addEventListener("click", function() {
     </tr>
   </tbody>
 </table>
+<p>location 객체</p>
+
+현재 문서의 URL 주소와 관련된 정보가 들어 있음<br><br>
+
+<table style="border-collapse: collapse; font-family: sans-serif; font-size: 14px;">
+  <thead>
+    <tr style="background-color: #e6f0fa;">
+      <td style="border: 1px solid #ccc; padding: 8px;">구분</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">속성/메서드</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">설명</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="10" style="border: 1px solid #ccc; padding: 8px; vertical-align: top;">프로퍼티</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">hash</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">URL 중에서 <b>#</b>로 시작하는 해시 부분의 정보를 담고 있습니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">host</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">URL의 <b>호스트 이름</b>과 포트 번호를 담고 있습니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">hostname</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">URL의 <b>호스트 이름</b>이 저장됩니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">href</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">전체 URL입니다. 이 값을 변경하면 해당 주소로 이동할 수 있습니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">pathname</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">URL 경로가 지정됩니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">port</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">URL의 포트 번호를 담고 있습니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">protocol</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">URL의 프로토콜을 저장합니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">password</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">도메인 이름 앞에 <b>username</b>과 <b>password</b>를 함께 입력해서 접속하는 사이트의 URL일 경우에 <b>password</b> 정보를 저장합니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">search</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">URL 중에서 <b>?</b>로 시작하는 검색 내용을 저장합니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">username</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">도메인 이름 앞에 <b>username</b>을 함께 입력해서 접속하는 사이트의 URL일 경우에 <b>username</b> 정보를 저장합니다.</td>
+    </tr>
+    <tr>
+      <td rowspan="4" style="border: 1px solid #ccc; padding: 8px; vertical-align: top;">메서드</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">assign()</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">현재 문서에 새 문서 주소를 할당해서 새 문서를 가져옵니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">reload()</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">현재 문서를 다시 불러옵니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">replace()</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">현재 문서의 URL을 지우고 다른 URL의 문서로 교체합니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">toString()</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">현재 문서의 URL을 문자열로 반환합니다.</td>
+    </tr>
+  </tbody>
+</table>
 
 
