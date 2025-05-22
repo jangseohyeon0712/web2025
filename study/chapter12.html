@@ -1,6 +1,7 @@
 <h1>Chapter 12</h1>
 Chapter 12 summary
-HTTP/HTTPS
+HTTP/HTTPS<br>
+JSON
 <br>
 <h2>HTTP란</h2>
 
@@ -117,3 +118,82 @@ HTTP/HTTPS
     <td>요청한 서비스를 이용할 수 없습니다.</td>
   </tr>
 </table>
+<h4>JSON</h4>
+<p>데이터 교환 방식</p>
+
+서버와 클라이언트 간에 자료를 주고받기 위해 양쪽 모두 이해할 수 있는 형식을 사용해야 한다.<br>
+<li>XML은 컴퓨터에서 처리하는 모든 문서의 표준 형식이기 때문에 웹에서 사용 가능</li>
+<li>최근에는 JSON이라는 형식을 더 많이 사용한다</li>
+<p>JSON의 특징</p>
+
+<li>텍스트로만 구성되어 있기 때문에 서버와 클라이언트 사이에 주고받을 때 전송 속도가 아주 빠르다.</li>
+<li>JSON은 프로그래밍 언어나 플랫폼에 대해 독립적이기 때문에 C++이나 자바, 자바스크립트, 파이썬 등 많은 언어에서 사용할 수 있다.</li>
+<li>자바스크립트 사용자라면 누구나 알고 있는 표기법을 사용하기 때문에 읽기도 쉽고 필요에 따라 자바스크립트 객체로 변환하기도 쉽다.</li>
+<p>JSON의 형식</p>
+
+<li>중괄호 { } 사이에 ‘이름’과 ‘값’으로 구성된다.</li>
+<li>JSON에서는 <b>‘이름’ 부분에 반드시 큰따옴표를 붙이는 것</b>이 큰 차이점</li>
+
+<br><br>
+
+예) ‘도레미’라는 학생의 수업 신청 정보<br><br>
+
+<b>객체</b><br>
+<div style="background-color:#f0f0f0; padding:10px; width:250px; font-family:monospace;">
+{<br>
+&nbsp;&nbsp;name : "도레미",<br>
+&nbsp;&nbsp;major : "컴퓨터 공학",<br>
+&nbsp;&nbsp;grade : 2<br>
+}
+</div>
+
+<br>
+
+<b>JSON</b><br>
+<div style="background-color:#f0f0f0; padding:10px; width:300px; font-family:monospace;">
+{<br>
+&nbsp;&nbsp;"name" : "도레미",<br>
+&nbsp;&nbsp;"major" : "컴퓨터 공학",<br>
+&nbsp;&nbsp;"grade" : 2<br>
+}
+</div>
+
+<br>
+
+‘{ "name" : "도레미", "major" : "컴퓨터 공학", "grade" : 2 }’
+<p>JSON의 ‘이름’</p>
+
+반드시 큰따옴표(")로 묶어야 한다.<br>
+‘이름’에 작은따옴표를 사용하거나 큰따옴표가 없는 이름은 사용할 수 없습니다.
+
+<br><br>
+<b style="color:blue;">맞게 사용한 예</b><br>
+<div style="background-color:#f0f0f0; padding:8px; width:180px; font-family:monospace;">
+{ "name" : "도레미" }
+</div>
+
+<br>
+
+<b style="color:blue;">잘못 사용한 예</b><br>
+<div style="background-color:#f0f0f0; padding:8px; width:180px; font-family:monospace;">
+{ 'name': "도레미" }<br>
+{ name : "도레미" }
+</div>
+
+<br>
+
+<li>JSON 이름에는 공백(space)이나 하이픈(-), 언더바(_)를 함께 사용할 수 있다.<br>
+문법적으로 다음 형식도 가능</li>
+
+<div style="background-color:#f0f0f0; padding:8px; width:250px; font-family:monospace;">
+{ "full name" : "도레미" }<br>
+{ "full-name" : "도레미" }
+</div>
+
+<br>
+
+<li>하지만 이름에 공백이나 하이픈이 있을 경우 프로그램을 통해 그 이름에 접근할 때 쉽지 않기 때문에 둘 이상의 단어로 된 이름을 사용한다면 언더스코어(_)를 사용하는 것이 좋다.</li>
+
+<div style="background-color:#f0f0f0; padding:8px; width:250px; font-family:monospace;">
+{ "full_name" : "도레미" }
+</div>
