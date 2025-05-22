@@ -332,5 +332,47 @@ btnt.addEventListener("click", function() {
     window.open("notice.html", "event", `width = ${popWidth} height= ${popHeight} left = ${left} top = ${top}`);
 });
 </div>
+<p>history 객체</p>
+
+<ul>
+  <li>history 객체에는 브라우저에서 [뒤로]나 [앞으로] 또는 주소 표시줄에 입력해서 방문한 사이트 주소가 배열 형태로 저장된다.</li>
+  <li>브라우저 히스토리는 보안 문제 때문에 읽기 전용</li>
+</ul>
+
+<br>
+
+<table style="border-collapse: collapse; font-family: sans-serif; font-size: 14px;">
+  <thead>
+    <tr style="background-color: #e6f0fa;">
+      <td style="border: 1px solid #ccc; padding: 8px;">구분</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">속성/메서드</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">설명</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">프로퍼티</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">length</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">현재 브라우저 창의 <b>history</b> 목록에 있는 항목의 개수, 즉 방문한 사이트 개수가 저장됩니다.</td>
+    </tr>
+    <tr>
+      <td rowspan="3" style="border: 1px solid #ccc; padding: 8px; vertical-align: top;">메서드</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">back()</td>
+      <td style="border: 1px solid #ccc; padding: 8px;"><b>history</b> 목록에서 이전 페이지를 현재 화면으로 불러옵니다</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">forward()</td>
+      <td style="border: 1px solid #ccc; padding: 8px;"><b>history</b> 목록에서 다음 페이지를 현재 화면으로 불러옵니다</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">go()</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">
+        <b>history</b> 목록에서 현재 페이지를 기준으로 상대적인 위치에 있는 페이지를 현재 화면으로 불러옵니다.<br>
+        예를 들어 <code>history.go(1)</code>은 다음 페이지를 가져오고,<br>
+        <code>history.go(-1)</code>은 이전 페이지를 불러옵니다.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 
