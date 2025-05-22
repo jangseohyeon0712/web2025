@@ -457,4 +457,48 @@ console.log(entries);
 <p>예: <code>book1.finish()</code> 호출 가능</p>
 
 <br>
+<p>__proto__ 와 prototype</p>
+
+<table border="1" cellspacing="0" cellpadding="8">
+  <tr>
+    <th>구분</th>
+    <th>__proto__ 프로퍼티</th>
+    <th>prototype 프로퍼티</th>
+  </tr>
+  <tr>
+    <td>정의</td>
+    <td>모든 객체가 가지고 있는 프로퍼티<br>자신에게 연결된 프로토타입 객체를 참조</td>
+    <td>모든 함수가 가지고 있는 프로퍼티<br>생성자 함수로부터 생성된 인스턴스들의 프로토타입 역할</td>
+  </tr>
+  <tr>
+    <td>용도</td>
+    <td>인스턴스 객체에서 연결된 프로토타입 객체 확인 시 사용</td>
+    <td>해당 생성자 함수가 어떤 속성과 메서드를 제공하는지 확인 시 사용</td>
+  </tr>
+  <tr>
+    <td>접근 예시</td>
+    <td><code>book1.__proto__</code></td>
+    <td><code>Book.prototype</code></td>
+  </tr>
+  <tr>
+    <td>출력 결과 예시</td>
+    <td>
+      <ul>
+        <li>constructor: Book()</li>
+        <li>[[Prototype]]: Object</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>constructor: Book()</li>
+        <li>메서드 목록 (toString, hasOwnProperty, 등)</li>
+        <li>__proto__도 존재함</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<p><strong>결론:</strong> <code>book1.__proto__ === Book.prototype</code> 은 <span style="color:red;">true</span></p>
 
