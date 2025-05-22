@@ -112,3 +112,18 @@ const brandLinks = {
   "Vivienne Westwood": "https://www.viviennewestwood.com",
   "Tripp NYC": "https://trippnyc.com"
 };
+const brandList = document.getElementById("brand-list");
+brandList.innerHTML = "";
+style.brands.forEach(brand => {
+  const li = document.createElement("li");
+  if (brandLinks[brand]) {
+    const a = document.createElement("a");
+    a.href = brandLinks[brand];
+    a.textContent = brand;
+    a.target = "_blank"; // 새 창에서 열기
+    li.appendChild(a);
+  } else {
+    li.textContent = brand; // 링크가 없는 경우
+  }
+  brandList.appendChild(li);
+});
