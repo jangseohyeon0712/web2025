@@ -925,4 +925,30 @@ Math 객체는 따로 객체의 인스턴스를 사용하지 않고 속성이나
 
 <b>주요 속성</b><br>
 PI – 파이 값
+<p>Math 객체</p>
+
+콘솔 창에서 연습하기<br><br>
+
+1) 반지름이 10인 원의 원둘레와 넓이<br>
+
+<div style="display: flex; gap: 20px;">
+  <div style="border: 1px solid #999; padding: 10px; width: 400px; font-family: monospace;">
+    radius = 10<br><br>
+    2 * Math.PI * radius&nbsp;&nbsp;&nbsp;&nbsp;// 원둘레(2πr)<br>
+    Math.PI * radius * radius&nbsp;&nbsp;&nbsp;&nbsp;// 원 넓이(πr²)
+  </div>
+
+  <div style="border: 1px solid #999; padding: 10px; width: 500px; font-family: monospace;">
+    radius = 10<br><br>
+    2 * Math.PI * radius&nbsp;&nbsp;&nbsp;&nbsp;// 62.83185307179586<br>
+    Math.round(2 * Math.PI * radius)&nbsp;&nbsp;&nbsp;&nbsp;// 63. 반올림<br>
+    Math.ceil(2 * Math.PI * radius)&nbsp;&nbsp;&nbsp;&nbsp;// 63. 올림<br>
+    Math.floor(2 * Math.PI * radius)&nbsp;&nbsp;&nbsp;&nbsp;// 62. 버림
+  </div>
+</div>
+
+<br><br>
+<li><b>Math.ceil(값)</b> : 소수점 이하 올림.</li>
+<li><b>Math.floor(값)</b> : 소수점 이하 버림.</li>
+<li><b>Math.round(값)</b> : 소수점 이하 반올림.</li>
 
