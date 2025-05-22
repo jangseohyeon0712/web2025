@@ -1,3 +1,177 @@
 <h1>Chapter 9</h1>
 Chapter 9 summary
 자바스크립트 객체 만들기
+ <h2>객체란 Object</h2>
+
+<li>프로그래밍에서 ‘객체’는 데이터를 저장하고 처리하는 기본 단위</li>
+<li>자바스크립트에서 객체는 관련된 정보와 동작을 함께 모아 놓은 것</li>
+
+<li>내장 객체 : 프로그래밍을 할 때 자주 사용하는 요소들을 자바스크립트에서 미리 정의해 놓은 객체</li>
+<ul>
+  <li>문서 객체 모델(DOM) : 웹 문서 자체도 객체이고 웹 문서에 포함된 이미지와 링크, 텍스트 필드 등은 모두 이미지 객체, 링크 객체, 폼 객체처럼 각각 별도의 객체.</li>
+  <li>브라우저 객체 모델(B0M) : 웹 브라우저에서 사용하는 정보도 객체로 지정되어 있다.</li>
+</ul>
+
+<li>사용자 정의 객체 : 필요할 때마다 사용자가 만들어 사용하는 객체</li>
+<h3>사용자 정의 객체 만들기</h3>
+
+객체는 여러 개의 프로퍼티로 구성되어 있는데, 프로퍼티는 ‘키 : 값’ 형태를 가지고 있다.<br><br>
+
+<b>키와 값</b><br>
+객체를 만들 때는 객체 이름 다음에 중괄호({})를 사용하고,<br>
+중괄호 사이에 ‘키 : 값’ 형식으로 필요한 프로퍼티를 나열한다.<br>
+객체의 키는 문자열이나 숫자, 심벌만 사용할 수 있고,<br>
+각 프로퍼티는 쉼표(,)를 넣어 구분한다.<br><br>
+
+<div style="background-color: #f0f0f0; padding: 10px; display: inline-block;">
+객체명 {<br>
+&nbsp;&nbsp;키1 : 값1,<br>
+&nbsp;&nbsp;키2 : 값2,<br>
+&nbsp;&nbsp;......<br>
+}
+</div>
+<p>객체 선언하기</p>
+
+(예) 책 정보를 담고 있는 book1<br><br>
+
+<div style="background-color: #f0f0f0; padding: 10px; display: inline-block;">
+let book1 = {<br>
+&nbsp;&nbsp;title : "웹 표준의 정석",<br>
+&nbsp;&nbsp;pages : 648<br>
+}<br>
+book1&nbsp;&nbsp;// { title : "웹 표준의 정석", pages : 648 }
+</div><br><br>
+
+<ul>
+  <li><b>프로퍼티</b>: 객체의 속성을 나타내는 항목</li>
+  <li><b>key (키)</b>: title, pages와 같은 이름</li>
+  <li><b>value (값)</b>: "웹 표준의 정석", 648과 같은 데이터</li>
+</ul>
+<p>객체 프로퍼티에 접근하기</p>
+
+점 표기법이나 괄호 표기법 사용<br>
+괄호 표기법을 사용할 경우 프로퍼티 키의 문자열에는 큰따옴표를 붙여야 한다<br><br>
+
+<div style="background-color: #f0f0f0; padding: 10px; display: inline-block;">
+book1.title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 점 표기법. 프로퍼티키에 큰따옴표 없음<br>
+book1["title"]&nbsp;&nbsp;&nbsp;&nbsp;// 괄호 표기법. 프로퍼티키에 큰따옴표 있음
+</div><br><br>
+
+<p>객체 프로퍼티 수정하기 및 추가하기</p>
+
+<div style="background-color: #e0e0e0; padding: 6px; display: inline-block; font-family: monospace;">
+객체명.키 = 값
+</div><br><br>
+
+<div style="background-color: #f0f0f0; padding: 10px; display: inline-block;">
+book1.pages = 50<br>
+book1&nbsp;&nbsp;// { title: "웹 표준의 정석", pages: 50 }
+</div><br><br>
+
+<div style="background-color: #f0f0f0; padding: 10px; display: inline-block;">
+book1.author = "고경희"<br>
+book1&nbsp;&nbsp;// { title: "웹 표준의 정석", pages: 50, author: "고경희" }
+</div>
+<p>빈 객체를 만든 후 프로퍼티를 추가하면서 객체를 만들 수 있음</p>
+
+<p><b>빈 객체 만들기</b></p>
+<div style="background-color: #f0f0f0; padding: 8px; display: inline-block;">
+let book2 = {}&nbsp;&nbsp;&nbsp;&nbsp;또는&nbsp;&nbsp;&nbsp;&nbsp;let book2 = new Object()
+</div><br><br>
+
+<p><b>프로퍼티 추가하기</b></p>
+<div style="background-color: #f0f0f0; padding: 10px; display: inline-block;">
+book2.title = "Javascript"<br>
+book2.pages = 500<br>
+book2.author = "고경희"<br>
+book2<br>
+// { title: "Javascript", pages: 500, author: "고경희" }
+</div><br><br>
+
+<p><b>프로퍼티 삭제하기</b></p>
+<div style="background-color: #f0f0f0; padding: 10px; display: inline-block;">
+delete book2.pages<br>
+book2<br>
+// { title: "Javascript", author: "고경희" }
+</div>
+<p>객체 중첩하기</p>
+
+객체 안에 또다른 객체를 넣을 수 있다. – 둘 이상의 객체 중첩<br><br>
+
+<div style="background-color: #f0f0f0; padding: 12px; width: fit-content; font-family: monospace;">
+let student = {<br>
+&nbsp;&nbsp;name : "Doremi",<br>
+&nbsp;&nbsp;score : {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;history : 85,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;science : 94,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;average : function () {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (this.history + this.science) / 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}<br><br>
+
+student.score.history&nbsp;&nbsp;// 85<br>
+student.score.average()&nbsp;&nbsp;// 89.5
+</div>
+<p>객체 메서드 정의하기</p>
+
+<li>메서드(method) : 객체의 프로퍼티 중 객체의 동작을 지정하는 함수</li>
+<li>메서드를 선언하는 방법은 일반적인 함수를 선언하는 것과 비슷하다.</li><br>
+
+<div style="background-color: #f0f0f0; padding: 10px; width: fit-content; font-family: monospace;">
+메서드명 : function() {<br>
+&nbsp;&nbsp;......<br>
+}
+</div><br>
+
+<div style="display: flex; gap: 20px; font-family: monospace;">
+  <div style="background-color: #f0f0f0; padding: 12px;">
+    let book3 = {<br>
+    &nbsp;&nbsp;title : "점프 투 파이썬",<br>
+    &nbsp;&nbsp;pages : 360,<br>
+    &nbsp;&nbsp;<span style="color: red;">buy : function () {</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;console.log("이 책을 구입했습니다.");<br>
+    &nbsp;&nbsp;}<br>
+    }
+  </div>
+
+  <div style="background-color: #f0f0f0; padding: 12px;">
+    <b>ES6</b><br><br>
+    let book3 = {<br>
+    &nbsp;&nbsp;title : "점프 투 파이썬",<br>
+    &nbsp;&nbsp;pages : 360,<br>
+    &nbsp;&nbsp;<span style="color: red;">buy () {</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;console.log("이 책을 구입했습니다.");<br>
+    &nbsp;&nbsp;}<br>
+    }
+  </div>
+</div>
+<p>메서드와 this</p>
+
+this: 메서드에서 객체 안에 있는 프로퍼티값을 사용할 때, 현재 객체를 가리키는 예약어<br><br>
+
+<div style="background-color: #f0f0f0; padding: 12px; font-family: monospace; width: fit-content;">
+let book4 = {<br>
+&nbsp;&nbsp;title : "Javascript",<br>
+&nbsp;&nbsp;pages : 500,<br>
+&nbsp;&nbsp;author : "고경희",<br>
+&nbsp;&nbsp;done : false,<br>
+&nbsp;&nbsp;finish : function() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;">this.done</span> === false ? console.log("읽는 중") : console.log("완독");<br>
+&nbsp;&nbsp;}<br>
+}<br><br>
+book4.finish() // "읽는 중"
+</div>
+<p>객체 복사하기</p>
+
+<b>원시 유형 자료 복사</b><br>
+<li>‘값’을 복사한다</li>
+<li>복사한 자료의 값을 변경 → 원래 자료의 값은 그대로</li>
+<br>
+<img src="images/객체복사.png" alt="원시 유형 복사 설명"><br><br>
+
+<b>객체 복사</b><br>
+<li>‘주소’를 복사한다</li>
+<li>복사한 자료의 값 변경 → 원래 자료의 값도 바뀐다</li>
+<br>
+<img src="images/객체복사2.png" alt="객체 주소 복사 설명">
