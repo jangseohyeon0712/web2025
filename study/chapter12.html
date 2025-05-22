@@ -197,3 +197,62 @@ JSON
 <div style="background-color:#f0f0f0; padding:8px; width:250px; font-family:monospace;">
 { "full_name" : "도레미" }
 </div>
+<p>JSON의 ‘값’</p>
+
+객체에서는 ‘값’ 부분에 함수(메서드)도 사용할 수 있지만<br>
+<b>JSON의 ‘값’에는 숫자, 문자열, boolean, null, 배열만 사용할 수 있고, 함수는 사용할 수 없다.</b>
+
+<br><br>
+
+<li><b>숫자형:</b> JSON에서는 정수와 실수 모두 사용할 수 있지만, 8진수나 16진수를 사용한 표기법은 지원하지 않는다.</li>
+<li><b>문자열:</b> JSON 문자열은 항상 큰따옴표(" ")로 묶어야 한다.</li>
+<li><b>논릿값과 null:</b> true/false 값을 가지는 논리형을 사용할 수도 있고 null 유형도 사용할 수 있다.</li>
+<li><b>문자열, 배열:</b> 문자열이나 배열을 값으로 사용할 수 있다. JSON 문자열 안에 또다른 JSON 문자열을 넣을 수도 있다. JSON에서 배열을 사용할 때에도 일반 배열과 마찬가지로 대괄호([ ])를 사용한다.</li>
+<p>JSON 문자열</p>
+
+JSON 문자열 안에 또 다른 JSON 문자열을 지정할 수 있다. <br>
+<br>
+<span style="color:gray">예) 신청한 과목의 이름과 주당 시간을 새로운 JSON 문자열로 사용</span>
+
+<div style="background-color:#f4f4f4; padding:12px; border:1px solid #ccc; width:340px; font-family:monospace;">
+{<br>
+&nbsp;&nbsp;"name" : "도레미",<br>
+&nbsp;&nbsp;"major" : "컴퓨터 공학",<br>
+&nbsp;&nbsp;"grade" : 2,<br>
+&nbsp;&nbsp;"course" : {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"title" : "웹 기초",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"timePerWeek" : 3<br>
+&nbsp;&nbsp;}<br>
+}
+</div>
+<p>객체를 JSON 형식으로 변환하기</p>
+
+클라이언트에서 정보를 처리할 때는 객체를 사용한다. <br>
+객체를 JSON 형식으로 저장하거나, JSON 형식을 요구하는 서버로 넘기려면 <br>
+→ 객체를 JSON 형식으로 변환해야 한다. 직렬화(<i>stringify</i>)라고 한다. <br><br>
+
+<div style="background-color:#f0f0f0; padding:8px; display:inline-block;">
+  JSON.stringify(<i>객체</i>)
+</div>
+
+<div style="background-color:#f9f9f9; border:1px solid #ccc; padding:10px; margin-top:10px; font-family:monospace; width:fit-content;">
+let student = {name:"도레미", major:"컴퓨터 공학", grade:2}<br><br>
+let json = JSON.stringify(student)
+</div>
+<p>일반적인 서버와 클라이언트의 통신</p>
+
+1) 웹 브라우저 화면에 ‘www.daum.net’을 입력하고 [Enter]를 누르면 인터넷 회선을 통해 서버 컴퓨터로 접속한다.<br>
+2) 서버 컴퓨터에서 해당 페이지를 찾아낸 후 내용을 다운로드해서 웹 브라우저 화면에 보여준다.<br>
+3) 메뉴 중에서 '게임'을 클릭하면 현재 화면이 완전히 사라지고 게임과 관련된 페이지로 이동한다.<br><br>
+
+메뉴나 링크를 클릭하면 현재 페이지를 완전히 지우고 새로운 화면을 가져와 보여주는 방식
+
+<br><br>
+
+<p>비동기적으로 통신한다면</p>
+
+페이스북이나 트위터 같은 SNS 사이트를 사용할 때에도 화면을 스크롤하면 사이트 전체가 새로 로딩되는 것이 아니라<br>
+기존 내용은 그대로 둔 상태에서 다음 내용만 가져와서 보여준다..<br><br>
+
+이렇게 웹 문서 전체를 다시 불러오지 않고 일부분만 가져와 실행할 수 있는 것은<br>
+<b>AJAX(Asynchronous Javascript And XML)</b> 기능 때문
