@@ -251,4 +251,58 @@ book4.finish() // "읽는 중"
     </td>
   </tr>
 </table>
+<p>for...in 사용하기</p>
+
+<table border="1" cellspacing="0" cellpadding="8">
+  <tr>
+    <th>항목</th>
+    <th>내용</th>
+  </tr>
+  <tr>
+    <td>기본 문법</td>
+    <td>
+      <div style="background:#f4f4f4;padding:8px;">
+        for (변수 in 객체) { ... }
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>특징</td>
+    <td>객체의 **키(key)** 를 순회할 때 사용</td>
+  </tr>
+  <tr>
+    <td>예시 객체</td>
+    <td>
+      <div style="background:#f4f4f4;padding:8px;">
+        let bag = {<br>
+        &nbsp;&nbsp;type: "backpack",<br>
+        &nbsp;&nbsp;color: "blue",<br>
+        &nbsp;&nbsp;size: 15<br>
+        }
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>키만 출력</td>
+    <td>
+      <div style="background:#f4f4f4;padding:8px;">
+        for (key in bag) {<br>
+        &nbsp;&nbsp;console.log(`${key}`);<br>
+        }<br>
+        // 출력: type, color, size
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>키와 값 출력</td>
+    <td>
+      <div style="background:#f4f4f4;padding:8px;">
+        for (key in bag) {<br>
+        &nbsp;&nbsp;console.log(`${key} : ${bag[key]}`);<br>
+        }<br>
+        // 출력: type : backpack, color : blue, size : 15
+      </div>
+    </td>
+  </tr>
+</table>
 
