@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const styleSelector = document.querySelector("#style-selector");
   const styleCardsContainer = document.querySelector(".style-cards");
@@ -12,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const gallery = document.querySelector("#gallery");
 
   let styles = [];
+  let currentSlideIndex = 0;
+  let currentGallery = [];
 
   fetch("data.json")
     .then((res) => res.json())
@@ -38,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     styleName.textContent = style.name;
     styleDesc.textContent = style.desc;
 
-    // 원단 리스트 초기화 및 삽입
     fabricList.innerHTML = "";
     style.fabrics.forEach(fabric => {
       const li = document.createElement("li");
@@ -46,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
       fabricList.appendChild(li);
     });
 
-    // 브랜드 리스트 초기화 및 링크 삽입
     brandList.innerHTML = "";
     style.brands.forEach(brand => {
       const li = document.createElement("li");
@@ -58,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
       brandList.appendChild(li);
     });
 
-    // 변천사 초기화
     historyTimeline.innerHTML = "";
     style.history.forEach(h => {
       const div = document.createElement("div");
@@ -66,17 +67,46 @@ document.addEventListener("DOMContentLoaded", () => {
       historyTimeline.appendChild(div);
     });
 
-    // 갤러리 초기화
-    gallery.innerHTML = "";
-    style.gallery.forEach(imgUrl => {
-      const img = document.createElement("img");
-      img.src = imgUrl;
-      img.alt = `${style.name} look`;
-      gallery.appendChild(img);
-    });
+    // 슬라이드용 갤러리
+    currentGallery = style.gallery;
+    currentSlideIndex = 0;
+    renderGallery();
 
     styleSelector.classList.add("hidden");
     styleDetail.classList.remove("hidden");
+  }
+
+  function renderGallery() {
+    gallery.innerHTML = "";
+    const wrapper = document.createElement("div");
+    wrapper.className = "slider-wrapper";
+
+    const leftBtn = document.createElement("button");
+    leftBtn.textContent = "←";
+    leftBtn.className = "slide-arrow";
+    leftBtn.onclick = () => {
+      currentSlideIndex = (currentSlideIndex - 1 + currentGallery.length) % currentGallery.length;
+      renderGallery();
+    };
+
+    const rightBtn = document.createElement("button");
+    rightBtn.textContent = "→";
+    rightBtn.className = "slide-arrow";
+    rightBtn.onclick = () => {
+      currentSlideIndex = (currentSlideIndex + 1) % currentGallery.length;
+      renderGallery();
+    };
+
+    const img = document.createElement("img");
+    img.src = currentGallery[currentSlideIndex];
+    img.alt = "스타일 이미지";
+    img.className = "slide-image";
+
+    wrapper.appendChild(leftBtn);
+    wrapper.appendChild(img);
+    wrapper.appendChild(rightBtn);
+
+    gallery.appendChild(wrapper);
   }
 
   function getBrandUrl(brand) {
