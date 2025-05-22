@@ -26,10 +26,11 @@
       { "year": "2000s", "event": "Y2K 트렌드 속 복고적 요소 재조명" },
       { "year": "2020s", "event": "Z세대 사이에서 다시 유행" }
     ],
-    "gallery": [
-      "https://via.placeholder.com/300x200?text=Preppy+Look+1",
-      "https://via.placeholder.com/300x200?text=Preppy+Look+2"
-    ]
+   "gallery": [
+    "images/프레피1.png",
+  "images/프레피2.png",
+  "images/프레피3.png"
+  ]
   },
   {
     "name": "미니멀",
@@ -42,9 +43,10 @@
       { "year": "2020s", "event": "지속가능성과 연결되며 재조명" }
     ],
     "gallery": [
-      "https://via.placeholder.com/300x200?text=Minimal+Look+1",
-      "https://via.placeholder.com/300x200?text=Minimal+Look+2"
-    ]
+    "images/미니멀1.png",
+  "images/미니멀2.png",
+  "images/미니멀멀3.png"
+  ]
   },
   {
   "name": "워크웨어",
@@ -58,8 +60,9 @@
     { "year": "2020s", "event": "밀리터리, 아웃도어와 믹스되어 재해석" }
   ],
   "gallery": [
-    "https://via.placeholder.com/300x200?text=Workwear+Look+1",
-    "https://via.placeholder.com/300x200?text=Workwear+Look+2"
+    "images/워크웨어1.png",
+  "images/워크웨어2.png",
+  "images/워크웨어3.png"
   ]
 },
   {
@@ -73,8 +76,9 @@
     { "year": "2020s", "event": "유틸리티 & 아웃도어 감성과 융합되어 인기 상승" }
   ],
   "gallery": [
-    "https://via.placeholder.com/300x200?text=Techwear+Look+1",
-    "https://via.placeholder.com/300x200?text=Techwear+Look+2"
+    "images/워크웨어1.png",
+  "images/워크웨어2.png",
+  "images/워크웨어어3.png"
   ]
 },
   {
@@ -88,8 +92,9 @@
     { "year": "2020s", "event": "시티보이와 결합해 재조명됨" }
   ],
   "gallery": [
-    "https://via.placeholder.com/300x200?text=Amekaji+Look+1",
-    "https://via.placeholder.com/300x200?text=Amekaji+Look+2"
+    "images/아메카지1.png",
+  "images/아메카지2.png",
+  "images/아메카지3.png"
   ]
 },
   {
@@ -103,8 +108,9 @@
     { "year": "2020s", "event": "Z세대 SNS 통해 글로벌하게 인기 상승" }
   ],
   "gallery": [
-    "https://via.placeholder.com/300x200?text=Cityboy+Look+1",
-    "https://via.placeholder.com/300x200?text=Cityboy+Look+2"
+    "images/시티보이1.png",
+  "images/시티보이2.png",
+  "images/시티보이이3.png"
   ]
 },
   {
@@ -118,8 +124,9 @@
     { "year": "2023s", "event": "하이엔드 브랜드들과 협업하며 패션계 정착" }
   ],
   "gallery": [
-    "https://via.placeholder.com/300x200?text=Gorpcore+Look+1",
-    "https://via.placeholder.com/300x200?text=Gorpcore+Look+2"
+    "images/고프코어1.png",
+  "images/고프코어2.png",
+  "images/고프코어어3.png"
   ]
 },
   {
@@ -133,8 +140,9 @@
     { "year": "2023s", "event": "Z세대와 알파세대의 정체성 표현 방식으로 정착" }
   ],
   "gallery": [
-    "https://via.placeholder.com/300x200?text=Genderless+Look+1",
-    "https://via.placeholder.com/300x200?text=Genderless+Look+2"
+    "images/젠더리스1.png",
+  "images/젠더리스2.png",
+  "images/젠더리스3.png"
   ]
 },
   {
@@ -148,8 +156,9 @@
     { "year": "2020s", "event": "하이패션과 협업하며 메인스트림으로 진입" }
   ],
   "gallery": [
-    "https://via.placeholder.com/300x200?text=Street+Look+1",
-    "https://via.placeholder.com/300x200?text=Street+Look+2"
+    "images/스트릿1.png",
+  "images/스트릿2.png",
+  "images/스트릿릿3.png"
   ]
 },
   {
@@ -163,8 +172,9 @@
     { "year": "2020s", "event": "MZ세대의 자기표현 수단으로 주류에 등장" }
   ],
   "gallery": [
-    "https://via.placeholder.com/300x200?text=Kitsch+Look+1",
-    "https://via.placeholder.com/300x200?text=Kitsch+Look+2"
+    "images/키치1.png",
+  "images/키치2.png",
+  "images/키치3.png"
   ]
 },
   {
@@ -177,9 +187,10 @@
     { "year": "1980s", "event": "하위문화의 아이콘으로 자리잡음" },
     { "year": "2020s", "event": "하이패션과 결합되어 재조명됨" }
   ],
-  "gallery": [
-    "https://via.placeholder.com/300x200?text=Punk+Look+1",
-    "https://via.placeholder.com/300x200?text=Punk+Look+2"
+ "gallery": [
+    "images/펑크1.png",
+  "images/펑크2.png",
+  "images/펑크3.png"
   ]
 }
 ]
