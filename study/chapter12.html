@@ -474,3 +474,43 @@ try {
 }
 ...
 </script>
+<p>throw()</p>
+
+사용자가 직접 예외를 만들고 오류 메시지를 지정한다.  
+<span style="background-color:#fcefe6">기본형</span> throw <i>메시지</i>  
+<span style="background-color:#fcefe6">기본형</span> throw new Error(<i>메시지</i>)
+
+<br><br>
+(예) JSON 자료에 ‘이름’ 정보가 없는데 ‘이름’ 정보를 가져오려고 했을 때 오류 메시지를 표시하고 싶다면
+
+<pre>
+&lt;script&gt;
+let json = '{"grade": 3, "age": 25}';
+
+try {
+  let user = JSON.parse(json);
+  if (!user.name) {
+    <span style="color:red">throw "사용자 이름이 없습니다.";</span>
+  }
+} catch (err) {
+  console.error(err);
+}
+&lt;/script&gt;
+</pre>
+
+또는
+
+<pre>
+&lt;script&gt;
+let json = '{"grade": 3, "age": 25}';
+
+try {
+  let user = JSON.parse(json);
+  if (!user.name) {
+    <span style="color:red">throw new Error("사용자 이름이 없습니다.");</span>
+  }
+} catch (err) {
+  console.error(err);
+}
+&lt;/script&gt;
+</pre>
