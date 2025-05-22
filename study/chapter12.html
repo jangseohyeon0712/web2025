@@ -25,3 +25,14 @@ HTTP/HTTPS
 <b>서버에서 입력한 사이트를 찾아서 클라이언트로 보낼 때</b><br>
 <li>응답 메시지를 보내는 시간, 메시지를 클라이언트에 어떻게 표시할지 등의 정보는 ‘응답 헤더(<span style="color:gray">response header</span>)’에 담기고</li>
 <li>이미지나 텍스트 같은 실제 사이트 내용은 ‘응답 본문(<span style="color:gray">response body</span>)’에 담겨서 전달된다.</li>
+<p>요청 헤더 예시</p>
+
+<img src="images/요청헤더.png"><br>
+
+<b>요청 헤더(Request Header)</b><br>
+웹 브라우저(클라이언트)에서 서버에 요청을 보낼 때 함께 전송되는 정보들이다. 예를 들어 위 이미지처럼:<br>
+<li><b>요청 메서드(Method)</b>: <span style="color:red">GET</span></li>
+<li><b>요청 URL</b>: https://www.google.com/</li>
+<li><b>요청 헤더 항목들</b>: host, user-agent, accept, cookie 등</li>
+<br>
+이런 헤더 정보는 서버가 어떤 데이터를, 어떤 형식으로 반환할지 판단하는 데 사용된다.
