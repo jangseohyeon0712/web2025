@@ -37,13 +37,20 @@ function showDetail(index) {
     fabricList.appendChild(li);
   });
 
-  const brandList = document.getElementById("brand-list");
-  brandList.innerHTML = "";
-  style.brands.forEach(b => {
-    const li = document.createElement("li");
-    li.textContent = b;
-    brandList.appendChild(li);
-  });
+ style.brands.forEach(brand => {
+  const li = document.createElement("li");
+  if (brandLinks[brand]) {
+    const a = document.createElement("a");
+    a.href = brandLinks[brand];
+    a.textContent = brand;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    li.appendChild(a);
+  } else {
+    li.textContent = brand;
+  }
+  brandList.appendChild(li);
+});
 
   const timeline = document.getElementById("history-timeline");
   timeline.innerHTML = "";
