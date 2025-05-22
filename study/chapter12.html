@@ -297,3 +297,121 @@ XMLHttpRequest 객체를 만들면 서버로 자료를 요청하고 자료를 �
 
 <img src="images/xmlhttp.png" style="width: 100%; max-width: 800px;">
 
+<p>open() – 어떤 자료를 가져올지 지정</p>
+
+서버로 자료를 요청할 때 어떤 방식을 사용할지, 어떤 자료가 필요한지, 그리고 비동기 처리 여부를 지정한다.
+
+<div style="background-color: #eee; display: inline-block; padding: 5px 10px; margin: 8px 0;">
+  open(방식, 자료 위치, 비동기 여부)
+</div>
+
+<ul>
+  <li><b>방식:</b> HTTP 요청 방식을 지정한다. <b>GET</b>이나 <b>POST</b> 중 하나이고 대문자로 사용해야 한다.</li>
+  <li><b>자료 위치:</b> 요청할 서버의 URL을 지정한다.</li>
+  <li><b>비동기 여부:</b> 비동기 요청인지, 동기 요청인지의 여부를 판단하는 항목.<br>
+    <span style="color: blue;">true</span> – 비동기, <span style="color: blue;">false</span> – 동기<br>
+    기본적으로 비동기 처리하므로 따로 지정하지 않으면 비동기로 처리한다.
+  </li>
+</ul>
+<p>send() – 서버로 요청 전송</p>
+
+사용자 요청을 서버로 보내는 메서드
+
+<div style="background-color: #eee; display: inline-block; padding: 5px 10px; margin: 8px 0;">
+  send(내용)
+</div>
+
+<ul>
+  <li><b>send()</b> 괄호 안에 들어가는 매개변수는 옵션이다.</li>
+  <li><b>POST</b> 방식을 사용할 경우에는 서버로 넘길 내용을 매개변수로 넘겨주고,</li>
+  <li><b>GET</b> 방식을 사용할 경우에는 <code>null</code>로 넘기거나 빈 상태로 남겨 둔다.</li>
+</ul>
+
+(예) GET 방식을 이용해 <span style="color: blue;">test.txt</span> 파일에 비동기 방식으로 연결하려면
+
+<div style="background-color: #eee; padding: 10px; width: fit-content; font-family: monospace;">
+  xhr.open("GET", "test.txt", true);<br>
+  xhr.send();
+</div>
+<p>JSON 가져오기 연습</p>
+
+<ul>
+  <li>JSON 자료는 기본적으로 서버에 저장되어 있다.</li>
+  <li>연습을 위해 사용자 컴퓨터를 서버로 만들어 주는 VS Code의 ‘라이브 서버’를 사용한다.</li>
+</ul>
+
+12 폴더에는 <code>student.json</code> 파일이 미리 만들어져 있다.
+
+<div style="background-color: #eee; font-family: monospace; padding: 10px; margin-top: 10px; width: fit-content;">
+{<br>
+&nbsp;&nbsp;"name" : "도레미",<br>
+&nbsp;&nbsp;"major" : "컴퓨터 공학",<br>
+&nbsp;&nbsp;"grade" : 2<br>
+}
+</div>
+<p>readyState 프로퍼티</p>
+
+readyState 프로퍼티는 XMLHttpRequest 객체의 현재 상태를 나타낸다.<br>
+객체에서 서버로 자료를 요청했는지, 자료가 도착했는지, 사용할 준비가 되었는지 등을 알 수 있다.
+
+<table border="1" cellpadding="8" style="border-collapse: collapse; margin-top: 10px;">
+  <tr>
+    <th>상태</th>
+    <th>기능</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>아직 아무 요청도 하지 않은 상태입니다.</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>서버로 자료를 요청하고 성공한 상태입니다.</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>서버 요청에 대한 응답으로 헤더가 도착한 상태입니다.</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>서버에서 자료들이 로딩 중인 상태입니다.</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>자료 처리가 끝나서 프로그램에서 사용할 수 있는 상태입니다.</td>
+  </tr>
+</table>
+
+<div style="margin-top: 10px; color: #6495ED;">
+0 → 1 → 2 → 3 → 4 →<br>
+0 → 1 …처럼 순서대로 반복한다
+</div>
+<p>readyState와 state를 어디에 쓰나</p>
+
+readyState 값이 바뀔 때마다 <span style="color:blue;">readystatechange</span> 이벤트가 발생한다.<br>
+(예) 요청이 성공적으로 끝났을 때(즉, readyState 값이 4일 때) 실행할 명령은
+
+<div style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; width: fit-content; font-family: monospace; margin-top: 10px;">
+xhr.onreadystatechange = function() {<br>
+&nbsp;&nbsp;if (xhr.readyState == 4) { &nbsp;&nbsp;<span style="color:gray">// 요청이 성공했다면</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;......<br>
+&nbsp;&nbsp;}<br>
+}
+</div>
+
+<br>
+
+<div style="color: cornflowerblue;">
+→ readystatechange 이벤트가 발생했을 때 실행할 함수를 연결한 후<br>
+→ 함수 안에서 readyState 값이 4일 경우에 명령을 처리합니다
+</div>
+readyState 값은 요청이 성공했는지를 알려주기 때문에 만약 서버에 없는 파일을 요청하더라도 readyState 값은 4.<br>
+요청에 성공하고 서버에서 필요한 파일을 가져왔는지 체크하려면<br>
+readyState 프로퍼티 값이 4이면서 <b>status</b> 프로퍼티 값이 200일 경우
+
+<div style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; width: fit-content; font-family: monospace; margin-top: 10px;">
+xhr.onreadystatechange = function() {<br>
+&nbsp;&nbsp;if (xhr.readyState === 4 && xhr.status === 200) { &nbsp;&nbsp;<span style="color:gray">// 자료가 있고 가져오는 데 성공했다면</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;......<br>
+&nbsp;&nbsp;}<br>
+}
+</div>
