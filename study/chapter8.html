@@ -656,4 +656,42 @@ new Date("Thu Aug 17 2017 15:00:41 GMT+0900 (대한민국 표준시)")
     </tr>
   </tbody>
 </table>
+<p>[참고] 자바스크립트 시간 단위</p>
+
+자바스크립트에서 시간 정보를 계산하기 위해서 밀리초를 사용한다.<br>
+기존 시간 단위와 밀리초간의 변환<br><br>
+
+<ul>
+  <li>1밀리초 = 1/1000초</li>
+  <li>1초 = 1000밀리초</li>
+  <li>1분 = 60초 (60 * 1000 = 60,000밀리초)</li>
+  <li>1시간 = 60분 (60 * 60 * 1000 = 3,600,000밀리초)</li>
+  <li>1일 = 24시간 (24 * 60 * 60 * 1000 = 86,400,000밀리초)</li>
+</ul>
+<p>[실습] 만보 걷기, 오늘까지 며칠째일까</p>
+
+&lt;미리 생각해 보기&gt;<br><br>
+
+<ul>
+  <li>특정한 날짜를 프로그램에 사용하기 위해 어떻게 인스턴스를 만들까</li>
+  <li>두 날짜 사이에 흐른 시간을 계산하려면 어떤 메서드를 사용할까</li>
+  <li>밀리초를 날짜 수로 어떻게 바꿀까</li>
+</ul>
+
+<br>
+
+두 날짜 사이에 얼마나 시간이 흘렀는지 계산할 때는 <b>getTime()</b> 메서드를 사용한다.<br><br>
+
+<div style="background-color:#f5f5f5; padding:16px; font-family:monospace; font-size:15px; width:fit-content; border:1px solid #ccc; white-space:pre;">
+today = new Date()
+passedTime = today.getTime(today.toDateString())
+</div>
+
+<br>
+
+결과값이 밀리초이기 때문에 날짜 수로 변환하려면<br><br>
+
+<div style="background-color:#f5f5f5; padding:16px; font-family:monospace; font-size:15px; width:fit-content; border:1px solid #ccc; white-space:pre;">
+passedDay = Math.round(passedTime / (1000 * 60 * 60 * 24))
+</div>
 
