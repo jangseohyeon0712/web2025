@@ -72,3 +72,51 @@ backButton.addEventListener("click", () => {
 });
 
 window.addEventListener("DOMContentLoaded", loadData);
+const brandLinks = {
+  "UNIQLO": "https://www.uniqlo.com",
+  "ZARA": "https://www.zara.com",
+  "Muji": "https://www.muji.com",
+  "Gap": "https://www.gap.com",
+  "Lacoste": "https://www.lacoste.com",
+  "Ralph Lauren": "https://www.ralphlauren.com",
+  "COS": "https://www.cos.com",
+  "The Row": "https://therow.com",
+  "Uniqlo U": "https://www.uniqlo.com/uniqlo-u",
+  "Carhartt": "https://www.carhartt.com",
+  "Dickies": "https://www.dickies.com",
+  "ACRONYM": "https://acrnm.com",
+  "Nike ACG": "https://www.nike.com/acg",
+  "Stone Island Shadow Project": "https://www.stoneisland.com",
+  "Guerrilla Group": "https://www.guerrillagroup.co",
+  "Visvim": "https://www.visvim.tv",
+  "Kapital": "https://www.kapital.jp",
+  "The North Face": "https://www.thenorthface.com",
+  "Arc'teryx": "https://arcteryx.com",
+  "Patagonia": "https://www.patagonia.com",
+  "Telfar": "https://shop.telfar.net",
+  "JW Anderson": "https://www.jwanderson.com",
+  "Comme des Garçons": "https://www.comme-des-garcons.com",
+  "Supreme": "https://www.supremenewyork.com",
+  "Stüssy": "https://www.stussy.com",
+  "A Bathing Ape": "https://bape.com",
+  "Palace": "https://www.palaceskateboards.com",
+  "Moschino": "https://www.moschino.com",
+  "Lazy Oaf": "https://www.lazyoaf.com",
+  "Vivienne Westwood": "https://www.viviennewestwood.com",
+  "Tripp NYC": "https://trippnyc.com"
+};
+const brandList = document.getElementById("brand-list");
+brandList.innerHTML = "";
+style.brands.forEach(brand => {
+  const li = document.createElement("li");
+  if (brandLinks[brand]) {
+    const a = document.createElement("a");
+    a.href = brandLinks[brand];
+    a.textContent = brand;
+    a.target = "_blank"; // 새 창에서 열기
+    li.appendChild(a);
+  } else {
+    li.textContent = brand; // 링크가 없는 경우
+  }
+  brandList.appendChild(li);
+});
