@@ -461,3 +461,33 @@ btnt.addEventListener("click", function() {
 → <b>Date</b> 객체를 사용하려면 자바스크립트의 <b>Date</b> 객체를 똑같이 만들어서 그것을 사용한다.<br>
 → 이렇게 내장 객체와 똑같은 모양으로 찍어낸 객체를 인스턴스(<b>instance</b>) 객체라고 한다.
 
+<p>Date 객체의 인스턴스 만들기</p>
+
+1) 현재 날짜를 기준으로 인스턴스 만들기<br><br>
+
+<span style="background-color:#eee; padding:6px 12px; display:inline-block;">new Date()</span><br><br>
+
+<div style="border:1px solid #000; padding:10px; width:fit-content; font-family:monospace; font-size:15px;">
+let today = new Date()<br>
+today
+</div>
+
+<div style="border:1px solid #ccc; padding:12px; margin-top:10px; width:fit-content; font-family:monospace; font-size:14px;">
+<span style="color:#c33;">&gt; let today = <b>new</b> Date()</span><br>
+<span style="color:#999;">&lt; undefined</span><br>
+<span style="color:#c33;">&gt; console.log(today)</span><br>
+Thu Jul 29 2021 15:59:15 GMT+0900 (한국 표준시)<br>
+<span style="color:#999;">&lt; undefined</span>
+</div><br>
+
+<b>today</b> 변수에는 <b>Date</b> 객체의 인스턴스가 저장되었기 때문에<br>
+이제부터 <b>today</b> 변수는 <b>Date</b> 객체의 프로퍼티와 메서드를 사용할 수 있다<br><br>
+
+<div style="border:1px solid #000; padding:10px; width:fit-content; font-family:monospace; font-size:15px;">
+today.getDate()
+</div>
+
+<div style="border:1px solid #ccc; padding:12px; margin-top:10px; width:fit-content; font-family:monospace; font-size:14px;">
+<span style="color:#c33;">&gt; today.getDate()</span><br>
+29
+</div>
