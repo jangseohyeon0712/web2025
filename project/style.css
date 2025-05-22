@@ -138,25 +138,4 @@ footer {
 
 .prev-btn { left: 0; }
 .next-btn { right: 0; }
-.slider-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 10px;
-}
 
-.slide-arrow {
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  user-select: none;
-}
-
-.slide-image {
-  max-width: 300px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-}
