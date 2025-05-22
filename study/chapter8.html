@@ -463,7 +463,7 @@ btnt.addEventListener("click", function() {
 
 <p>Date 객체의 인스턴스 만들기</p>
 
-1) 현재 날짜를 기준으로 인스턴스 만들기<br><br>
+<p> 1) 현재 날짜를 기준으로 인스턴스 만들기</p><br><br>
 
 <span style="background-color:#eee; padding:6px 12px; display:inline-block;">new Date()</span><br><br>
 
@@ -491,3 +491,18 @@ today.getDate()
 <span style="color:#c33;">&gt; today.getDate()</span><br>
 29
 </div>
+<p>2) 특정 날짜를 기준으로 인스턴스 만들기</p>
+
+<b>Date</b> 다음의 괄호 안에 날짜 정보 입력<br>
+(예) ‘2025년 2월 25일’이라는 날짜 정보를 객체에 저장한 후 프로그램에 사용하려면 다음과 같이 입력한다.<br><br>
+
+<div style="border:1px solid #000; padding:8px 12px; width:fit-content; font-family:monospace; font-size:15px;">
+new Date("2025-02-25") &nbsp;&nbsp;&nbsp;// 2025년 2월 25일
+</div><br>
+
+시간 정보까지 함께 지정하려면 날짜 다음에 대문자 <b>T</b>를 추가한 후 그 뒤에 시간을 입력한다.<br><br>
+
+<div style="border:1px solid #000; padding:8px 12px; width:fit-content; font-family:monospace; font-size:15px;">
+new Date("2025-02-25T18:00:00")
+</div>
+
