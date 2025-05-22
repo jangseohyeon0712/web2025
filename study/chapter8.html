@@ -706,4 +706,18 @@ passedDay = Math.round(passedTime / (1000 * 60 * 60 * 24))
   <li>두 날짜 사이의 차이를 계산한다</li>
   <li>밀리초를 날짜 수로 변환한다</li>
 </ol>
+<p>[실습] 만보 걷기, 오늘까지 며칠째일까</p>
+
+js\#walking.js 파일을 만들고 작성<br><br>
+
+<div style="background-color:#f5f5f5; padding:16px; font-family:monospace; font-size:15px; width:fit-content; border:1px solid #ccc; white-space:pre;">
+const result = document.querySelector("#result");   // 결과값을 표시할 부분
+const firstDay = new Date("2021-07-01");            // 시작한 날
+const today = new Date();                           // 오늘
+
+let passedTime = today.getTime() - firstDay.getTime();  // 시작한 날부터 오늘까지 흐른 시간(밀리초)
+let passedDay = Math.round(passedTime / (1000 * 60 * 60 * 24));  // 밀리초를 일(date) 수로 계산
+
+result.innerText = passedDay;
+</div>
 
