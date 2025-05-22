@@ -317,3 +317,18 @@ open( ) 함수를 사용하면 현재 창이나 새 탭, 새로운 알림 창 �
   <li>팝업 창의 <b>left</b> = (화면 너비 − 팝업 창 너비) / 2</li>
   <li>팝업 창의 <b>top</b> = (화면 높이 − 팝업 창 높이) / 2</li>
 </ul>
+08Wpopup-3.html, 08Wjspopup-3.js<br><br>
+
+<div style="background-color:#f5f5f5; padding:16px; font-family:monospace; white-space:pre; border:1px solid #ccc;">
+
+const btnt = document.querySelector("button");
+
+const popWidth = 600;
+const popHeight = 500;
+
+btnt.addEventListener("click", function() {
+    let left = (screen.availWidth - popWidth) / 2;
+    let top  = (screen.availHeight - popHeight) / 2;
+    window.open("notice.html", "event", `width = ${popWidth} height= ${popHeight} left = ${left} top = ${top}`);
+});
+</div>
