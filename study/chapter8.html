@@ -747,3 +747,20 @@ result.innerText = passedDay;
 &lt;/body&gt;
 </div>
 
+<ol>
+  <li>날짜 정보를 표시할 영역을 displayDate라는 변수로 저장하고,</li>
+  <li>오늘 날짜 정보에 해당하는 인스턴스를 만든다.</li>
+  <li><b>Date</b> 메서드에서 toDateString() 메서드를 사용하면 날짜 정보만 가져올 수 있다.</li>
+  <li>콘솔 창에 날짜 정보가 표시되는지 확인한다. -> 연도, 월, 일, 요일을 각각 분리해서 보기 쉽게 만든다.</li>
+</ol><br>
+
+08#js\current.js<br><br>
+
+<div style="background-color:#f5f5f5; padding:16px; font-family:monospace; font-size:15px; width:fit-content; border:1px solid #ccc; white-space:pre;">
+const displayDay = document.querySelector('#today');
+
+const today = new Date();
+console.log(today);
+console.log(today.toDateString());
+</div>
+
