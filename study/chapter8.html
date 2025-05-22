@@ -720,4 +720,30 @@ let passedDay = Math.round(passedTime / (1000 * 60 * 60 * 24));  // 밀리초를
 
 result.innerText = passedDay;
 </div>
+<p>[실습] 디지털 시계 만들기</p>
+
+&lt;미리 생각해 보기&gt;<br><br>
+
+<ul>
+  <li>날짜 정보에서 연도와 월, 일을 가져오려면 어떻게 해야 할까</li>
+  <li>시간 정보에서 시와 분, 초를 가져오려면 어떻게 해야 할까</li>
+  <li>1초마다 시간이 바뀌면서 표시되려면 어떻게 해야 할까</li>
+</ul><br>
+
+<div style="background-color:#f5f5f5; padding:16px; font-family:monospace; font-size:15px; width:fit-content; border:1px solid #ccc; white-space:pre;">
+
+&lt;body&gt;
+  &lt;div id=<span style="color:orangered;">"container"</span>&gt;
+    &lt;div id=<span style="color:orangered;">"today"</span>&gt;
+      &lt;!-- 현재 날짜 --&gt;
+    &lt;/div&gt;
+
+    &lt;div id=<span style="color:orangered;">"clock"</span>&gt;
+      &lt;!-- 현재 시간 --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  <span style="color:orangered;">&lt;script src="js/current.js"&gt;&lt;/script&gt;</span>
+&lt;/body&gt;
+</div>
 
