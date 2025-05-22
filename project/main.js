@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const styleSelector = document.querySelector("#style-selector");
   const styleCardsContainer = document.querySelector(".style-cards");
@@ -67,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
       historyTimeline.appendChild(div);
     });
 
-    // 슬라이드용 갤러리
     currentGallery = style.gallery;
     currentSlideIndex = 0;
     renderGallery();
@@ -76,45 +73,38 @@ document.addEventListener("DOMContentLoaded", () => {
     styleDetail.classList.remove("hidden");
   }
 
- function renderGallery() {
-  gallery.innerHTML = "";
+  function renderGallery() {
+    gallery.innerHTML = "";
 
-  const wrapper = document.createElement("div");
-  wrapper.className = "slider-wrapper";
+    const wrapper = document.createElement("div");
+    wrapper.className = "slider-wrapper";
 
-  const leftBtn = document.createElement("button");
-  leftBtn.textContent = "←";
-  leftBtn.className = "slide-btn slide-left";
-  leftBtn.addEventListener("click", () => {
-    currentSlideIndex = (currentSlideIndex - 1 + currentGallery.length) % currentGallery.length;
-    updateImage();
-  });
+    const leftBtn = document.createElement("button");
+    leftBtn.textContent = "←";
+    leftBtn.className = "slide-arrow left-btn";
+    leftBtn.onclick = () => {
+      currentSlideIndex = (currentSlideIndex - 1 + currentGallery.length) % currentGallery.length;
+      renderGallery();
+    };
 
-  const rightBtn = document.createElement("button");
-  rightBtn.textContent = "→";
-  rightBtn.className = "slide-btn slide-right";
-  rightBtn.addEventListener("click", () => {
-    currentSlideIndex = (currentSlideIndex + 1) % currentGallery.length;
-    updateImage();
-  });
+    const rightBtn = document.createElement("button");
+    rightBtn.textContent = "→";
+    rightBtn.className = "slide-arrow right-btn";
+    rightBtn.onclick = () => {
+      currentSlideIndex = (currentSlideIndex + 1) % currentGallery.length;
+      renderGallery();
+    };
 
-  const img = document.createElement("img");
-  img.src = currentGallery[currentSlideIndex];
-  img.alt = "스타일 이미지";
-  img.className = "slide-image";
-  img.id = "current-slide";
+    const img = document.createElement("img");
+    img.src = currentGallery[currentSlideIndex];
+    img.alt = "스타일 이미지";
+    img.className = "slide-image";
 
-  wrapper.appendChild(leftBtn);
-  wrapper.appendChild(img);
-  wrapper.appendChild(rightBtn);
-  gallery.appendChild(wrapper);
-
-  // 내부 함수로 이미지만 갱신
-  function updateImage() {
-    document.getElementById("current-slide").src = currentGallery[currentSlideIndex];
+    wrapper.appendChild(leftBtn);
+    wrapper.appendChild(img);
+    wrapper.appendChild(rightBtn);
+    gallery.appendChild(wrapper);
   }
-}
-
 
   function getBrandUrl(brand) {
     const urls = {
