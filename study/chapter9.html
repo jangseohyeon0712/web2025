@@ -412,7 +412,6 @@ console.log(entries);
 
 <br>
 
-<img src="images/BookPrototype.png" alt="Book 프로토타입 관계 구조도" style="width:450px;">
 <p>생성자 함수와 프로토타입 객체</p>
 
 <ul>
@@ -501,4 +500,54 @@ console.log(entries);
 <br>
 
 <p><strong>결론:</strong> <code>book1.__proto__ === Book.prototype</code> 은 <span style="color:red;">true</span></p>
+<p>프로토타입 메서드</p>
+
+<p>생성자 함수 밖에서 프로토타입을 사용해 새로운 메서드를 정의할 수 있다</p>
+
+<table border="1" cellspacing="0" cellpadding="8">
+  <tr>
+    <th>구성 요소</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td>생성자 함수 정의</td>
+    <td>
+      <pre>
+function newBook(title, pages, done) {
+  this.title = title;
+  this.pages = pages;
+  this.done = done;
+}
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>프로토타입 메서드 정의</td>
+    <td>
+      <pre>
+newBook.prototype.finish = function() {
+  let str = this.done === false ? "읽는 중" : "완독";
+  return str;
+};
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>객체 생성</td>
+    <td>
+      <pre>
+const nBook1 = new newBook("웹 표준의 정석", 648, false);
+const nBook2 = new newBook("점프 투 파이썬", 360, true);
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>프로토타입 체인</td>
+    <td>
+      <li>nBook1과 nBook2는 newBook 생성자 함수로부터 생성됨</li>
+      <li>두 객체는 newBook.prototype을 자신의 프로토타입으로 가짐</li>
+      <li>finish() 메서드는 각각의 객체에서 공유되어 사용됨</li>
+    </td>
+  </tr>
+</table>
 
