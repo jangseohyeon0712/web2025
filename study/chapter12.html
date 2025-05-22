@@ -50,3 +50,70 @@ HTTP/HTTPS
 <li>클라이언트의 요청을 받은 서버가 필요한 작업을 처리하고 그 결과를 클라이언트로 보낼 때</li>
 <li>서버로 요청한 것이 성공적으로 처리되었는지, 또는 요청한 파일이 없어서 실패했는지 등을 응답 상태를 ‘상태’ 칼럼에 숫자로 표시한다.</li>
 <li>서버에서 자료를 받아 프로그래밍할 때는 응답 상태를 확인한 후 진행한다.</li>
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th>상태</th>
+    <th>메시지</th>
+    <th>기능</th>
+  </tr>
+  <tr>
+    <td>2XX</td>
+    <td></td>
+    <td>자료 요청을 수락했거나 자료 전송이 성공적으로 끝났습니다</td>
+  </tr>
+  <tr>
+    <td>200</td>
+    <td>OK</td>
+    <td>서버에서 클라이언트로 성공적으로 전송했습니다.</td>
+  </tr>
+  <tr>
+    <td>202</td>
+    <td>Accepted</td>
+    <td>서버에서 클라이언트 요청을 수락했습니다.</td>
+  </tr>
+  <tr>
+    <td>4XX</td>
+    <td></td>
+    <td>클라이언트에서 주소를 잘못 입력했거나 요청이 잘못되었습니다.</td>
+  </tr>
+  <tr>
+    <td>400</td>
+    <td>Bad Request</td>
+    <td>요청을 실패했습니다.</td>
+  </tr>
+  <tr>
+    <td>401</td>
+    <td>Unauthorized</td>
+    <td>권한이 없어 거절되었습니다. 인증 가능합니다.</td>
+  </tr>
+  <tr>
+    <td>403</td>
+    <td>Forbidden</td>
+    <td>권한이 없어 거절되었습니다. 인증을 시도해도 계속 거절됩니다.</td>
+  </tr>
+  <tr>
+    <td>404</td>
+    <td>Not Found</td>
+    <td>문서를 찾을 수 없습니다.</td>
+  </tr>
+  <tr>
+    <td>408</td>
+    <td>Request Timeout</td>
+    <td>요청 시간이 초과되었습니다.</td>
+  </tr>
+  <tr>
+    <td>5XX</td>
+    <td></td>
+    <td>서버 측의 오류로 처리할 수 없습니다</td>
+  </tr>
+  <tr>
+    <td>500</td>
+    <td>Internal Server Error</td>
+    <td>서버 내부에 오류가 발생했습니다.</td>
+  </tr>
+  <tr>
+    <td>503</td>
+    <td>Service Unavailable</td>
+    <td>요청한 서비스를 이용할 수 없습니다.</td>
+  </tr>
+</table>
