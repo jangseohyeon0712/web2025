@@ -1,129 +1,136 @@
-let styles = [];
+document.addEventListener("DOMContentLoaded", () => {
+  const styleSelector = document.querySelector("#style-selector");
+  const styleCardsContainer = document.querySelector(".style-cards");
+  const styleDetail = document.querySelector("#style-detail");
+  const backButton = document.querySelector("#back-button");
 
-async function loadData() {
-  try {
-    const res = await fetch("data.json");
-    styles = await res.json();
-    loadStyles();
-  } catch (e) {
-    console.error("데이터 불러오기 오류:", e);
+  const styleName = document.querySelector("#style-name");
+  const styleDesc = document.querySelector("#style-desc");
+  const fabricList = document.querySelector("#fabric-list");
+  const brandList = document.querySelector("#brand-list");
+  const historyTimeline = document.querySelector("#history-timeline");
+  const gallery = document.querySelector("#gallery");
+
+  let styles = [];
+
+  fetch("data.json")
+    .then((res) => res.json())
+    .then((data) => {
+      styles = data;
+      renderStyleCards();
+    });
+
+  function renderStyleCards() {
+    styles.forEach((style, index) => {
+      const card = document.createElement("div");
+      card.className = "style-card";
+      card.innerHTML = `
+        <h3>${style.name}</h3>
+        <p>${style.desc}</p>
+      `;
+      card.addEventListener("click", () => showDetail(index));
+      styleCardsContainer.appendChild(card);
+    });
   }
-}
 
-const selector = document.querySelector("#style-selector .style-cards");
-const detailSection = document.getElementById("style-detail");
-const backButton = document.getElementById("back-button");
+  function showDetail(index) {
+    const style = styles[index];
+    styleName.textContent = style.name;
+    styleDesc.textContent = style.desc;
 
-function loadStyles() {
-  styles.forEach((style, index) => {
-    const card = document.createElement("div");
-    card.className = "style-card";
-    card.innerHTML = `<h3>${style.name}</h3><p>${style.desc}</p>`;
-    card.addEventListener("click", () => showDetail(index));
-    selector.appendChild(card);
-  });
-}
+    // 원단 리스트 초기화 및 삽입
+    fabricList.innerHTML = "";
+    style.fabrics.forEach(fabric => {
+      const li = document.createElement("li");
+      li.textContent = fabric;
+      fabricList.appendChild(li);
+    });
 
-function showDetail(index) {
-  const style = styles[index];
-  document.getElementById("style-name").textContent = style.name;
-  document.getElementById("style-desc").textContent = style.desc;
+    // 브랜드 리스트 초기화 및 링크 삽입
+    brandList.innerHTML = "";
+    style.brands.forEach(brand => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = getBrandUrl(brand);
+      a.textContent = brand;
+      a.target = "_blank";
+      li.appendChild(a);
+      brandList.appendChild(li);
+    });
 
-  const fabricList = document.getElementById("fabric-list");
-  fabricList.innerHTML = "";
-  style.fabrics.forEach(f => {
-    const li = document.createElement("li");
-    li.textContent = f;
-    fabricList.appendChild(li);
-  });
+    // 변천사 초기화
+    historyTimeline.innerHTML = "";
+    style.history.forEach(h => {
+      const div = document.createElement("div");
+      div.textContent = `${h.year}: ${h.event}`;
+      historyTimeline.appendChild(div);
+    });
 
- style.brands.forEach(brand => {
-  const li = document.createElement("li");
-  if (brandLinks[brand]) {
-    const a = document.createElement("a");
-    a.href = brandLinks[brand];
-    a.textContent = brand;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
-    li.appendChild(a);
-  } else {
-    li.textContent = brand;
+    // 갤러리 초기화
+    gallery.innerHTML = "";
+    style.gallery.forEach(imgUrl => {
+      const img = document.createElement("img");
+      img.src = imgUrl;
+      img.alt = `${style.name} look`;
+      gallery.appendChild(img);
+    });
+
+    styleSelector.classList.add("hidden");
+    styleDetail.classList.remove("hidden");
   }
-  brandList.appendChild(li);
-});
 
-  const timeline = document.getElementById("history-timeline");
-  timeline.innerHTML = "";
-  style.history.forEach(h => {
-    const div = document.createElement("div");
-    div.innerHTML = `<strong>${h.year}</strong>: ${h.event}`;
-    timeline.appendChild(div);
-  });
-
-  const gallery = document.getElementById("gallery");
-  gallery.innerHTML = "";
-  style.gallery.forEach(url => {
-    const img = document.createElement("img");
-    img.src = url;
-    img.alt = `${style.name} look`;
-    gallery.appendChild(img);
-  });
-
-  detailSection.classList.remove("hidden");
-  document.getElementById("style-selector").classList.add("hidden");
-}
-
-backButton.addEventListener("click", () => {
-  detailSection.classList.add("hidden");
-  document.getElementById("style-selector").classList.remove("hidden");
-});
-
-window.addEventListener("DOMContentLoaded", loadData);
-const brandLinks = {
-  "UNIQLO": "https://www.uniqlo.com",
-  "ZARA": "https://www.zara.com",
-  "Muji": "https://www.muji.com",
-  "Gap": "https://www.gap.com",
-  "Lacoste": "https://www.lacoste.com",
-  "Ralph Lauren": "https://www.ralphlauren.com",
-  "COS": "https://www.cos.com",
-  "The Row": "https://therow.com",
-  "Uniqlo U": "https://www.uniqlo.com/uniqlo-u",
-  "Carhartt": "https://www.carhartt.com",
-  "Dickies": "https://www.dickies.com",
-  "ACRONYM": "https://acrnm.com",
-  "Nike ACG": "https://www.nike.com/acg",
-  "Stone Island Shadow Project": "https://www.stoneisland.com",
-  "Guerrilla Group": "https://www.guerrillagroup.co",
-  "Visvim": "https://www.visvim.tv",
-  "Kapital": "https://www.kapital.jp",
-  "The North Face": "https://www.thenorthface.com",
-  "Arc'teryx": "https://arcteryx.com",
-  "Patagonia": "https://www.patagonia.com",
-  "Telfar": "https://shop.telfar.net",
-  "JW Anderson": "https://www.jwanderson.com",
-  "Comme des Garçons": "https://www.comme-des-garcons.com",
-  "Supreme": "https://www.supremenewyork.com",
-  "Stüssy": "https://www.stussy.com",
-  "A Bathing Ape": "https://bape.com",
-  "Palace": "https://www.palaceskateboards.com",
-  "Moschino": "https://www.moschino.com",
-  "Lazy Oaf": "https://www.lazyoaf.com",
-  "Vivienne Westwood": "https://www.viviennewestwood.com",
-  "Tripp NYC": "https://trippnyc.com"
-};
-const brandList = document.getElementById("brand-list");
-brandList.innerHTML = "";
-style.brands.forEach(brand => {
-  const li = document.createElement("li");
-  if (brandLinks[brand]) {
-    const a = document.createElement("a");
-    a.href = brandLinks[brand];
-    a.textContent = brand;
-    a.target = "_blank"; // 새 창에서 열기
-    li.appendChild(a);
-  } else {
-    li.textContent = brand; // 링크가 없는 경우
+  function getBrandUrl(brand) {
+    const urls = {
+      "UNIQLO": "https://www.uniqlo.com/",
+      "ZARA": "https://www.zara.com/",
+      "Muji": "https://www.muji.com/",
+      "Gap": "https://www.gap.com/",
+      "Lacoste": "https://www.lacoste.com/",
+      "Ralph Lauren": "https://www.ralphlauren.com/",
+      "COS": "https://www.cos.com/",
+      "The Row": "https://www.therow.com/",
+      "Uniqlo U": "https://www.uniqlo.com/UniqloU",
+      "Carhartt": "https://www.carhartt.com/",
+      "Dickies": "https://www.dickies.com/",
+      "Engineered Garments": "https://nepenthesny.com/",
+      "Nigel Cabourn": "https://www.cabourn.com/",
+      "ACRONYM": "https://acrnm.com/",
+      "Nike ACG": "https://www.nike.com/acg",
+      "Stone Island Shadow Project": "https://www.stoneisland.com/",
+      "Guerrilla Group": "https://guerrilla-group.co/",
+      "Visvim": "https://www.visvim.tv/",
+      "Kapital": "https://www.kapital.jp/",
+      "Warehouse": "https://www.ware-house.co.jp/",
+      "The Real McCoy's": "https://therealmccoys.jp/",
+      "BEAMS": "https://www.beams.co.jp/",
+      "AURALEE": "https://auralee.jp/",
+      "NANAMICA": "https://www.nanamica.com/",
+      "The North Face": "https://www.thenorthface.com/",
+      "Arc'teryx": "https://arcteryx.com/",
+      "Patagonia": "https://www.patagonia.com/",
+      "Salomon": "https://www.salomon.com/",
+      "Telfar": "https://shop.telfar.net/",
+      "Comme des Garçons": "https://www.comme-des-garcons.com/",
+      "Y/Project": "https://yproject.fr/",
+      "JW Anderson": "https://www.jwanderson.com/",
+      "Supreme": "https://www.supremenewyork.com/",
+      "Stüssy": "https://www.stussy.com/",
+      "A Bathing Ape": "https://bape.com/",
+      "Palace": "https://www.palaceskateboards.com/",
+      "Moschino": "https://www.moschino.com/",
+      "Ashley Williams": "https://ashleywilliamslondon.com/",
+      "Lazy Oaf": "https://www.lazyoaf.com/",
+      "Lisa Says Gah": "https://lisasaysgah.com/",
+      "Vivienne Westwood": "https://www.viviennewestwood.com/",
+      "Underground": "https://underground-england.com/",
+      "Sex Pistols Merch": "https://www.sex-pistols.net/",
+      "Tripp NYC": "https://trippnyc.com/"
+    };
+    return urls[brand] || "#";
   }
-  brandList.appendChild(li);
+
+  backButton.addEventListener("click", () => {
+    styleDetail.classList.add("hidden");
+    styleSelector.classList.remove("hidden");
+  });
 });
