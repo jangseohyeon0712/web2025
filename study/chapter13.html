@@ -1,1 +1,28 @@
-1
+
+
+<h2><strong>동기 처리 방식과 비동기 처리 방식</strong></h2>
+
+예) 커피 전문점에서 커피 주문하고 마시기
+
+<div style="border:1px solid #ccc; padding:10px; width:fit-content; margin-bottom:12px;">
+  <strong>&lt;동기 처리 방식&gt;</strong><br>
+  <ul>
+    <li>A라는 사람이 커피를 주문하면 그 주문을 받아서 커피를 만들고 A에게 넘겨준다.</li>
+    <li>뒤에 아무리 많은 손님이 있어도 한번에 하나의 손님만 처리한다.</li>
+    <li>주문을 받고 커피를 만드는 것이 한 과정이기 때문에 대기 줄이 점점 더 길어지고 주문을 처리하는데도 시간이 걸린다.</li>
+  </ul>
+</div>
+
+<div style="border:1px solid #ccc; padding:10px; width:fit-content;">
+  <strong>&lt;비동기 처리 방식&gt;</strong><br>
+  <ul>
+    <li>A라는 사람이 커피를 주문하면 그 주문을 주방으로 넘기고,</li>
+    <li>A에게는 진동벨을 주면서 커피가 완성되면 알려주겠다고 한다.</li>
+    <li>대기하고 있던 B의 주문을 받고 진동벨을 건네준다.</li>
+    <li>중간에 A의 커피가 완성되면 A에게 알려 준다.</li>
+  </ul>
+</div>
+
+<br>
+
+<img src="images/동기.png" style="width:700px;" alt="동기 vs 비동기 처리방식 다이어그램">
