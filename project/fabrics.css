@@ -79,3 +79,32 @@ footer {
   color: #777;
   font-size: 0.9rem;
 }
+.big-back-button-wrapper {
+  max-width: 1200px;
+  margin: 3rem auto 4rem;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.big-back-button {
+  display: inline-block;
+  width: 100%;
+  max-width: 900px; /* 카드 3개 정도 너비 */
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.big-back-button:hover {
+  transform: translateY(-4px);
+  background-color: #333;
+}
+
