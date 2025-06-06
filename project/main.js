@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentGallery = [];
   let slideInterval;
 
-  // 데이터 불러오기
   fetch("data.json")
     .then((res) => res.json())
     .then((data) => {
@@ -70,15 +69,14 @@ document.addEventListener("DOMContentLoaded", () => {
     currentGallery = style.gallery;
     currentSlideIndex = 0;
     renderGallery();
-    startAutoSlide(); // ✅ 자동 슬라이드 시작
+    startAutoSlide();
 
     styleSelector.classList.add("hidden");
     styleDetail.classList.remove("hidden");
   }
 
   function renderGallery() {
-    clearInterval(slideInterval); // 이전 슬라이드 멈추기
-
+    clearInterval(slideInterval);
     gallery.innerHTML = "";
 
     const wrapper = document.createElement("div");
@@ -103,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const img = document.createElement("img");
     img.src = currentGallery[currentSlideIndex];
     img.alt = "스타일 이미지";
-    img.className = "slide-image";
+    img.className = "slide"; // 자동 슬라이드를 위해 "slide" 클래스 부여
 
     wrapper.appendChild(leftBtn);
     wrapper.appendChild(img);
@@ -112,10 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function startAutoSlide() {
+    clearInterval(slideInterval);
     slideInterval = setInterval(() => {
       currentSlideIndex = (currentSlideIndex + 1) % currentGallery.length;
       renderGallery();
-    }, 3000); // 3초마다 자동 전환
+    }, 3000);
   }
 
   function getBrandUrl(brand) {
@@ -169,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   backButton.addEventListener("click", () => {
-    clearInterval(slideInterval); // 슬라이드 멈춤
+    clearInterval(slideInterval);
     styleDetail.classList.add("hidden");
     styleSelector.classList.remove("hidden");
   });
