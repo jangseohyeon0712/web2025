@@ -13,13 +13,22 @@
   </header>
 
   <main>
+    <!-- 스타일 선택 영역 -->
     <section id="style-selector">
       <h2>스타일을 선택하세요</h2>
       <div class="style-cards">
         <!-- 동적으로 JS로 채워질 영역 -->
       </div>
+      <button id="compare-reset">선택 초기화</button>
     </section>
 
+    <!-- 비교 분석 영역 (초기엔 숨김 처리) -->
+    <section id="compare-section" class="hidden">
+      <h2>스타일 비교 분석</h2>
+      <div id="compare-info"></div>
+    </section>
+
+    <!-- 상세 보기 영역 -->
     <section id="style-detail" class="hidden">
       <button id="back-button">← 돌아가기</button>
       <h2 id="style-name"></h2>
@@ -35,19 +44,19 @@
       <div id="history-timeline"></div>
 
       <h3>룩북</h3>
-<div class="slider">
-  <button class="slide-btn prev-btn">←</button>
-  <div class="slide-track" id="gallery"></div>
-  <button class="slide-btn next-btn">→</button>
-</div>
-
+      <div class="slider">
+        <button class="slide-btn prev-btn">←</button>
+        <div class="slide-track" id="gallery"></div>
+        <button class="slide-btn next-btn">→</button>
+      </div>
     </section>
   </main>
-<div class="big-block-button-wrapper">
-  <a href="fabrics.html" class="big-block-button">
-    📘 패션 원단 24종 자세히 보기
-  </a>
-</div>
+
+  <div class="big-block-button-wrapper">
+    <a href="fabrics.html" class="big-block-button">
+      📘 패션 원단 24종 자세히 보기
+    </a>
+  </div>
 
   <footer>
     <p>&copy; 2025 StyleScope</p>
@@ -56,5 +65,3 @@
   <script src="main.js"></script>
 </body>
 </html>
-
-
