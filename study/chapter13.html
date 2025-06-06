@@ -28,7 +28,7 @@ Chapter 13 summary
 <br>
 
 <img src="images/동기.png" style="width:700px;" alt="동기 vs 비동기 처리방식 다이어그램">
-<p><strong>함수 이름을 콜백으로 사용하기</strong></p>
+<h3><strong>함수 이름을 콜백으로 사용하기</strong></h3>
 
 <div style="display: flex; justify-content: space-between; gap: 40px;">
   <div>
@@ -60,7 +60,7 @@ order("아메리카노", <span style="border: 1px dotted red;">display</span>);
     </div>
   </div>
 </div>
-<p><strong>익명 콜백 사용</strong></p>
+<h4><strong>익명 콜백 사용</strong></h4>
 <p>예) 1초마다 A -&gt; B -&gt; C -&gt; D -&gt; STOP! 순으로 표시하기</p>
 
 <div style="display: flex; justify-content: space-between; gap: 40px;">
@@ -87,7 +87,7 @@ displayLetter();
     
   </div>
 </div>
-<p><strong>프로미스</strong></p>
+<h5><strong>프로미스</strong></h5>
 
 <ul>
   <li>콜백 안에 콜백, 그 안에 또 콜백 …. ➔ 콜백 지옥</li>
@@ -110,7 +110,7 @@ displayLetter();
   프로미스는 객체를 생성(제작)하는 부분과 소비하는 부분으로 나뉜다.<br>
   프로미스 제작 코드에서 ‘성공’ 과 ‘실패’를 확인한 후 소비 코드로 알려준다.
 </p>
-<p><strong>예) 피자 주문 흐름을 만들어 보자</strong></p>
+<h6><strong>예) 피자 주문 흐름을 만들어 보자</strong></h6>
 
 <p>
 likePizza가 true라면 → 성공했을 때 실행할 함수에 ‘피자를 주문합니다.’ 넘긴다<br>
@@ -171,5 +171,30 @@ pizza
     err => console.log(err)
   );</span>
 </pre>
+<p><strong>프로미스의 상태</strong></p>
+<p>프로미스는 <code>resolve()</code> 함수나 <code>reject()</code> 함수를 매개변수로 받아서 실행하는 객체<br>
+프로미스 객체는 <code>resolve()</code> 함수나 <code>reject()</code> 함수를 실행하면서 상태가 바뀜</p>
 
+<table style="border-collapse: collapse; width: 100%; text-align: left; font-family: sans-serif;">
+  <thead>
+    <tr style="background-color: #f8e9d0;">
+      <th style="border: 1px solid #ccc; padding: 8px;"><strong>상태</strong></th>
+      <th style="border: 1px solid #ccc; padding: 8px;"><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">pending</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">처음 프로미스를 만들면 대기 상태 <span style="color: gray;">pending</span>가 됩니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">fulfilled</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">처리에 성공하면 이행 상태 <span style="color: gray;">fulfilled</span>가 됩니다.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">rejected</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">처리에 성공하지 못하면 거부 상태 <span style="color: gray;">rejected</span>가 됩니다.</td>
+    </tr>
+  </tbody>
+</table>
 
