@@ -184,4 +184,13 @@ footer {
   font-size: 1.35rem;
   line-height: 1.7;
 }
+#style-detail h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+
+#style-detail h3 {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+}
 
