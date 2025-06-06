@@ -72,6 +72,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     styleSelector.classList.add("hidden");
     styleDetail.classList.remove("hidden");
+
+    // ✅ 자동 스크롤 이동 추가
+    setTimeout(() => {
+      window.scrollTo({
+        top: window.innerHeight * 0.3,
+        behavior: "smooth"
+      });
+    }, 100);
   }
 
   function renderGallery() {
