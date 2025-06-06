@@ -87,5 +87,28 @@ displayLetter();
     콜백이 계속 반복되는 상태를 ‘<strong>콜백 지옥</strong>’이라 한다
   </div>
 </div>
+<p><strong>프로미스</strong></p>
+
+<ul>
+  <li>콜백 안에 콜백, 그 안에 또 콜백 …. ➔ 콜백 지옥</li>
+  <li>콜백을 사용했을 때의 복잡함을 피하기 위해, ES6부터 “프로미스(promise)” 등장.</li>
+</ul>
+
+<p>
+  처리가 성공했을 때 실행할 함수와 성공하지 못했을 때 실행할 함수를 미리 약속하자~
+</p>
+<p>
+  프로미스를 사용하려면 <code>Promise</code> 객체를 먼저 만들어야 한다.<br>
+  성공했을 때 실행할 함수 <code>resolve()</code>와 실패했을 때 실행할 함수 <code>reject()</code>도 함께 지정
+</p>
+
+<div style="background-color:#e8e8e8; display:inline-block; padding:6px 12px; font-family:monospace;">
+  new Promise(resolve, reject)
+</div>
+
+<p>
+  프로미스는 객체를 생성(제작)하는 부분과 소비하는 부분으로 나뉜다.<br>
+  프로미스 제작 코드에서 ‘성공’ 과 ‘실패’를 확인한 후 소비 코드로 알려준다.
+</p>
 
 
