@@ -84,7 +84,7 @@ displayLetter();
   </div>
 
   <div style="align-self: center;">
-    콜백이 계속 반복되는 상태를 ‘<strong>콜백 지옥</strong>’이라 한다
+    
   </div>
 </div>
 <p><strong>프로미스</strong></p>
@@ -110,5 +110,66 @@ displayLetter();
   프로미스는 객체를 생성(제작)하는 부분과 소비하는 부분으로 나뉜다.<br>
   프로미스 제작 코드에서 ‘성공’ 과 ‘실패’를 확인한 후 소비 코드로 알려준다.
 </p>
+<p><strong>예) 피자 주문 흐름을 만들어 보자</strong></p>
+
+<p>
+likePizza가 true라면 → 성공했을 때 실행할 함수에 ‘피자를 주문합니다.’ 넘긴다<br>
+likePizza가 false라면 → 실패했을 때 실행할 함수에 ‘피자를 주문하지 않습니다.’ 넘긴다
+</p>
+
+<div style="background-color:#fde6d5; padding:4px 12px; width:max-content; font-family:monospace;">
+13Wjs\promise-1.js
+</div>
+
+<div style="background-color:#f5f5f5; padding:12px; font-family:monospace; display:inline-block;">
+let likePizza = true;<br>
+const pizza = new Promise((resolve, reject) => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (likePizza)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resolve('피자를 주문합니다.');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reject('피자를 주문하지 않습니다.');<br>
+});
+</div>
+<p><strong>프로미스를 실행할 때 사용하는 함수</strong></p>
+
+<ul>
+  <li>then() – 프로미스에서 성공했다는 결과를 보냈을 때 실행할 소스</li>
+  <li>catch() – 프로미스에서 실패했다는 결과를 보냈을 때 실행할 소스</li>
+  <li>finally() – 프로미스의 성공과 실패에 상관없이 실행할 소스</li>
+</ul>
+
+<div style="background-color:#eeeeee; font-family:monospace; padding:6px; display:inline-block;">
+  <em>프로미스객체</em>.then( ).catch().finally();
+</div>
+
+<div style="background-color:#eeeeee; font-family:monospace; padding:6px; display:inline-block; margin-left:40px;">
+  <em>프로미스객체</em><br>
+  &nbsp;&nbsp;.then( )<br>
+  &nbsp;&nbsp;.catch()<br>
+  &nbsp;&nbsp;.finally();
+</div>
+<p><strong>프로미스 제작 코드</strong></p>
+<pre style="display:inline-block; width:48%; background:#f8f8f8; padding:10px; border:1px solid #ccc;">
+let likePizza = true;
+const pizza = new Promise((resolve, reject) => {
+  if (likePizza)
+    <span style="border:2px solid #3366cc; padding:2px;">resolve('피자를 주문합니다.');</span>
+  else
+    <span style="border:2px solid #66cc66; padding:2px;">reject('피자를 주문하지 않습니다.');</span>
+});
+</pre>
+
+<p style="display:inline-block; width:3%;"></p>
+
+<p><strong>프로미스 소비 코드</strong></p>
+<pre style="display:inline-block; width:48%; background:#f8f8f8; padding:10px; border:1px solid #ccc;">
+pizza
+  <span style="border:2px dashed #3366cc; padding:2px;">.then(
+    result => console.log(result)
+  )</span>
+  <span style="border:2px dashed #66cc66; padding:2px;">.catch(
+    err => console.log(err)
+  );</span>
+</pre>
 
 
