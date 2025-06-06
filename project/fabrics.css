@@ -1,34 +1,4 @@
-body {
-  font-family: 'Pretendard', sans-serif;
-  margin: 0;
-  background: #fefefe;
-  color: #333;
-}
-
-header {
-  background: #111;
-  color: #fff;
-  padding: 2rem;
-  text-align: center;
-}
-
-main.fabric-list {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-.fabric-item {
-  background: #f3f3f3;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-h2 {
-  color: #222;
-}
+/* 공통 구조 */
 body {
   margin: 0;
   font-family: 'Pretendard', sans-serif;
@@ -36,6 +6,7 @@ body {
   color: #333;
 }
 
+/* 헤더 영역 */
 header {
   background-color: #111;
   color: #fff;
@@ -65,25 +36,43 @@ header p {
   text-decoration: underline;
 }
 
+/* 메인 영역: 카드 그리드 */
 main.fabric-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
   padding: 2rem;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
+/* 개별 카드 */
 .fabric-item {
   background-color: #fff;
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
 }
 
+.fabric-item:hover {
+  transform: translateY(-5px);
+}
+
+/* 제목 & 본문 */
 .fabric-item h2 {
   margin-top: 0;
+  font-size: 1.1rem;
   color: #222;
 }
 
+.fabric-item p {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* 푸터 */
 footer {
   text-align: center;
   padding: 2rem 0;
