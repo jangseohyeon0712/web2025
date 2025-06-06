@@ -180,3 +180,36 @@ ctx.fillRect(50, 50, 120, 100);        // 파란색으로 채운 사각형
 
 ctx.clearRect(70, 80, 80, 45);         // 사각형 지우기
 </div>
+<p><strong>사각형 외의 도형 그리기</strong></p>
+
+<ol>
+  <li><code>beginPath()</code> 메서드를 이용해 경로가 시작되는 것을 알린다.</li>
+  <li>직선이든, 호든 원하는 경로를 그린다. 경로에 따라 사용하는 메서드가 달라진다.</li>
+  <li><code>closePath()</code> 메서드를 이용해서 경로의 시작점부터 끝나는 점까지 선을 그린다. 
+    (도형을 채울 경우에는 생략 가능)</li>
+  <li><code>stroke()</code> 메서드로 테두리를 그리거나 <code>fill()</code> 메서드로 도형을 채운다.</li>
+</ol>
+
+<br>
+
+<ul>
+  <li><code>beginPath()</code> : 경로가 시작되는 것을 알린다.</li>
+  <li><code>closePath()</code> : 경로 그리기가 끝났다고 알린다.</li>
+  <li><code>moveTo()</code> : 경로의 시작점을 (x, y)로 옮긴다.</li>
+  <li><code>lineTo()</code> : 지정한 위치(x, y)까지 경로를 만든다.</li>
+  <li><code>stroke()</code> : 경로를 선으로 그린다.</li>
+  <li><code>fill()</code> : 경로를 사용해 채운 도형을 만들었을 때 지정한 색으로 채운다.</li>
+</ul>
+
+<br>
+
+<div style="display: flex; gap: 20px;">
+  <div style="background-color:#f0f0f0; padding:10px; font-family:monospace;">
+    beginPath()<br>
+    closePath()<br>
+    moveTo(x, y)<br>
+    lineTo(x, y)<br>
+    stroke()<br>
+    fill()
+  </div>
+</div>
