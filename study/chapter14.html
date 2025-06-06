@@ -499,5 +499,77 @@ ctx.fill(circle);
   ctx.stroke(triangle);
   ctx.fill(circle);
 </script>
+<p><strong>[실습] 개구리 얼굴 그리고 저장하기</strong></p>
+
+타원과 원 그리기를 활용해 개구리 얼굴을 그리기
+
+<br>
+
+1) 캔버스 영역을 가져와서 2차원 콘텍스트를 만든다.
+
+<div style="background-color:#f9f9f9; padding:12px; border:1px solid #ccc; font-family:monospace; white-space:pre;">
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext("2d");
+</div>
+
+<br>
+
+2) 개구리 얼굴과 눈은 타원 형태로 그려야 한다.<br>
+전체적으로 타원으로 바뀌도록 <code>scale()</code> 함수를 사용한다
+
+<div style="background-color:#f9f9f9; padding:8px; border:1px solid #ccc; font-family:monospace; white-space:pre;">
+ctx.scale(1, 0.7);   // 세로 길이 줄이기
+</div>
+<p>4) 눈은 흰색으로 채우고 테두리는 초록색으로 그린 후 눈동자는 검은색으로 칠한다.<br>
+5) x 좌표값만 바꾸면 반대쪽 눈과 눈동자도 그릴 수 있다.</p>
+
+<!-- 코드 박스 -->
+<div style="background-color:#f9f9f9; padding:12px; border:1px solid #ccc; font-family:monospace; white-space:pre;">
+// 눈
+ctx.beginPath();
+ctx.arc(120, 80, 20, 0, Math.PI * 2, false);
+ctx.moveTo(200, 80);
+ctx.arc(180, 80, 20, 0, Math.PI * 2, false);
+ctx.fillStyle = "white";
+ctx.strokeStyle = "green";
+ctx.fill();
+ctx.stroke();
+
+// 눈동자
+ctx.beginPath();
+ctx.arc(120, 80, 5, 0, Math.PI * 2, false);
+ctx.moveTo(200, 80);
+ctx.arc(180, 80, 5, 0, Math.PI * 2, false);
+ctx.fillStyle = "black";
+ctx.fill();
+</div>
+
+<br>
+
+<!-- 실제 캔버스 -->
+<canvas width="300" height="200" style="border:1px solid #ccc;"></canvas>
+
+<script>
+  const canvas = document.querySelector('canvas');
+  const ctx = canvas.getContext("2d");
+
+  // 눈
+  ctx.beginPath();
+  ctx.arc(120, 80, 20, 0, Math.PI * 2, false);
+  ctx.moveTo(200, 80);
+  ctx.arc(180, 80, 20, 0, Math.PI * 2, false);
+  ctx.fillStyle = "white";
+  ctx.strokeStyle = "green";
+  ctx.fill();
+  ctx.stroke();
+
+  // 눈동자
+  ctx.beginPath();
+  ctx.arc(120, 80, 5, 0, Math.PI * 2, false);
+  ctx.moveTo(200, 80);
+  ctx.arc(180, 80, 5, 0, Math.PI * 2, false);
+  ctx.fillStyle = "black";
+  ctx.fill();
+</script>
 
 
