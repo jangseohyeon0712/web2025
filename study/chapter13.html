@@ -372,4 +372,38 @@ fetch('student-2.json')
   .catch(error => console.log(error));
   </div>
 </div>
+<p>async 함수</p>
+• 프로미스는 콜백 지옥이 생기지 않도록 소스를 읽기 쉽게 바꾼 것<br>
+• 프로미스 체이닝은 프로미스를 계속 연결해서 사용하기 때문에 콜백 지옥처럼 소스가 복잡해질 수도 있다<br>
+→ 이런 문제를 줄이기 위해 <span style="color: black;">async</span> 함수와 <span style="color: black;">await</span> 예약어 등장<br><br>
+
+<span style="color: black;">async</span>라는 예약어를 함께 사용하면 그 함수 안에 있는 명령을 비동기적으로 실행할 수 있다.<br><br>
+
+<div style="background-color: #f2e8dc; width: 240px; padding: 5px 8px; font-family: 'Courier New', monospace;">
+기본형&nbsp;&nbsp;&nbsp;<span style="color: black;">async function() { ... }</span>
+</div>
+<p>await</p>
+• 프로미스 체이닝을 좀더 쉽게 작성<br>
+• <span style="color: black;">async</span> 함수에서만 사용할 수 있다.<br><br>
+
+<span style="color: #6783b4;">whatsYourFavorite()</span> 함수 처리에 시간이 얼마나 걸리든 기다렸다가 결과값을 <span style="color: #6783b4;">response</span>에 저장<br><br>
+
+<div style="background-color: #f5f5f5; padding: 12px; font-family: 'Courier New', monospace; font-size: 14px; white-space: pre;">
+async function whatsYourFavorite() {
+  let fav = "Javascript";
+  return fav;
+}
+
+async function displaySubject(subject) {
+  return `Hello, ${subject}`;
+}
+
+async function init() {
+  const response = await whatsYourFavorite();
+  const result = await displaySubject(response);
+  console.log(result);
+}
+
+init();
+</div>
 
