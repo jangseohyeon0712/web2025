@@ -177,7 +177,11 @@ footer {
   background-color: #5b21b6;
   transform: translateY(-5px);
 }
-#style-desc {
-  font-size: 1.25rem;
+#style-desc,
+#fabric-list,
+#brand-list,
+#history-timeline {
+  font-size: 1.35rem;
   line-height: 1.7;
 }
+
