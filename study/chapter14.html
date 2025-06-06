@@ -562,46 +562,18 @@ ctx.stroke();
   <li>그래픽 부분을 마우스 오른쪽 버튼으로 클릭하고<br>
       바로가기 메뉴에서 [이미지를 다른 이름으로 저장]을 선택한다.</li>
 </ul>
+<p><strong>이미지 표시하기</strong></p>
 
-<!-- 캔버스 (개구리 전체) -->
-<canvas width="300" height="200" style="border:1px solid #ccc;"></canvas>
+캔버스에 이미지를 넣으려면  
+1) 이미지 객체를 만들고<br>
+2) 객체에 이미지 파일 경로를 지정한 후<br>
+3) 메서드를 사용해서 캔버스에 그립니다.
 
-<script>
-  const canvas = document.querySelector('canvas');
-  const ctx = canvas.getContext("2d");
+<br>
+(예) <strong>spring.jpg</strong> 파일을 캔버스에 넣으려면
 
-  // 비율 조정 (타원 효과)
-  ctx.scale(1, 0.7);
-
-  // 얼굴
-  ctx.beginPath();
-  ctx.ellipse(150, 200, 80, 80, 0, 0, Math.PI * 2);
-  ctx.fillStyle = "green";
-  ctx.fill();
-
-  // 눈
-  ctx.beginPath();
-  ctx.ellipse(120, 115, 20, 20, 0, 0, Math.PI * 2);
-  ctx.ellipse(180, 115, 20, 20, 0, 0, Math.PI * 2);
-  ctx.fillStyle = "white";
-  ctx.strokeStyle = "green";
-  ctx.fill();
-  ctx.stroke();
-
-  // 눈동자
-  ctx.beginPath();
-  ctx.arc(120, 115, 5, 0, Math.PI * 2);
-  ctx.arc(180, 115, 5, 0, Math.PI * 2);
-  ctx.fillStyle = "black";
-  ctx.fill();
-
-  // 입
-  ctx.beginPath();
-  ctx.arc(150, 150, 50, 0, Math.PI, false); // 180도 반원
-  ctx.strokeStyle = "black";
-  ctx.lineWidth = 3;
-  ctx.stroke();
-</script>
-
-
+<div style="background-color:#f0f0f0; padding:12px; border:1px solid #ccc; font-family:monospace; white-space:pre;">
+let img = new Image();         // 새로운 이미지 객체를 만든다.
+img.src = "spring.jpg";        // 이미지 객체에 파일 경로를 지정한다.
+</div>
 
