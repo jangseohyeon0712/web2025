@@ -92,3 +92,42 @@ Canvas<br>
     (예) 60°를 라디안으로 표현하려면 (Math.PI / 180) × 60
   </div>
 </div>
+<p><strong>사각형을 그리는 3가지 메서드</strong></p>
+
+<ul>
+  <li>캔버스에서 기본으로 제공하는 도형은 사각형뿐.</li>
+  <li>삼각형이나 원을 비롯한 다른 도형들은 경로를 이용해서 직접 해당 형태를 그려야 한다.</li>
+</ul>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="8" style="border-collapse: collapse; text-align: left;">
+  <thead>
+    <tr>
+      <th>메서드</th>
+      <th>기능</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>fillRect(x, y, width, height)</code></td>
+      <td>
+        · (x, y) 위치부터 시작해서 지정한 너비와 높이만큼 <strong>색이 채워진 사각형</strong>을 그린다.<br>
+        · 색상을 지정하지 않으면 검은색으로 채운다.
+      </td>
+    </tr>
+    <tr>
+      <td><code>strokeRect(x, y, width, height)</code></td>
+      <td>
+        · (x, y) 위치부터 시작해서 지정한 너비와 높이만큼 <strong>테두리만 있는 사각형</strong>을 그린다.<br>
+        · 선 색을 지정하지 않으면 검은색 선을 사용한다.
+      </td>
+    </tr>
+    <tr>
+      <td><code>clearRect(x, y, width, height)</code></td>
+      <td>
+        · (x, y) 위치부터 시작해서 지정한 너비와 높이만큼 <strong>사각 영역을 지운다.</strong>
+      </td>
+    </tr>
+  </tbody>
+</table>
