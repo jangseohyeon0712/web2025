@@ -197,4 +197,53 @@ pizza
     </tr>
   </tbody>
 </table>
+<p><strong>프로미스의 상태</strong></p>
+
+<!-- 상단 흐름 설명 박스 -->
+<table style="border-collapse: collapse; margin-bottom: 16px; font-family: sans-serif;">
+  <tr>
+    <td style="border: 1px solid #ccc; padding: 6px;" colspan="2"><strong>Promise 객체 만들기</strong></td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ccc; padding: 6px;">상태</td>
+    <td style="border: 1px solid #ccc; padding: 6px;">"pending"</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ccc; padding: 6px;">결과값</td>
+    <td style="border: 1px solid #ccc; padding: 6px;">undefined</td>
+  </tr>
+</table>
+
+<!-- 아래 then / catch 흐름 -->
+<div style="display: flex; gap: 24px; font-family: sans-serif;">
+  <table style="border-collapse: collapse;">
+    <tr><td colspan="2" style="border: 1px solid #ccc; padding: 6px;"><strong>then()</strong></td></tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 6px;">상태</td>
+      <td style="border: 1px solid #ccc; padding: 6px;">"fulfilled"</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 6px;">결과값</td>
+      <td style="border: 1px solid #ccc; padding: 6px;">"피자를 주문합니다."</td>
+    </tr>
+  </table>
+
+  <table style="border-collapse: collapse;">
+    <tr><td colspan="2" style="border: 1px solid #ccc; padding: 6px;"><strong>catch()</strong></td></tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 6px;">상태</td>
+      <td style="border: 1px solid #ccc; padding: 6px;">"rejected"</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 6px;">결과값</td>
+      <td style="border: 1px solid #ccc; padding: 6px;">"피자를 주문하지 않습니다."</td>
+    </tr>
+  </table>
+</div>
+
+<!-- 설명 문단 -->
+<ul style="margin-top: 20px; font-family: sans-serif;">
+  <li>제작코드 : <code>fulfilled</code> 상태인지, <code>reject</code> 상태인지에 따라 ‘피자를 주문합니다.’ 또는 ‘피자를 주문하지 않습니다.’라는 결과값을 넘겨준다.</li>
+  <li>소비코드 : 결과값을 <code>result</code>나 <code>err</code> 같은 변수 이름으로 받아서 사용한다.</li>
+</ul>
 
