@@ -257,3 +257,247 @@ ctx.fillStyle = 'rgb(0, 200, 0)';
 ctx.fill();
   </div>
 </div>
+<p><strong>원이냐 호 그리기</strong></p>
+
+원이나 호를 그릴 때는 <code>arc()</code> 메서드 사용
+
+<br><br>
+
+<div style="background-color:#f0f0f0; padding:6px; display:inline-block; font-family:monospace;">
+  arc(x, y, r, startAngle, endAngle [, counterClockwise])
+</div>
+
+<br><br>
+
+<ul>
+  <li><strong>x, y</strong>: 원의 중심</li>
+  <li><strong>r</strong>: 원의 반지름</li>
+  <li><strong>startAngle</strong>: 원이나 호의 시작점을 라디안으로 표시</li>
+  <li><strong>endAngle</strong>: 원이나 호의 끝점을 라디안으로 표시</li>
+  <li><strong>counterClockwise</strong>: 반시계 방향으로 그릴지의 여부를 
+    <code>true</code>나 <code>false</code>로 지정<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;(따로 지정하지 않으면 <code>true</code>로 인식)
+  </li>
+</ul>
+<p><strong>(예) 원 그리기</strong></p>
+
+<div style="background-color:#f9f9f9; padding:12px; border:1px solid #ccc; font-family:monospace; white-space:pre;">
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext("2d");
+
+ctx.fillStyle = "yellow";       // 채우기 색상
+ctx.strokeStyle = "red";        // 선 색상
+
+ctx.beginPath()
+ctx.arc(200, 150, 100, 0, Math.PI * 2, true);   // 0~360°까지 경로를 만들기.
+ctx.closePath();             // 경로 닫기.
+ctx.fill();                  // 색상 채우기.
+ctx.stroke();                // 선 그리기.
+</div>
+<p><strong>반원/호 그리기</strong></p>
+
+반원 - 시작 각도와 끝나는 각도의 차이가 180°만 되면 그릴 수 있다.<br>
+호 - 시작 각도와 끝 각도를 지정한 후 회전 방향이 지정. 회전 방향에 따라 다른 모양의 호가 그려진다.
+
+<br><br>
+
+<div style="background-color:#f9f9f9; padding:12px; border:1px solid #ccc; font-family:monospace; white-space:pre;">
+ctx.fillStyle = "red";
+ctx.beginPath()
+ctx.arc(420, 150, 80, 0, (Math.PI / 180) * 180, true);   // 반시계 방향
+ctx.arc(600, 150, 80, 0, (Math.PI / 180) * 180, false);  // 시계 방향
+ctx.fill();
+</div>
+
+<br>
+<p><strong>반원/호 그리기</strong></p>
+
+<div style="background-color:#f9f9f9; padding:12px; border:1px solid #ccc; font-family:monospace; white-space:pre;">
+ctx.beginPath();
+ctx.moveTo(120, 200);
+ctx.arc(120, 200, 50, (Math.PI / 180) * 90, (Math.PI / 180) * 270, false);
+ctx.stroke();
+
+ctx.strokeStyle = "blue";
+ctx.moveTo(200, 100);
+ctx.beginPath();
+ctx.arc(200, 200, 50, 0, (Math.PI / 180) * 60, false);
+ctx.stroke();
+</div>
+<p><strong>타원 그리기</strong></p>
+
+캔버스에는 타원을 그릴 수 있는 <code>ellipse()</code> 메서드가 있다.<br>
+타원은 가로 반지름과 세로 반지름의 길이를 따로 지정하기 때문에 <code>arc()</code> 메서드 기본형과 조금 다르다.
+
+<br><br>
+
+<div style="background-color:#f0f0f0; padding:6px; display:inline-block; font-family:monospace;">
+  ellipse(x, y, <i>radiusX</i>, <i>radiusY</i>, <i>rotation</i>, <i>startAngle</i>, <i>endAngle</i> [, <i>counterClockwise</i>])
+</div>
+
+<br><br>
+
+<ul>
+  <li><strong>x, y</strong>: 타원의 중심</li>
+  <li><strong>radiusX</strong>: 타원의 가로 반지름</li>
+  <li><strong>radiusY</strong>: 타원의 세로 반지름</li>
+  <li><strong>rotation</strong>: 타원 회전 크기. 라디안 값.</li>
+  <li><strong>startAngle</strong>: 타원의 시작점을 라디안으로 표시.</li>
+  <li><strong>endAngle</strong>: 타원의 끝점을 라디안으로 표시.</li>
+  <li><strong>counterClockwise</strong>: 반시계 방향으로 그릴지의 여부. 기본값 <code>true</code></li>
+</ul>
+<p><strong>원을 변형해서 타원 그리기</strong></p>
+
+원을 그린 후 <code>scale()</code> 메서드를 사용해서 원을 변경할 수 있다.
+
+<br><br>
+
+<div style="background-color:#f0f0f0; padding:6px; display:inline-block; font-family:monospace;">
+  scale(x, y)
+</div>
+
+<ul>
+  <li><strong>x</strong>: 가로 방향으로 얼마나 확대/축소할지 지정</li>
+  <li><strong>y</strong>: 세로 방향으로 얼마나 확대/축소할지 지정</li>
+</ul>
+
+<br>
+
+<div style="background-color:#f9f9f9; padding:12px; border:1px solid #ccc; font-family:monospace; white-space:pre;">
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext("2d");
+
+ctx.strokeStyle = "blue";
+ctx.scale(1, 0.7);                         // 가로 길이는 그대로, 세로 길이는 축소
+ctx.beginPath();
+ctx.arc(200, 150, 80, 0, Math.PI * 2, true);   // 바깥쪽 원
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(200, 150, 30, 0, Math.PI * 2, false);  // 안쪽 원
+ctx.stroke();
+ctx.closePath();
+</div>
+<p><strong>2차 베지에 곡선</strong></p>
+
+베지에 곡선은 조절점을 이용해서 부드러운 곡선을 그릴 수 있다.<br>
+현재 좌표에서 끝점 좌표 <code>(x, y)</code> 사이에 경로를 그리는데, 조절점을 통해 경로를 구부러지게 해서 곡선의 형태를 만든다.<br>
+조절점이 하나면 ‘2차 베지에 곡선’이라고 한다.
+
+<br><br>
+
+<div style="background-color:#f0f0f0; padding:6px; display:inline-block; font-family:monospace;">
+  quadraticCurveTo(<i>cpx</i>, <i>cpy</i>, <i>x</i>, <i>y</i>)
+</div>
+
+<br>
+
+<ul>
+  <li><strong>cpx, cpy</strong>: 조절점 좌표</li>
+  <li><strong>x, y</strong>: 곡선이 끝나는 점의 좌표</li>
+</ul>
+
+<br>
+
+<div style="background-color:#f9f9f9; padding:12px; border:1px solid #ccc; font-family:monospace; white-space:pre;">
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext("2d");
+
+ctx.beginPath();
+ctx.moveTo(50, 200);
+ctx.quadraticCurveTo(200, 50, 350, 200);
+ctx.stroke();
+</div>
+<p><strong>3차 베지에 곡선</strong></p>
+
+두 개의 조절점을 사용해서 그리는 곡선을 3차 베지에 곡선이라고 한다.
+
+<br><br>
+
+<div style="background-color:#f0f0f0; padding:6px; display:inline-block; font-family:monospace;">
+  bezierCurveTo(<i>cp1x</i>, <i>cp1y</i>, <i>cp2x</i>, <i>cp2y</i>, <i>x</i>, <i>y</i>)
+</div>
+
+<br>
+
+<ul>
+  <li><strong>cp1x, cp1y</strong>: 첫 번째 조절점 좌표</li>
+  <li><strong>cp2x, cp2y</strong>: 두 번째 조절점 좌표</li>
+  <li><strong>x, y</strong>: 곡선이 끝나는 점의 좌표</li>
+</ul>
+
+<br>
+
+<div style="background-color:#f9f9f9; padding:12px; border:1px solid #ccc; font-family:monospace; white-space:pre;">
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext("2d");
+
+ctx.beginPath();
+ctx.moveTo(50, 100);        // 곡선의 시작 위치
+ctx.bezierCurveTo(90, 250, 310, 10, 350, 100);
+ctx.strokeStyle = "green";
+ctx.stroke();
+</div>
+<p><strong>path2D 객체 사용하기</strong></p>
+
+<ul>
+  <li>경로도 많이 복잡할 뿐만 아니라 같은 경로를 반복해서 사용해야 할 경우도 있다.</li>
+  <li>캔버스에는 같은 경로를 반복하지 않기 위해 경로를 저장해 두는 <strong>Path2D</strong> 객체가 있다.</li>
+</ul>
+
+<br>
+
+<div style="display: flex; gap: 40px; align-items: flex-start;">
+
+  <!-- Path2D 설명 박스 -->
+  <div style="background-color:#f0f0f0; padding:6px; font-family:monospace; white-space:pre;">
+    new Path2D()<br>
+    new Path2D(<i>경로</i>)
+  </div>
+</div>
+
+<br>
+
+<!-- 코드 박스 -->
+<div style="background-color:#f9f9f9; padding:12px; border:1px solid #ccc; font-family:monospace; white-space:pre;">
+let triangle = new Path2D();
+triangle.moveTo(100, 100);
+triangle.lineTo(300, 100);
+triangle.lineTo(200, 260);
+triangle.closePath();
+
+let circle = new Path2D();
+circle.arc(200, 155, 50, 0, Math.PI * 2);
+
+ctx.fillStyle = "green";
+ctx.stroke(triangle);
+ctx.fill(circle);
+</div>
+
+<br>
+
+<!-- 실제 캔버스 도형 -->
+<canvas width="400" height="300" style="border:1px solid #ccc;"></canvas>
+
+<script>
+  const canvas = document.querySelector('canvas');
+  const ctx = canvas.getContext("2d");
+
+  // 삼각형 Path2D
+  let triangle = new Path2D();
+  triangle.moveTo(100, 100);
+  triangle.lineTo(300, 100);
+  triangle.lineTo(200, 260);
+  triangle.closePath();
+
+  // 원 Path2D
+  let circle = new Path2D();
+  circle.arc(200, 155, 50, 0, Math.PI * 2);
+
+  // 스타일 및 출력
+  ctx.fillStyle = "green";
+  ctx.stroke(triangle);
+  ctx.fill(circle);
+</script>
+
+
