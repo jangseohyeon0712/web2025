@@ -321,4 +321,55 @@ pizza
 <div style="text-align: right;">
   <img src="images/response.png" alt="response 예시 이미지" style="max-width: 600px; border: 1px solid #ccc;">
 </div>
+<p><b>XMLHttpRequest</b> 객체 대신 <b>fetch API</b>를 사용해 보자</p>
+
+<p><code>13\fetch.js</code></p>
+
+<!-- 왼쪽: 수강생 출력 예시 -->
+<div style="display: flex; gap: 40px;">
+  <div style="border: 1px solid #ccc; padding: 16px; width: 300px;">
+    <h3 style="text-align: center;">수강생 명단</h3>
+
+    <h4>도레미</h4>
+    <ul>
+      <li>전공: 컴퓨터 공학</li>
+      <li>학년: 2</li>
+    </ul>
+    <hr>
+
+    <h4>백두산</h4>
+    <ul>
+      <li>전공: 철학과</li>
+      <li>학년: 1</li>
+    </ul>
+    <hr>
+
+    <h4>홍길동</h4>
+    <ul>
+      <li>전공: 국문학과</li>
+      <li>학년: 3</li>
+    </ul>
+  </div>
+
+  <!-- 오른쪽: fetch 코드 -->
+  <div style="background-color: #f9f9f9; border: 1px solid #ddd; padding: 12px; font-family: monospace; white-space: pre; font-size: 14px;">
+fetch('student-2.json')  
+  .then(response => response.json())  
+  .then(json => {
+    let output = '';
+    json.forEach(student => {
+      output += `
+  &lt;h2&gt;${student.name}&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;전공 : ${student.major}&lt;/li&gt;
+    &lt;li&gt;학년 : ${student.grade}&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;hr&gt;
+      `;
+    });
+    document.querySelector('#result').innerHTML = output;
+  })  
+  .catch(error => console.log(error));
+  </div>
+</div>
 
