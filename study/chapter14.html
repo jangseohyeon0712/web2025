@@ -46,3 +46,27 @@ Canvas<br>
   &nbsp;&nbsp;&lt;canvas width="400" height="300"&gt;&lt;/canvas&gt;<br>
   &lt;/div&gt;
 </div>
+<p><strong>렌더링 콘텍스트 만들기</strong></p>
+
+<ul>
+  <li>웹 문서에 캔버스 요소를 추가했지만, 이것은 단지 영역만 만든 것이어서 비어 있는 상태</li>
+  <li>캔버스에서 무엇인가를 하려면 렌더링 콘텍스트를 만들어야 자바스크립트를 사용할 수 있다.</li>
+  <li>콘텍스트는 프로그램에서 무언가를 호출하고 응답할 수 있도록 환경을 만드는 것이라고 이해하자.<br>
+      → 콘텍스트를 만드는 순간부터 환경이 갖춰진다.
+  </li>
+</ul>
+
+<br>
+
+<div style="background-color:#f0f0f0; padding:6px; display:inline-block; font-family:monospace;">
+  canvas.getContext("2d")
+</div>
+
+<br><br>
+
+<div style="background-color:#f9f9f9; padding:10px; border:1px solid #ccc; font-family:monospace; white-space:pre;">
+  <span style="color:deepskyblue;">const</span> <span style="background-color:cyan;">canvas</span> = document.querySelector('canvas'); <span style="color:gray;">// 캔버스 영역을 가져온다.</span>
+  <span style="color:deepskyblue;">const</span> <span style="background-color:yellow;">ctx</span> = <span style="background-color:cyan;">canvas</span>.getContext("2d"); <span style="color:gray;">// 2차원 콘텍스트 생성</span>
+  <span style="background-color:yellow;">ctx</span>.fillStyle = "rgb(200,0,0)";
+  <span style="background-color:yellow;">ctx</span>.fillRect(10, 10, 50, 100);
+</div>
