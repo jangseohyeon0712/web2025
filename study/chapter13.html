@@ -28,3 +28,64 @@ Chapter 13 summary
 <br>
 
 <img src="images/동기.png" style="width:700px;" alt="동기 vs 비동기 처리방식 다이어그램">
+<p><strong>함수 이름을 콜백으로 사용하기</strong></p>
+
+<div style="display: flex; justify-content: space-between; gap: 40px;">
+  <div>
+    <strong>예상하는 프로그램 흐름</strong><br><br>
+    <div style="background-color: #f5f5f5; padding: 10px; font-family: monospace; white-space: pre;">
+function order(coffee) {
+  // coffee 주문
+  // 3초 기다린 후 완료 표시
+}
+
+function display(result) {
+  // 커피 완료 표시
+    </div>
+  </div>
+
+  <div>
+    <strong>콜백을 사용한 프로그램 흐름</strong><br><br>
+    <div style="background-color: #f5f5f5; padding: 10px; font-family: monospace; white-space: pre;">
+function order(coffee, <span style="border: 1px dotted red;">callback</span>) {
+  // coffee 주문
+  // 3초 기다린 후 완료 표시
+}
+
+function display(result) {
+  // 커피 완료 표시
+}
+
+order("아메리카노", <span style="border: 1px dotted red;">display</span>);
+    </div>
+  </div>
+</div>
+<p><strong>익명 콜백 사용</strong></p>
+<p>예) 1초마다 A -&gt; B -&gt; C -&gt; D -&gt; STOP! 순으로 표시하기</p>
+
+<div style="display: flex; justify-content: space-between; gap: 40px;">
+  <div style="background-color: #f5f5f5; padding: 12px; font-family: monospace; white-space: pre;">
+function displayLetter() {
+  console.log("A");
+  setTimeout(() =&gt; {
+    console.log("B");
+    setTimeout(() =&gt; {
+      console.log("C");
+      setTimeout(() =&gt; {
+        console.log("D");
+        setTimeout(() =&gt; {
+          console.log("stop!");
+        }, 1000);
+      }, 1000);
+    }, 1000);
+  }, 1000);
+}
+displayLetter();
+  </div>
+
+  <div style="align-self: center;">
+    콜백이 계속 반복되는 상태를 ‘<strong>콜백 지옥</strong>’이라 한다
+  </div>
+</div>
+
+
