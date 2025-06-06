@@ -213,3 +213,15 @@ ctx.clearRect(70, 80, 80, 45);         // 사각형 지우기
     fill()
   </div>
 </div>
+<p><strong>(예) 직선 그리기</strong></p>
+
+<div style="background-color:#f9f9f9; padding:12px; border:1px solid #ccc; font-family:monospace; white-space:pre;">
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext("2d");
+
+ctx.beginPath();        // 경로 시작.
+ctx.moveTo(50, 50);     // 경로 시작 위치 지정
+ctx.lineTo(200, 200);   // (200, 200)까지 경로를 만들기
+ctx.closePath();        // 경로 닫기
+ctx.stroke();           // 만든 경로를 선으로 그린다
+</div>
