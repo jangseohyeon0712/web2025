@@ -2,7 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const styleSelector = document.querySelector("#style-selector");
   const styleCardsContainer = document.querySelector(".style-cards");
   const styleDetail = document.querySelector("#style-detail");
+  const compareSection = document.querySelector("#compare-section");
+  const compareInfo = document.querySelector("#compare-info");
   const backButton = document.querySelector("#back-button");
+  const compareReset = document.querySelector("#compare-reset");
 
   const styleName = document.querySelector("#style-name");
   const styleDesc = document.querySelector("#style-desc");
@@ -15,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentSlideIndex = 0;
   let currentGallery = [];
   let slideImgElement = null;
+  let selectedStyles = [];
 
   fetch("data.json")
     .then((res) => res.json())
@@ -31,10 +35,50 @@ document.addEventListener("DOMContentLoaded", () => {
         <h3>${style.name}</h3>
         <p>${style.desc}</p>
       `;
-      card.addEventListener("click", () => showDetail(index));
+      card.addEventListener("click", () => handleStyleClick(index));
       styleCardsContainer.appendChild(card);
     });
   }
+
+  function handleStyleClick(index) {
+    if (selectedStyles.length < 2) {
+      selectedStyles.push(styles[index]);
+      if (selectedStyles.length === 2) {
+        showCompareResult();
+      } else {
+        showDetail(index);
+      }
+    }
+  }
+
+  function showCompareResult() {
+    styleSelector.classList.add("hidden");
+    styleDetail.classList.add("hidden");
+    compareSection.classList.remove("hidden");
+
+    const [a, b] = selectedStyles;
+    compareInfo.innerHTML = `
+      <h3>${a.name} vs ${b.name}</h3>
+      <h4>📌 주요 원단</h4>
+      <p><strong>${a.name}:</strong> ${a.fabrics.join(", ")}<br>
+         <strong>${b.name}:</strong> ${b.fabrics.join(", ")}</p>
+
+      <h4>🏷 대표 브랜드</h4>
+      <p><strong>${a.name}:</strong> ${a.brands.join(", ")}<br>
+         <strong>${b.name}:</strong> ${b.brands.join(", ")}</p>
+
+      <h4>📅 변천사</h4>
+      <div><strong>${a.name}</strong><br>${a.history.map(h => `- ${h.year}: ${h.event}`).join("<br>")}</div>
+      <div style="margin-top:1rem;"><strong>${b.name}</strong><br>${b.history.map(h => `- ${h.year}: ${h.event}`).join("<br>")}</div>
+    `;
+  }
+
+  compareReset.addEventListener("click", () => {
+    selectedStyles = [];
+    compareInfo.innerHTML = "";
+    compareSection.classList.add("hidden");
+    styleSelector.classList.remove("hidden");
+  });
 
   function showDetail(index) {
     const style = styles[index];
