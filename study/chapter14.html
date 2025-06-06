@@ -131,3 +131,52 @@ Canvas<br>
     </tr>
   </tbody>
 </table>
+<p><strong>채우기 색과 선 색 지정하기</strong></p>
+
+도형을 채울 색이나 선 색을 지정하는 속성
+
+<br><br>
+
+<table border="1" cellspacing="0" cellpadding="8" style="border-collapse: collapse; text-align: left;">
+  <thead>
+    <tr>
+      <th>속성</th>
+      <th>기능</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>fillStyle = "색상"</code></td>
+      <td>도형을 채우는 색상을 지정</td>
+    </tr>
+    <tr>
+      <td><code>strokeStyle = "색상"</code></td>
+      <td>도형의 선 색상을 지정</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<ul>
+  <li>이 속성은 사각형뿐만 아니라 캔버스에서 모든 도형에 사용할 수 있다.</li>
+  <li>색상 값은 색상 이름이나 <code>rgb/rgba</code>, 16진수값 등 모두 사용할 수 있다.</li>
+  <li>채우기 색이나 선 색은 스타일을 지정하면 해당 소스의 뒤에 오는 모든 도형에 똑같이 적용된다.</li>
+  <li>도형마다 다른 색을 채우거나 선을 사용하려면 도형마다 스타일을 각각 다르게 지정해야 한다.</li>
+</ul>
+<p><strong>(예) 사각형 그리기</strong></p>
+
+<div style="background-color:#f9f9f9; padding:12px; border:1px solid #ccc; font-family:monospace; white-space:pre;">
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext("2d");
+
+ctx.fillStyle = "rgb(200, 0, 0)";      // 채우기 색 - 빨강
+ctx.storkeStyle = "black";             // 선 색 - 검정
+ctx.fillRect(10, 10, 200, 100);        // 빨간색으로 채운 사각형
+ctx.strokeRect(10, 10, 200, 100);      // 선이 검은색인 사각형
+
+ctx.fillStyle = "blue";                // 채우기 색 - 파랑
+ctx.fillRect(50, 50, 120, 100);        // 파란색으로 채운 사각형
+
+ctx.clearRect(70, 80, 80, 45);         // 사각형 지우기
+</div>
