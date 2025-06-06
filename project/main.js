@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentSlideIndex = 0;
   let currentGallery = [];
   let slideImgElement = null;
-  let slideInterval;
 
   fetch("data.json")
     .then((res) => res.json())
@@ -70,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     currentGallery = style.gallery;
     currentSlideIndex = 0;
     renderGallery();
-    startAutoSlide();
 
     styleSelector.classList.add("hidden");
     styleDetail.classList.remove("hidden");
@@ -113,14 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (slideImgElement) {
       slideImgElement.src = currentGallery[currentSlideIndex];
     }
-  }
-
-  function startAutoSlide() {
-    clearInterval(slideInterval);
-    slideInterval = setInterval(() => {
-      currentSlideIndex = (currentSlideIndex + 1) % currentGallery.length;
-      updateSlideImage();
-    }, 3000);
   }
 
   function getBrandUrl(brand) {
@@ -174,7 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   backButton.addEventListener("click", () => {
-    clearInterval(slideInterval);
     styleDetail.classList.add("hidden");
     styleSelector.classList.remove("hidden");
   });
