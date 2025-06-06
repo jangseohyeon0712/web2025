@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let styles = [];
   let currentSlideIndex = 0;
   let currentGallery = [];
+  let slideImgElement = null;
   let slideInterval;
 
   fetch("data.json")
@@ -76,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderGallery() {
-    clearInterval(slideInterval);
     gallery.innerHTML = "";
 
     const wrapper = document.createElement("div");
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     leftBtn.className = "slide-arrow left-btn";
     leftBtn.onclick = () => {
       currentSlideIndex = (currentSlideIndex - 1 + currentGallery.length) % currentGallery.length;
-      renderGallery();
+      updateSlideImage();
     };
 
     const rightBtn = document.createElement("button");
@@ -95,25 +95,31 @@ document.addEventListener("DOMContentLoaded", () => {
     rightBtn.className = "slide-arrow right-btn";
     rightBtn.onclick = () => {
       currentSlideIndex = (currentSlideIndex + 1) % currentGallery.length;
-      renderGallery();
+      updateSlideImage();
     };
 
-    const img = document.createElement("img");
-    img.src = currentGallery[currentSlideIndex];
-    img.alt = "스타일 이미지";
-    img.className = "slide"; // 자동 슬라이드를 위해 "slide" 클래스 부여
+    slideImgElement = document.createElement("img");
+    slideImgElement.src = currentGallery[currentSlideIndex];
+    slideImgElement.alt = "스타일 이미지";
+    slideImgElement.className = "slide-image";
 
     wrapper.appendChild(leftBtn);
-    wrapper.appendChild(img);
+    wrapper.appendChild(slideImgElement);
     wrapper.appendChild(rightBtn);
     gallery.appendChild(wrapper);
+  }
+
+  function updateSlideImage() {
+    if (slideImgElement) {
+      slideImgElement.src = currentGallery[currentSlideIndex];
+    }
   }
 
   function startAutoSlide() {
     clearInterval(slideInterval);
     slideInterval = setInterval(() => {
       currentSlideIndex = (currentSlideIndex + 1) % currentGallery.length;
-      renderGallery();
+      updateSlideImage();
     }, 3000);
   }
 
