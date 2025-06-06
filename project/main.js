@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let styles = [];
   let currentSlideIndex = 0;
   let currentGallery = [];
+  let slideInterval;
 
+  // 데이터 불러오기
   fetch("data.json")
     .then((res) => res.json())
     .then((data) => {
@@ -68,12 +70,15 @@ document.addEventListener("DOMContentLoaded", () => {
     currentGallery = style.gallery;
     currentSlideIndex = 0;
     renderGallery();
+    startAutoSlide(); // ✅ 자동 슬라이드 시작
 
     styleSelector.classList.add("hidden");
     styleDetail.classList.remove("hidden");
   }
 
   function renderGallery() {
+    clearInterval(slideInterval); // 이전 슬라이드 멈추기
+
     gallery.innerHTML = "";
 
     const wrapper = document.createElement("div");
@@ -104,6 +109,13 @@ document.addEventListener("DOMContentLoaded", () => {
     wrapper.appendChild(img);
     wrapper.appendChild(rightBtn);
     gallery.appendChild(wrapper);
+  }
+
+  function startAutoSlide() {
+    slideInterval = setInterval(() => {
+      currentSlideIndex = (currentSlideIndex + 1) % currentGallery.length;
+      renderGallery();
+    }, 3000); // 3초마다 자동 전환
   }
 
   function getBrandUrl(brand) {
@@ -157,60 +169,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   backButton.addEventListener("click", () => {
+    clearInterval(slideInterval); // 슬라이드 멈춤
     styleDetail.classList.add("hidden");
     styleSelector.classList.remove("hidden");
   });
 });
-let currentIndex = 0;
-let slideInterval;
-
-// 슬라이드 요소 가져오기
-const gallery = document.getElementById('gallery');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-
-// 슬라이드 하나의 너비 계산
-function getSlideWidth() {
-  const slide = gallery.querySelector('.slide');
-  return slide ? slide.offsetWidth : 0;
-}
-
-// 슬라이드 이동 함수
-function moveToSlide(index) {
-  const slideWidth = getSlideWidth();
-  gallery.style.transform = `translateX(-${slideWidth * index}px)`;
-  currentIndex = index;
-}
-
-// 자동 넘김 시작
-function startAutoSlide() {
-  slideInterval = setInterval(() => {
-    const totalSlides = gallery.querySelectorAll('.slide').length;
-    const nextIndex = (currentIndex + 1) % totalSlides;
-    moveToSlide(nextIndex);
-  }, 3000); // 3초 간격
-}
-
-// 버튼 제어
-prevBtn.addEventListener('click', () => {
-  const totalSlides = gallery.querySelectorAll('.slide').length;
-  const nextIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-  moveToSlide(nextIndex);
-  resetAutoSlide();
-});
-
-nextBtn.addEventListener('click', () => {
-  const totalSlides = gallery.querySelectorAll('.slide').length;
-  const nextIndex = (currentIndex + 1) % totalSlides;
-  moveToSlide(nextIndex);
-  resetAutoSlide();
-});
-
-// 자동 슬라이드 리셋 함수
-function resetAutoSlide() {
-  clearInterval(slideInterval);
-  startAutoSlide();
-}
-
-// 초기 실행
-startAutoSlide();
