@@ -90,21 +90,23 @@ footer {
 .big-back-button {
   display: inline-block;
   width: 100%;
-  max-width: 900px; /* 카드 3개 정도 너비 */
-  background-color: #111;
+  max-width: 900px;
+  background-color: #007AFF; /* 포인트 블루 */
   color: #fff;
   text-align: center;
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: 1.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
 }
 
 .big-back-button:hover {
-  transform: translateY(-4px);
-  background-color: #333;
+  background-color: #005fcc;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
 
