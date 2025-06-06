@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ✅ 자동 스크롤 이동 추가
     setTimeout(() => {
       window.scrollTo({
-        top: window.innerHeight * 0.3,
+        top: window.innerHeight * 0.6,
         behavior: "smooth"
       });
     }, 100);
