@@ -70,3 +70,25 @@ Canvas<br>
   <span style="background-color:yellow;">ctx</span>.fillStyle = "rgb(200,0,0)";
   <span style="background-color:yellow;">ctx</span>.fillRect(10, 10, 50, 100);
 </div>
+<div style="display: flex; justify-content: space-between; gap: 40px;">
+  <!-- 좌표 영역 -->
+  <div style="flex: 1; text-align: center;">
+    <p><strong>캔버스에서 좌표</strong></p>
+    <img src="images/좌표.png" alt="좌표 이미지" style="max-width: 100%; height: auto;"><br><br>
+    캔버스 영역의 왼쪽 위 구석을 원점(0, 0)으로 해서<br>
+    오른쪽으로 갈수록 x 좌표값이 커지고<br>
+    아래쪽으로 갈수록 y 좌표값이 커진다.
+  </div>
+
+  <!-- 각도 영역 -->
+  <div style="flex: 1; text-align: center;">
+    <p><strong>캔버스에서 각도</strong></p>
+    <img src="images/각도.png" alt="각도 이미지" style="max-width: 100%; height: auto;"><br><br>
+    각도의 값은 라디안으로 표기.<br><br>
+    <div style="background-color:#f0f0f0; padding:6px; display:inline-block; font-family:monospace;">
+      radians = (Math.PI / 180) * degree
+    </div>
+    <br><br>
+    (예) 60°를 라디안으로 표현하려면 (Math.PI / 180) × 60
+  </div>
+</div>
