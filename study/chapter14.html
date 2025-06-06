@@ -225,3 +225,35 @@ ctx.lineTo(200, 200);   // (200, 200)까지 경로를 만들기
 ctx.closePath();        // 경로 닫기
 ctx.stroke();           // 만든 경로를 선으로 그린다
 </div>
+<p><strong>삼각형 그리기</strong></p>
+
+처음에 그린 직선의 끝점은 다음 직선의 시작점이 되고 그 직선의 끝점은 다시 다음 직선의 시작점이 된다.<br>
+이런 같은 방식으로 직선을 연결해서 도형을 그린다.
+
+<br><br>
+
+<div style="display: flex; gap: 40px; font-family:monospace;">
+  <!-- 첫 번째 삼각형 -->
+  <div style="background-color:#f9f9f9; padding:12px; border:1px solid #ccc; white-space:pre;">
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext("2d");
+
+ctx.beginPath();
+ctx.moveTo(50, 50);
+ctx.lineTo(150, 100);
+ctx.lineTo(50, 150);
+ctx.closePath();
+ctx.stroke();
+  </div>
+
+  <!-- 두 번째 삼각형 -->
+  <div style="background-color:#f9f9f9; padding:12px; border:1px solid #ccc; white-space:pre;">
+ctx.beginPath();
+ctx.moveTo(150, 100);
+ctx.lineTo(250, 50);
+ctx.lineTo(250, 150);
+ctx.closePath();
+ctx.fillStyle = 'rgb(0, 200, 0)';
+ctx.fill();
+  </div>
+</div>
