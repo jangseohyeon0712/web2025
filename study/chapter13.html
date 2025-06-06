@@ -246,4 +246,42 @@ pizza
   <li>제작코드 : <code>fulfilled</code> 상태인지, <code>reject</code> 상태인지에 따라 ‘피자를 주문합니다.’ 또는 ‘피자를 주문하지 않습니다.’라는 결과값을 넘겨준다.</li>
   <li>소비코드 : 결과값을 <code>result</code>나 <code>err</code> 같은 변수 이름으로 받아서 사용한다.</li>
 </ul>
+<p><strong>여러 단계 연결해서 프로그램 만들기</strong></p>
+
+프로그램은 여러 단계를 연결해서 사용할 경우가 많다. <br>
+<span style="color: cornflowerblue;">(예: 서버에서 학생 자료를 가져온다 → 성공하면? 가져온 자료를 객체로 만든다 → 성공하면? 객체에서 필요한 정보만 꺼낸다 → 성공하면? 화면에 표시한다 ….)</span>
+<br><br>
+여러 단계를 연결할 때 콜백 함수를 사용할 수도 있고, 프로미스를 사용할 수도 있다. <br>
+우선, 콜백 함수부터 살펴보자
+<p>앞의 피자 만들기 소스에서 프로미스 소비 코드를 줄이면.</p>
+
+<table style="border-spacing: 40px;">
+  <tr>
+    <td style="vertical-align: top;">
+      <div style="background-color: #f9f9f9; padding: 12px; border: 1px solid #ccc; font-family: monospace;">
+        pizza()<br>
+        &nbsp;&nbsp;.then((result) => step1(result))<br>
+        &nbsp;&nbsp;.then((result) => step2(result))<br>
+        &nbsp;&nbsp;.then((result) => step3(result))<br>
+        &nbsp;&nbsp;.then((result) => console.log(result))<br>
+        &nbsp;&nbsp;.then(() => {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log('피자가 준비되었습니다. 🍕');<br>
+        &nbsp;&nbsp;});<br>
+      </div>
+    </td>
+
+    <td style="vertical-align: top;">
+      <div style="background-color: #f9f9f9; padding: 12px; border: 1px solid #ccc; font-family: monospace;">
+        pizza()<br>
+        &nbsp;&nbsp;.then(step1)<br>
+        &nbsp;&nbsp;.then(step2)<br>
+        &nbsp;&nbsp;.then(step3)<br>
+        &nbsp;&nbsp;.then(console.log)<br>
+        &nbsp;&nbsp;.then(() => {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log("피자가 준비되었습니다. 🍕");<br>
+        &nbsp;&nbsp;});<br>
+      </div>
+    </td>
+  </tr>
+</table>
 
